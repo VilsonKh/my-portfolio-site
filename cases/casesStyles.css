@@ -1,0 +1,95 @@
+body {
+  background-color: #1e1e1d;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.first-row {
+  display: flex;
+  height: 80px;
+  margin-top: 30px;
+}
+.copyright {
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  width: 40%;
+  padding: 30px;
+}
+
+.menu {
+  display: flex;
+  width: 60%;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+}
+
+.about > a {
+  color: white;
+  transition: all .3s linears;
+}
+
+.cases > a {
+  transition: all 0.3s linear;
+}
+
+a:hover {
+  color: orange;
+}
+
+.menu > li {
+  width: 33%;
+  padding: 30px;
+}
+
+.menu > li:not(:last-child) {
+  border-right: 1px solid white;
+}
+
+.link {
+  color: white;
+}
+
+.cases-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+.case {
+  display: flex;
+  flex-direction: column;
+  column-gap: 30px;
+}
+.case-img {
+  height: 350px;
+  width: 440px;
+}
+
+.case-img > img {
+  object-fit: contain;
+  height: 100%;
+}
+
+.case-description {
+  width: 50%;
+  display: flex;
+  align-self: center;
+}
+
+.forth-row {
+  display: table;
+  margin-left: auto;
+  padding: 15px;
+  font-size: 80px;
+  font-weight: 600;
+}
