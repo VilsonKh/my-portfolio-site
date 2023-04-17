@@ -1,50 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      content="The website provides information about me, as well as examples of my projects"
-      name="description"
-    />
-    <meta
-      content="frontend, фронтенд, портфолио, portfolio, Vilson, Khechikiants,Вильсон Хечикянц"
-      name="keywords"
-    />
-    <title>Vilson Khechikiants portfolio website</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="reset.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="first-row">
-        <p class="copyright">&#169; 2023 Vilson Khechikiants</p>
-        <ul class="menu">
-          <li class="cases"><a class="link" href="https://projects.devilson.me">Cases</a></li>
-          <li class="about"><a class="link" href="https://devilson.me">About</a></li>
-          <li class="contacts">Contacts</li>
-        </ul>
-      </div>
-      <div class="second-row">
-        <p>Frontend developer</p>
-      </div>
-      <div class="third-row">
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
-          quidem.
-        </p>
-        <div class="contacts-items">
-          <ul class="contacts-list">
-            <li>Linkedin</li>
-            <li>Github</li>
-            <li>HeadHunter</li>
-          </ul>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta content="The website provides information about me, as well as examples of my projects" name="description" />
+		<meta content="frontend, фронтенд, портфолио, portfolio, Vilson, Khechikiants,Вильсон Хечикянц" name="keywords" />
+		<title>Vilson Khechikiants portfolio website</title>
+		<link href="https://fonts.googleapis.com/css?family=Jura:300,regular,500,600,700" rel="stylesheet" />
+		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/reset.css" />
+	</head>
+	<body>
+		<header class="header">
+			<div class="container d-flex justify-content-between">
+				<div class="header__logo">
+					<img src="img/logo.svg" alt="logo" />
+				</div>
+				<div class="header__langSwitcher d-flex align-items-center">
+					<button>Eng</button>
+					<p class="divider">|</p>
+					<button class="active-lang">Ru</button>
+				</div>
+			</div>
+		</header>
+		<aside class="aside"></aside>
+		<main>
+			<div class="first-screen">
+				<div class="container">
+					<div class="row first-screen__greeting mb-5">
+						<div class="col-11 ms-auto">
+							<div class="greeting__container">
+								<img class="greeting__img" src="img/info-area.svg" alt="" />
+								<div class="greeting__textBox">
+									<p class="greeting__firstLine"><span class="greeting__difLang">Hello</span>, меня зовут <span class="accent">Вильсон!</span></p>
+									<p class="greeting__secondLine">Я занимаюсь <span class="accent">Frontend</span> разработкой</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row first-screen__assist mb-5">
+						<div class="col-11 ms-auto">
+							<div class="assist__container">
+								<img class="assist__img" src="img/assist-area.svg" alt="" />
+								<p class="assist__text">Приветствую, путешественник, в вашем городе сейчас 37 градусов тепла, самое время, чтобы программировать!</p>
+							</div>
+						</div>
+					</div>
+					<div class="row first-screen__buttons mb-5">
+						<div class="col-10 m-auto mb-5">
+							<button class="buttons__interactive w-100">
+								<img class="buttons__interactive-img" src="img/button.svg" alt="" />
+								<a class="buttons__interactive-link text-uppercase" href="interactive.devilson.me">интерактивный сайт</a>
+							</button>
+						</div>
+						<div class="col-10 m-auto">
+							<button class="buttons__projects w-100">
+								<img class="buttons__projects-img" src="img/button.svg" alt="" />
+								<a class="buttons__projects-link text-uppercase" href="projects.devilson.me">проекты</a>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="assistant">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 m-auto assistant__container">
+							<img class="assistant__area" src="img/assist-small.svg" alt="" />
+							<img class="assistant__logo" src="img/logo.svg" alt="" />
+							<p class="assistant__text">Погода на марсе...</p>
+						</div>
+					</div>
+				</div>
+			</div>
+      <section class="about">
+        <div class="container">
+          <h1 class="about__heading accent text-uppercase text-center">обо мне</h1>
         </div>
-      </div>
-      <div class="forth-row">
-        <p>Vilson Khechikiants</p>
-      </div>
-    </div>
-  </body>
+      </section>
+		</main>
+
+		<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+	</body>
 </html>

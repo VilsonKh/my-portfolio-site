@@ -1,0 +1,33 @@
+@font-face {
+	font-family: "Marske";
+	src: url(../fonts/Marske.ttf);
+}
+
+.first-screen {
+	& .greeting__textBox {
+		font-size: 1.5rem;
+	}
+
+	& .assist__text {
+		font-size: 1.5rem;
+	}
+
+	& .buttons {
+		&__interactive-link, &__projects-link {
+      color: inherit;
+      font-size: 2rem;
+		}
+	}
+}
+
+.assistant {
+  &__text {
+    font-size: 1.5rem;
+  }
+}
+
+.about {
+  &__heading{
+    font-size: 5rem;
+  }
+}

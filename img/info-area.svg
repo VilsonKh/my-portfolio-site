@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 789.6 301.3" style="enable-background:new 0 0 789.6 301.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.2;fill:#F6F6F6;enable-background:new    ;}
+	.st1{opacity:0.25;fill:#646660;enable-background:new    ;}
+	.st2{opacity:0.5;fill:#646660;enable-background:new    ;}
+	.st3{fill:#F6F6F6;}
+	.st4{opacity:0.8;}
+	.st5{opacity:0.25;fill:#F6F6F6;enable-background:new    ;}
+	.st6{fill:none;}
+</style>
+<polyline class="st0" points="94,52.4 17.6,128.8 17.6,285.5 769.3,285.5 769.3,52.4 "/>
+<g>
+	<g>
+		<path class="st1" d="M777.2,293.5H9.7v-168l81-81h686.5V293.5z M11.4,291.8h764.1V46.2H91.4l-80,80V291.8z"/>
+		<path class="st2" d="M772.1,288.4H14.8V127.6l78-78h679.3V288.4z M17.7,285.5h751.6V52.4H94l-76.4,76.4v156.7H17.7z"/>
+		<polygon class="st3" points="783.8,300.1 561.2,300.1 561.2,297.2 781,297.2 781,243.6 783.8,243.6 		"/>
+		<polygon class="st3" points="6.7,177.6 3.8,177.6 3.8,122.5 4.2,122 88.1,38.2 275.9,38.2 275.9,41 89.3,41 6.7,123.6 		"/>
+	</g>
+	<rect x="61.1" y="125.9" class="st2" width="657.4" height="2.8"/>
+	<rect x="61.1" y="209" class="st2" width="657.4" height="2.8"/>
+	<g>
+		<g class="st4">
+			<path class="st3" d="M606,4v31h3.6V4H606z"/>
+			<path class="st3" d="M631.3,13.2h-16.4V35h3.6V16.8h11l1.8,1.8V35h3.6V16.8L631.3,13.2z"/>
+			<path class="st3" d="M649.3,7.7h5.5V4.1h-7.3l-3.6,3.6v5.5h-3.6v3.7h3.6V35h3.6V16.8h5.5v-3.7h-5.5V9.5L649.3,7.7z"/>
+			<path class="st3" d="M678.3,13.2h-14.5l-3.6,3.6v14.6l3.6,3.6h14.5l3.6-3.6V16.8L678.3,13.2z M678.3,29.6l-1.8,1.8h-11l-1.8-1.8
+				V18.7l1.8-1.8h10.9l1.8,1.8L678.3,29.6L678.3,29.6z"/>
+		</g>
+		<rect x="691.5" y="23.2" class="st5" width="69.3" height="1.7"/>
+		<rect x="526.2" y="23.2" class="st5" width="69.3" height="1.7"/>
+	</g>
+</g>
+<line class="st6" x1="46.5" y1="115.3" x2="46.5" y2="115.3"/>
+</svg>

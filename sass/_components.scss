@@ -1,0 +1,98 @@
+.header {
+padding-top: 2rem;
+}
+
+.aside {
+  background-color: $color-orange;
+  width: 30px;
+  height:550px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.first-screen {
+  & .greeting {
+    &__container {
+      position: relative;
+    }
+
+    &__textBox {
+      position: absolute;
+      top: 22%;
+      left: 10%;
+    }
+
+    &__firstLine {
+      margin-bottom: 10px;
+    }
+
+  
+  }
+  
+  & .assist {
+    &__container {
+      position: relative;
+    }
+
+    &__text {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      width: 85%;
+    }
+  }
+
+  & .buttons {
+    &__interactive {
+      position: relative;
+
+      &-link {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+    }
+
+    &__projects {
+      position: relative;
+
+      &-link {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+    }
+  }
+}
+
+.assistant {
+  &__container{
+    position: relative;
+  }
+
+  &__area{
+
+  }
+
+  &__logo {
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+
+    z-index: 1;
+  }
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+}

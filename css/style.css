@@ -1,0 +1,102 @@
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Jura", sans-serif;
+  background-color: #1c1c1c;
+  color: #d9d9d9; }
+
+h1 {
+  font-family: "Marske", sans-serif; }
+
+p {
+  margin: 0; }
+
+.accent {
+  color: #e75d02; }
+
+.header {
+  padding-top: 2rem; }
+
+.aside {
+  background-color: #e75d02;
+  width: 30px;
+  height: 550px;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.first-screen .greeting__container {
+  position: relative; }
+
+.first-screen .greeting__textBox {
+  position: absolute;
+  top: 22%;
+  left: 10%; }
+
+.first-screen .greeting__firstLine {
+  margin-bottom: 10px; }
+
+.first-screen .assist__container {
+  position: relative; }
+
+.first-screen .assist__text {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 85%; }
+
+.first-screen .buttons__interactive {
+  position: relative; }
+  .first-screen .buttons__interactive-link {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+.first-screen .buttons__projects {
+  position: relative; }
+  .first-screen .buttons__projects-link {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+
+.assistant__container {
+  position: relative; }
+
+.assistant__logo {
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  z-index: 1; }
+
+.assistant__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+@font-face {
+  font-family: "Marske";
+  src: url(../fonts/Marske.ttf); }
+
+.first-screen .greeting__textBox {
+  font-size: 1.5rem; }
+
+.first-screen .assist__text {
+  font-size: 1.5rem; }
+
+.first-screen .buttons__interactive-link, .first-screen .buttons__projects-link {
+  color: inherit;
+  font-size: 2rem; }
+
+.assistant__text {
+  font-size: 1.5rem; }
+
+.about__heading {
+  font-size: 5rem; }
