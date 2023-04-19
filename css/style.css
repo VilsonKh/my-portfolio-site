@@ -81,6 +81,20 @@ p {
   left: 50%;
   transform: translate(-50%, -50%); }
 
+.about {
+  margin-bottom: 20rem; }
+  .about__img-container {
+    margin-bottom: 10rem; }
+  .about__text-container {
+    position: relative; }
+  .about__text {
+    position: absolute;
+    top: 0;
+    padding: 2rem 2rem 2rem 5rem; }
+
+.tech {
+  margin-bottom: 10rem; }
+
 @font-face {
   font-family: "Marske";
   src: url(../fonts/Marske.ttf); }
@@ -99,4 +113,22 @@ p {
   font-size: 1.5rem; }
 
 .about__heading {
-  font-size: 5rem; }
+  font-size: 5rem;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  text-align: center; }
+
+.about__text {
+  font-size: 1.4rem; }
+
+.tech__heading {
+  font-size: 5rem;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  text-align: center; }
+
+.contacts__heading {
+  font-size: 5rem;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  text-align: center; }

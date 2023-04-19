@@ -5,29 +5,46 @@
 
 .first-screen {
 	& .greeting__textBox {
-		font-size: 1.5rem;
+		font-size: $main-font-size;
 	}
 
 	& .assist__text {
-		font-size: 1.5rem;
+		font-size: $main-font-size;
 	}
 
 	& .buttons {
-		&__interactive-link, &__projects-link {
-      color: inherit;
-      font-size: 2rem;
+		&__interactive-link,
+		&__projects-link {
+			color: inherit;
+			font-size: 2rem;
 		}
 	}
 }
 
 .assistant {
-  &__text {
-    font-size: 1.5rem;
-  }
+	&__text {
+		font-size: $main-font-size;
+	}
 }
 
 .about {
-  &__heading{
-    font-size: 5rem;
-  }
+	&__heading {
+		@include heading-font;
+	}
+
+	&__text {
+		font-size: 1.4rem;
+	}
+}
+
+.tech {
+	&__heading {
+		@include heading-font;
+	}
+}
+
+.contacts {
+	&__heading {
+		@include heading-font
+	}
 }

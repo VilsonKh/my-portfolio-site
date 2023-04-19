@@ -3,16 +3,16 @@
 <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 814 526" style="enable-background:new 0 0 814 526;" xml:space="preserve">
 <style type="text/css">
-	.st0{opacity:0.16;fill:#F6F6F6;enable-background:new    ;}
-	.st1{opacity:0.25;fill:#F6F6F6;enable-background:new    ;}
-	.st2{opacity:0.5;fill:#F6F6F6;enable-background:new    ;}
-	.st3{fill:#F6F6F6;}
+	.st0{opacity:0.25;fill:#F6F6F6;enable-background:new    ;}
+	.st1{opacity:0.5;fill:#F6F6F6;enable-background:new    ;}
+	.st2{fill:#F6F6F6;}
+	.st3{opacity:0.2;fill:#F6F6F6;}
 </style>
-<path class="st0" d="M795.4,21.2L18.7,504.6h776.7V21.2z"/>
-<path class="st1" d="M808,518.6H6.1V7.2H808V518.6z M7.8,516.6h798.4V9.1H7.8V516.6z"/>
-<path class="st2" d="M802.7,512.8H11.4V13h791.3V512.8z M14.4,509.5h785.4V16.3H14.4V509.5z"/>
-<path class="st3" d="M178.2,525.9H0V388.2h3v134.5h175.2V525.9z"/>
-<path class="st3" d="M813.9,137.7H811V3.3H635.8V0h178.1V137.7z"/>
-<polygon class="st3" points="14.4,16.3 795.4,21.2 795.4,504.6 18.7,504.6 "/>
-<path class="st3" d="M857,76.3"/>
+<path class="st0" d="M808,518.6H6.1V7.2H808V518.6z M7.8,516.6h798.4V9.1H7.8V516.6z"/>
+<path class="st1" d="M802.7,512.8H11.4V13h791.3V512.8z M14.4,509.5h785.4V16.3H14.4V509.5z"/>
+<path class="st2" d="M178.2,525.9H0V388.2h3v134.5h175.2V525.9z"/>
+<path class="st2" d="M813.9,137.7H811V3.3H635.8V0h178.1V137.7z"/>
+<path class="st2" d="M857,76.3"/>
+<path class="st2" d="M395.6,150.9"/>
+<rect x="14.4" y="16.3" class="st3" width="785.4" height="493.2"/>
 </svg>
