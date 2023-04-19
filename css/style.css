@@ -93,6 +93,9 @@ p {
     padding: 2rem 2rem 2rem 5rem; }
 
 .tech {
+  margin-bottom: 20rem; }
+
+.contacts {
   margin-bottom: 10rem; }
 
 @font-face {
@@ -132,3 +135,8 @@ p {
   letter-spacing: 7px;
   text-transform: uppercase;
   text-align: center; }
+
+.footer__text {
+  font-size: 2rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5); }
