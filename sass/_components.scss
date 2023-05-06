@@ -1,126 +1,272 @@
 .header {
-padding-top: 2rem;
+	height: 30px;
+	background-color: #141313;
+
+	&__logo {
+		margin-left: auto;
+		width: 30px;
+	}
 }
 
 .aside {
-  background-color: $color-orange;
-  width: 30px;
-  height:550px;
-  position: absolute;
-  top: 0;
-  left: 0;
+
+	&-header {
+		background-color: $color-orange;
+		width: 30px;
+		height: 550px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	
+		@include respond(tabPort) {
+			width: 60px;
+		}
+	}
+
+	&-links {
+		position: relative;
+		top: 55%;
+		left: 50%;
+		transform: translateX(-50%);
+		
+		&__list {
+			padding: 0 !important;
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		&__item {
+			&:not(:last-child) {
+				margin-bottom: 5px;
+			}
+		}
+	}
+}
+
+
+
+
+.burger-menu {
+	&__line {
+		width: 20px;
+		height: 3px;
+		background-color: #141313;
+		border-radius: 3px;
+		position: relative;
+		top: 12px;
+		left: 50%;
+		cursor: pointer;
+		transform: translateX(-50%);
+
+		@include respond (tabPort) {
+			top: 15px;
+		}
+
+
+		&::before {
+			content: "";
+			width: 20px;
+			height: 3px;
+			background-color: #141313;
+			border-radius: 3px;
+			position: absolute;
+			top: 5px;
+		}
+
+		&::after {
+			content: "";
+			width: 20px;
+			height: 3px;
+			background-color: #141313;
+			border-radius: 3px;
+			position: absolute;
+			top: -5px;
+		}
+	}
 }
 
 .first-screen {
-  & .greeting {
-    &__container {
-      position: relative;
-    }
+	& .greeting {
+		&__container {
+			position: relative;
+			margin-bottom: 100px;
+		}
 
-    &__textBox {
-      position: absolute;
-      top: 22%;
-      left: 10%;
-    }
+		&__textBox {
+			position: absolute;
+			top: 25%;
+			left: 10%;
+		}
 
-    &__firstLine {
-      margin-bottom: 10px;
-    }
+		&__firstLine {
+			margin-bottom: 15px;
+		}
+	}
 
-  
-  }
-  
-  & .assist {
-    &__container {
-      position: relative;
-    }
+	& .assist {
+		&__container {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}
 
-    &__text {
-      position: absolute;
-      top: 10%;
-      left: 10%;
-      width: 85%;
-    }
-  }
+		&__text {
+			position: absolute;
+			top: 50%;
+			left: 5%;
+			width: 85%;
+			transform: translateY(-50%);
+		}
+	}
 
-  & .buttons {
-    &__interactive {
-      position: relative;
+	& .buttons {
+		&__interactive {
+			position: relative;
+			width: 70%;
 
-      &-link {
-        width: 100%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-      }
-    }
+			@include respond(tabPort) {
+				width: 100%;
+			}
+			&-link {
+				width: 100%;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
 
-    &__projects {
-      position: relative;
+		&__projects {
+			position: relative;
+			width: 70%;
 
-      &-link {
-        width: 100%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-      }
-    }
-  }
+			@include respond(tabPort) {
+				width: 100%;
+			}
+
+			&-link {
+				width: 100%;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
 }
 
 .assistant {
-  &__container{
-    position: relative;
-  }
+	background-color: #141313;
+	position: relative;
+	z-index: 100;
 
-  &__area{
+	&__wrapper {
+		margin-left: auto;
 
-  }
+		@include respond(tabPort) {
+			margin-left: 0;
+		}
+	}
 
-  &__logo {
-    width: 50px;
-    position: absolute;
-    top: 50%;
-    left: 5%;
-    transform: translateY(-50%);
+	&__container {
+		position: relative;
+	}
 
-    z-index: 1;
-  }
+	&__area {
+		width: 80%;
+	}
 
-  &__text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-  }
+	&__logo {
+		width: 50px;
+		position: absolute;
+		top: 50%;
+		left: 87%;
+		transform: translateY(-50%);
+
+		z-index: 1;
+	}
+
+	&__text {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.aside-about {
+	width: 30px;
+	height: 800px;
+	background-color: #e75d02;
 }
 
 .about {
+	display: flex;
 
-  margin-bottom: 20rem;
+	&__img-container {
+		// width: 60%;
+		margin: 0 auto;
 
-  &__img-container {
-    margin-bottom: 10rem;
-  }
+		@include respond(tabPort) {
+			margin: 0;
+		}
+	}
 
-  &__text-container {
-    position: relative;
-  }
+	&__twoCols {
+		@include respond(tabPort) {
+			flex-wrap: nowrap;
+		}
+	}
 
-  &__text {
-    position: absolute;
-    top: 0;
-    // padding: 5rem 5rem 2rem 10rem;
-    padding: 2rem 2rem 2rem 5rem;
-  }
+	&__text-container {
+		position: relative;
+
+		height: 500px;
+
+		@include respond(tabPort) {
+		}
+	}
+
+	&__text {
+		position: absolute;
+		top: 0;
+		// padding: 5rem 5rem 2rem 10rem;
+		padding: 2rem 2rem 2rem 5rem;
+	}
+}
+
+.aside-tech {
+	height: 30px;
+	width: 100vw;
+	background-color: #e75d02;
+
+	&__vert {
+		width: 30px;
+		height: 800px;
+		background-color: #e75d02;
+		position: absolute;
+	}
 }
 
 .tech {
-  margin-bottom: 20rem;
+	margin-bottom: 10rem;
+
+	&__heading {
+		margin-bottom: 3rem;
+	}
+
+	&__table {
+		width: 60%;
+		margin: 0 auto;
+	}
 }
 
 .contacts {
-  margin-bottom: 10rem;
+	margin-bottom: 10rem;
+
+	&__list {
+		width: 70%;
+		margin: 0 auto;
+		padding: 0;
+	}
 }

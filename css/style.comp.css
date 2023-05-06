@@ -35,15 +35,9 @@ p {
 
 .aside-links {
   position: relative;
-  top: 55%;
+  top: 60%;
   left: 50%;
   transform: translateX(-50%); }
-  .aside-links__list {
-    padding: 0 !important;
-    width: 80%;
-    margin: 0 auto; }
-  .aside-links__item:not(:last-child) {
-    margin-bottom: 5px; }
 
 .burger-menu__line {
   width: 20px;
