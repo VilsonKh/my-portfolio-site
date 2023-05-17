@@ -1,23 +1,25 @@
+body {
+	overflow-x: hidden;
+}
+
 .header {
-	height: 30px;
-	background-color: #141313;
+	height: 60px;
+	padding-top: 30px;
 
 	&__logo {
-		margin-left: auto;
-		width: 30px;
+		width: 50px;
 	}
 }
 
 .aside {
-
 	&-header {
 		background-color: $color-orange;
 		width: 30px;
-		height: 550px;
+		height: 630px;
 		position: absolute;
 		top: 0;
 		left: 0;
-	
+
 		@include respond(tabPort) {
 			width: 60px;
 		}
@@ -25,10 +27,10 @@
 
 	&-links {
 		position: relative;
-		top: 55%;
+		top: 80%;
 		left: 50%;
 		transform: translateX(-50%);
-		
+
 		&__list {
 			padding: 0 !important;
 			width: 80%;
@@ -43,63 +45,103 @@
 	}
 }
 
-
-
-
 .burger-menu {
+	height: 50px;
 	&__line {
-		width: 20px;
-		height: 3px;
-		background-color: #141313;
+		width: 40px;
+		height: 5px;
+		background-color: #e75d02;
 		border-radius: 3px;
-		position: relative;
-		top: 12px;
-		left: 50%;
 		cursor: pointer;
-		transform: translateX(-50%);
-
-		@include respond (tabPort) {
-			top: 15px;
-		}
-
+		position: relative;
+		top: 10px;
 
 		&::before {
 			content: "";
-			width: 20px;
-			height: 3px;
-			background-color: #141313;
+			width: 40px;
+			height: 5px;
+			background-color: #e75d02;
 			border-radius: 3px;
 			position: absolute;
-			top: 5px;
+			top: 15px;
 		}
 
 		&::after {
 			content: "";
-			width: 20px;
-			height: 3px;
-			background-color: #141313;
+			width: 40px;
+			height: 5px;
+			background-color: #e75d02;
 			border-radius: 3px;
 			position: absolute;
-			top: -5px;
+			top: -15px;
 		}
 	}
 }
 
+.burger-assist {
+	
+}
+
+.line-assist {
+	top: 50%;
+
+	&::before,&::after {
+		left: 0;
+	}
+}
+
 .first-screen {
+	min-height: 746px;
+	//граница первого экрана
+	border-bottom: 2px solid red;
+	overflow-x: hidden;
+	overflow-y:clip;
+
+	& .diagonal-line {
+		height: 30px;
+		width: 120vw;
+		background-color: $color-orange;
+		position: relative;
+		bottom: 55px;
+		left: -50px;
+		transform: rotate(20deg);
+	}
+
 	& .greeting {
 		&__container {
 			position: relative;
-			margin-bottom: 100px;
+			margin-top: 70px;
+			margin-bottom: 70px;
 		}
 
 		&__textBox {
-			position: absolute;
 			top: 25%;
-			left: 10%;
+			background-color: $bg-grey;
+			clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 40%);
+			padding: 20px 20px 20px 30px;
+			font-size: $greeting-box-fs !important;
+			width: 95%;
+			margin: 0 auto;
+			outline-offset: 10px;
 		}
 
 		&__firstLine {
 			margin-bottom: 15px;
+		}
+
+		&__animation {
+			height: 100px;
+			background-color: orange;
+			opacity: 0.5;
+			margin-bottom: 70px;
+
+			&::after {
+				content: "some animation";
+				display: block;
+				position: relative;
+				top: 10px;
+				font-size: 3rem;
+			}
 		}
 	}
 
@@ -119,57 +161,80 @@
 		}
 	}
 
-	& .buttons {
-		&__interactive {
-			position: relative;
-			width: 70%;
+	&__buttons {
+		margin: 0 auto;
+	}
 
-			@include respond(tabPort) {
-				width: 100%;
-			}
+	& .buttons {
+		display: block;
+
+		&__interactive {
+			margin-bottom: 50px;
+
 			&-link {
-				width: 100%;
+				display: block;
+				transform: skewX(50deg);
+				font-size: $main-button-fs !important;
+			}
+		}
+
+		&__interactive,
+		&__projects {
+			background-color: $bg-grey;
+			padding: 10px;
+			transform: skewX(-50deg);
+			outline: 1px solid $bg-grey;
+			outline-offset: 5px;
+			border: 2px solid #9f9f9f;
+			width: 70%;
+			position: relative;
+			z-index: 1;
+
+			&::before {
+				content: "";
+				display: block;
 				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
+				border-bottom: 2px solid white;
+				border-right: 3px solid white;
+				width: 70px;
+				height: 40px;
+				top: 40%;
+				right: -5%;
+			}
+
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				border-top: 2px solid white;
+				border-left: 3px solid white;
+				width: 70px;
+				height: 40px;
+				top: -30%;
+				left: -5%;
 			}
 		}
 
 		&__projects {
-			position: relative;
-			width: 70%;
-
-			@include respond(tabPort) {
-				width: 100%;
-			}
-
 			&-link {
-				width: 100%;
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
+				display: block;
+				transform: skewX(50deg);
+				font-size: $main-button-fs !important;
 			}
 		}
 	}
 }
 
 .assistant {
-	background-color: #141313;
 	position: relative;
 	z-index: 100;
-
-	&__wrapper {
-		margin-left: auto;
-
-		@include respond(tabPort) {
-			margin-left: 0;
-		}
-	}
-
-	&__container {
-		position: relative;
+	
+	&__text {
+		background-color: $bg-grey;
+		padding: 10px 0;
+		width: 80%;
+		margin-right: 30px;
+		clip-path: polygon(0 0, 90% 0, 100% 40%, 100% 100%,10% 100%,0 60%,);
 	}
 
 	&__area {
@@ -186,25 +251,30 @@
 		z-index: 1;
 	}
 
-	&__text {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
 }
 
 .aside-about {
 	width: 30px;
-	height: 800px;
+	height: 835px;
 	background-color: #e75d02;
+	position: absolute;
+	top: -90px;
+	right: 0;
+
+	&__horizontal {
+		width: 100vw;
+		height: 30px;
+		background-color: $color-orange;
+		position: absolute;
+		bottom: 0;
+	}
 }
 
 .about {
 	display: flex;
-
+	position: relative;
 	&__img-container {
-		// width: 60%;
+		width: 60%;
 		margin: 0 auto;
 
 		@include respond(tabPort) {
@@ -219,8 +289,6 @@
 	}
 
 	&__text-container {
-		position: relative;
-
 		height: 500px;
 
 		@include respond(tabPort) {
@@ -228,18 +296,43 @@
 	}
 
 	&__text {
-		position: absolute;
-		top: 0;
-		// padding: 5rem 5rem 2rem 10rem;
-		padding: 2rem 2rem 2rem 5rem;
+		padding: 2rem 2rem 2rem 2rem;
+		text-align: justify;
+		background-color: $bg-grey;
+		width: 95%;
+		border: 2px solid $color-light-grey;
+		outline: 1px solid $bg-grey;
+		outline-offset: 7px;
+		position: relative;
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			border-top: 2px solid white;
+			border-right: 3px solid white;
+			width: 70px;
+			height: 70px;
+			top: -5%;
+			right: -5%;
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			border-bottom: 2px solid white;
+			border-left: 3px solid white;
+			width: 70px;
+			height: 70px;
+			bottom: -5%;
+			left: -5%;
+		}
+
 	}
 }
 
 .aside-tech {
-	height: 30px;
-	width: 100vw;
-	background-color: #e75d02;
-
 	&__vert {
 		width: 30px;
 		height: 800px;
@@ -247,6 +340,8 @@
 		position: absolute;
 	}
 }
+
+
 
 .tech {
 	margin-bottom: 10rem;
@@ -259,6 +354,52 @@
 		width: 60%;
 		margin: 0 auto;
 	}
+
+	&__item-inner {
+		position: relative;
+	}
+
+	&-item__container {
+		width: 110px;
+		height: 110px;
+		background-color: $bg-grey;
+		outline: 1px solid $bg-grey;
+		outline-offset: 3px;
+		border: 1px solid white;
+		margin: 5px;
+		position: relative;
+
+		
+
+		&:hover {
+			opacity: .3;
+		}
+
+		&:first-child{
+			margin-bottom: 15px;
+		}
+	}
+
+	// НЕ РАБОТАЕТ ПОКАЗ ПОДПИСИ ПО НАВЕДЕНИЮ
+	&-item__container:hover .tech__caption-container{
+		opacity: 1;
+	}
+
+	&__caption-container{
+		opacity: 0;
+		font-size: 2rem;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&-item__icon {
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
 }
 
 .contacts {
@@ -269,4 +410,10 @@
 		margin: 0 auto;
 		padding: 0;
 	}
+}
+
+.slider__item {
+}
+
+.slick-dots li button::before {
 }
