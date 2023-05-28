@@ -8,7 +8,6 @@
 		<meta content="frontend, фронтенд, портфолио, portfolio, Vilson, Khechikiants,Вильсон Хечикянц" name="keywords" />
 		<title>Vilson Khechikiants portfolio website</title>
 		<link href="https://fonts.googleapis.com/css?family=Jura:300,regular,500,600,700" rel="stylesheet" />
-		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/reset.css" />
 		<link
@@ -26,13 +25,39 @@
 				<div class="header__logo">
 					<img src="img/logo.svg" alt="logo" />
 				</div>
-				<div class="burger-menu burger-header">
+				<div class="burger-menu burger-header d-md-none">
 					<div class="burger-menu__line"></div>
+				</div>
+				<div class="changeLang__buttons tab-visible">
+					<button>ENG</button>
+					<button class="active">RU</button>
 				</div>
 			</div>
 		</header>
+		<div class="burger-menu__container">
+			<ul class="burger-menu__list">
+				<li class="burger-item"><a href="">Главная</a></li>
+				<li class="burger-item"><a href="">Обо мне</a></li>
+				<li class="burger-item"><a href="">Технологии</a></li>
+				<li class="burger-item"><a href="">Контакты</a></li>
+			</ul>
+			<div class="burger-menu__close">
+				<span class="close-line"></span>
+			</div>
+			<div class="burger__buttonGroup">
+
+				<div class="burger__removeAssist">
+						<label for="assistSwitch">Убрать ассистента</label>
+						<input type="checkbox" name="assistSwitch">
+				</div>
+				<div class="changeLang__buttons">
+					<button>ENG</button>
+					<button class="active">RU</button>
+				</div>
+			</div>
+		</div>
 		<aside class="aside-header">
-			<div class="aside-links d-none">
+			<div class="aside-links d-none d-md-block">
 				<ul class="aside-links__list">
 					<li class="aside-links__item">
 						<a href="#"><img src="img/icon-mail.svg" alt="mail" /></a>
@@ -58,15 +83,13 @@
 					<div class="row first-screen__greeting mb-5">
 						<div class="col-12">
 							<div class="greeting__container">
-								<!-- <img class="greeting__img" src="img/info-area.svg" alt="" /> -->
+								<img class="greeting__img" src="img/info-area.svg" alt="" />
 								<div class="greeting__textBox">
 									<p class="greeting__firstLine"><span class="greeting__difLang">Hello</span>, меня зовут <span class="accent">Вильсон!</span></p>
 									<p class="greeting__secondLine">Я занимаюсь <span class="accent">Frontend</span> разработкой</p>
 								</div>
 							</div>
-							<div class="greeting__animation">
-
-							</div>
+							<div class="greeting__animation d-md-none"></div>
 						</div>
 					</div>
 
@@ -175,29 +198,23 @@
 
 				<h1 class="tech__heading accent">технологии</h1>
 				<div class="tech__table">
-					<!-- <div class="row row-cols-2 row-cols-md-4 justify-content-center g-5">
-						<div class="col">
-							<img src="img/tech-area.svg" alt="" />
-						</div>
-						<div class="col">
-							<img src="img/tech-area.svg" alt="" />
-						</div>
-						<div class="col">
-							<img src="img/tech-area.svg" alt="" />
-						</div>
-						<div class="col">
-							<img src="img/tech-area.svg" alt="" />
-						</div>
-					</div> -->
 					<div class="slider-item">
-						<div class="tech-item__container first">
-							<img class="tech-item__icon" src="img/HTML.svg" alt="">
-							<p class="tech__caption">HTML</p>
+						<div class="tech__item-inner">
+							<div class="tech-item__container first">
+								<img class="tech-item__icon" src="img/HTML.svg" alt="">
+							</div>
+							<div class="tech__caption-container">
+								<p class="tech__caption">HTML</p>
+							</div>
 						</div>
-						<div class="tech-item__container">
-							<img class="tech-item__icon" src="img/CSS.svg" alt="">
-							<p class="tech__caption">CSS</p>
-						</div>
+					<div class="tech__item-inner">
+							<div class="tech-item__container">
+								<img class="tech-item__icon" src="img/CSS.svg" alt="">
+							</div>
+							<div class="tech__caption-container">
+								<p class="tech__caption">CSS</p>
+							</div>
+					</div>
 					</div>
 					<div class="slider-item">
 						<div class="tech__item-inner">
@@ -208,57 +225,81 @@
 								<p class="tech__caption">JS</p>
 							</div>
 						</div>
-						<div class="tech-item__container">
-							<img class="tech-item__icon" src="img/Jquery.svg" 
-							alt="">
-							<p class="tech__caption">JQUERY</p>
+						<div class="tech__item-inner">
+							<div class="tech-item__container">
+								<img class="tech-item__icon" src="img/Jquery.svg" 
+								alt="">
+							</div>
+							<div class="tech__caption-container">
+								<p class="tech__caption">JQUERY</p>
+							</div>
 						</div>
 					</div>
 					<div class="slider-item">
-						<div class="tech-item__container first">
-							<img class="tech-item__icon" src="img/sass.svg" alt="">
-							<p class="tech__caption">SASS</p>
-						</div>
-						<div class="tech-item__container">
-							<img class="tech-item__icon" src="img/bootstrap.svg" alt="">
-							<p class="tech__caption">BOOT<br/>STRAP</p>
-						</div>
+					<div class="tech__item-inner">
+							<div class="tech-item__container first">
+								<img class="tech-item__icon" src="img/sass.svg" alt="">
+							</div>
+							<div class="tech__caption-container">
+								<p class="tech__caption">SASS</p>
+							</div>
+					</div>
+					<div class="tech__item-inner">
+							<div class="tech-item__container">
+								<img class="tech-item__icon" src="img/bootstrap.svg" alt="">
+							</div>
+							<div class="tech__caption-container">
+								<p class="tech__caption">BOOT<br/>STRAP</p>
+							</div>
+					</div>
 					</div>
 					<div class="slider-item">
-						<div class="tech-item__container first">
-							<img class="tech-item__icon" src="img/React.svg" alt="">
-							<p class="tech__caption">REACT</p>
-						</div>
-						<div class="tech-item__container">
-							<img class="tech-item__icon" src="img/TS.svg" alt="">
-							<p class="tech__caption">TS</p>
-						</div>
+					<div class="tech__item-inner">
+							<div class="tech-item__container first">
+								<img class="tech-item__icon" src="img/React.svg" alt="">
+							</div>
+							<div class="tech__caption-container">
+								<p class="tech__caption">REACT</p>
+							</div>
+					</div>
+					<div class="tech__item-inner">
+							<div class="tech-item__container">
+								<img class="tech-item__icon" src="img/TS.svg" alt="">
+							</div>
+							<div class="tech__caption-container">
+								<p class="tech__caption">TS</p>
+							</div>
+					</div>
 					</div>
 					<div class="slider-item">
-						<div class="tech-item__container first">
-							<img class="tech-item__icon" src="img/NodeJs.svg" alt="">
-							<p class="tech__caption">Node.js</p>
-						</div>
+					<div class="tech__item-inner">
+							<div class="tech-item__container first">
+								<img class="tech-item__icon" src="img/NodeJs.svg" alt="">
+							</div>
+							<div class="tech__caption-container">
+								<p class="tech__caption">Node.js</p>
+							</div>
+					</div>
 						<div class="tech-item__container"></div>
 					</div>
 				</div>
 			</section>
 			<section class="contacts d-lg-none">
 				<h1 class="contacts__heading accent">контакты</h1>
-				<ul class="contacts__list row">
-					<li class="contacts__item col">
+				<ul class="contacts__list d-flex">
+					<li class="contacts__item">
 						<a href="#"><img src="img/icon-mail-orange.svg" alt="" /></a>
 					</li>
-					<li class="contacts__item col">
+					<li class="contacts__item">
 						<a href="#"><img src="img/icon-github-orange.svg" alt="" /></a>
 					</li>
-					<li class="contacts__item col">
+					<li class="contacts__item">
 						<a href="#"><img src="img/icon-hh-orange.svg" alt="" /></a>
 					</li>
-					<li class="contacts__item col">
+					<li class="contacts__item">
 						<a href="#"><img src="img/icon-linkdin-orange.svg" alt="" /></a>
 					</li>
-					<li class="contacts__item col">
+					<li class="contacts__item">
 						<a href="#"><img src="img/icon-telegram-orange.svg" alt="" /></a>
 					</li>
 				</ul>
@@ -268,7 +309,7 @@
 			<p class="footer__text">2023 | Вильсон Хечикянц</p>
 		</footer>
 
-		<script type="module" src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+		<!-- <script type="module" src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script> -->
 		<script
 			type="module"
 			src="node_modules/jquery/dist/jquery.min.js"

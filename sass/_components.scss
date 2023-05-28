@@ -31,6 +31,10 @@ body {
 		left: 50%;
 		transform: translateX(-50%);
 
+		@include respond(tabPort) {
+			top: 60%;
+		}
+
 		&__list {
 			padding: 0 !important;
 			width: 80%;
@@ -39,7 +43,8 @@ body {
 
 		&__item {
 			&:not(:last-child) {
-				margin-bottom: 5px;
+				margin-bottom: 10px;
+				
 			}
 		}
 	}
@@ -51,7 +56,6 @@ body {
 		width: 40px;
 		height: 5px;
 		background-color: #e75d02;
-		border-radius: 3px;
 		cursor: pointer;
 		position: relative;
 		top: 10px;
@@ -61,7 +65,6 @@ body {
 			width: 40px;
 			height: 5px;
 			background-color: #e75d02;
-			border-radius: 3px;
 			position: absolute;
 			top: 15px;
 		}
@@ -71,31 +74,25 @@ body {
 			width: 40px;
 			height: 5px;
 			background-color: #e75d02;
-			border-radius: 3px;
 			position: absolute;
 			top: -15px;
 		}
 	}
 }
 
-.burger-assist {
-	
-}
-
 .line-assist {
 	top: 50%;
 
-	&::before,&::after {
+	&::before,
+	&::after {
 		left: 0;
 	}
 }
 
 .first-screen {
 	min-height: 746px;
-	//граница первого экрана
-	border-bottom: 2px solid red;
 	overflow-x: hidden;
-	overflow-y:clip;
+	overflow-y: clip;
 
 	& .diagonal-line {
 		height: 30px;
@@ -105,6 +102,15 @@ body {
 		bottom: 55px;
 		left: -50px;
 		transform: rotate(20deg);
+
+		@media screen and (min-width: 768px) {
+			height: 60px;
+			width: 26vw;
+			bottom: -10px;
+			left: -70px;
+			transform: rotate(40deg);
+			z-index: -1;
+		}
 	}
 
 	& .greeting {
@@ -112,21 +118,39 @@ body {
 			position: relative;
 			margin-top: 70px;
 			margin-bottom: 70px;
+
+			@media screen and (min-width: 768px) {
+				width: 80%;
+				margin-left: auto;
+			}
 		}
 
 		&__textBox {
-			top: 25%;
-			background-color: $bg-grey;
-			clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 40%);
+			// top: 25%;
+			// background-color: $bg-grey;
+			// clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 40%);
+			// shape-outside: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 40%);
 			padding: 20px 20px 20px 30px;
 			font-size: $greeting-box-fs !important;
 			width: 95%;
+			height: 100%;
 			margin: 0 auto;
 			outline-offset: 10px;
+			position: absolute;
+			top: 0;
+			padding-left: 40px;
+
+			@media screen and (min-width: 768px) {
+				top: 40px;
+			}
 		}
 
 		&__firstLine {
 			margin-bottom: 15px;
+
+			@media screen and (min-width: 768px) {
+				margin-bottom: 25px;
+			}
 		}
 
 		&__animation {
@@ -173,7 +197,7 @@ body {
 
 			&-link {
 				display: block;
-				transform: skewX(50deg);
+				transform: skewX(40deg);
 				font-size: $main-button-fs !important;
 			}
 		}
@@ -182,7 +206,7 @@ body {
 		&__projects {
 			background-color: $bg-grey;
 			padding: 10px;
-			transform: skewX(-50deg);
+			transform: skewX(-40deg);
 			outline: 1px solid $bg-grey;
 			outline-offset: 5px;
 			border: 2px solid #9f9f9f;
@@ -218,7 +242,7 @@ body {
 		&__projects {
 			&-link {
 				display: block;
-				transform: skewX(50deg);
+				transform: skewX(40deg);
 				font-size: $main-button-fs !important;
 			}
 		}
@@ -228,13 +252,13 @@ body {
 .assistant {
 	position: relative;
 	z-index: 100;
-	
+
 	&__text {
 		background-color: $bg-grey;
 		padding: 10px 0;
 		width: 80%;
 		margin-right: 30px;
-		clip-path: polygon(0 0, 90% 0, 100% 40%, 100% 100%,10% 100%,0 60%,);
+		clip-path: polygon(0 0, 90% 0, 100% 40%, 100% 100%, 10% 100%, 0 60%);
 	}
 
 	&__area {
@@ -250,7 +274,6 @@ body {
 
 		z-index: 1;
 	}
-
 }
 
 .aside-about {
@@ -261,12 +284,28 @@ body {
 	top: -90px;
 	right: 0;
 
+	@include respond(tabPort){ 
+		width: 60px;
+		left: 16%;
+		top: -165px;
+		z-index: 0;
+		height: 650px;
+		right: -50px;
+	}
+
 	&__horizontal {
 		width: 100vw;
 		height: 30px;
 		background-color: $color-orange;
 		position: absolute;
 		bottom: 0;
+
+		@include respond (tabPort) {
+			bottom: 50px;
+			width: 84vw;
+			height: 60px;
+			right: 0;
+		}
 	}
 }
 
@@ -279,6 +318,9 @@ body {
 
 		@include respond(tabPort) {
 			margin: 0;
+			position: relative;
+			z-index: 1;
+			width: 50%;
 		}
 	}
 
@@ -328,23 +370,27 @@ body {
 			bottom: -5%;
 			left: -5%;
 		}
-
 	}
 }
 
 .aside-tech {
 	&__vert {
 		width: 30px;
-		height: 800px;
+		height: 820px;
 		background-color: #e75d02;
 		position: absolute;
+
+		@include respond(tabPort) {
+			width: 40px;
+			right: 0;
+			top: -50px;
+		}
 	}
 }
 
-
-
 .tech {
 	margin-bottom: 10rem;
+	position: relative;
 
 	&__heading {
 		margin-bottom: 3rem;
@@ -353,6 +399,10 @@ body {
 	&__table {
 		width: 60%;
 		margin: 0 auto;
+
+		@include respond(tabPort) {
+			width: 65%;
+		}
 	}
 
 	&__item-inner {
@@ -368,31 +418,55 @@ body {
 		border: 1px solid white;
 		margin: 5px;
 		position: relative;
-
-		
+		z-index: 1;
+		opacity: 1;
+		transition: opacity 0.3s ease;
+		// &::before {
+		// 	display: block;
+		// 	content: '';
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	position: absolute;
+		// 	top: 0;
+		// 	left: 0;
+		// 	background-color: grey;
+		// 	opacity: 0;
+		// 	z-index: 3;
+		// }
 
 		&:hover {
-			opacity: .3;
+			opacity: 0;
 		}
 
-		&:first-child{
+		&:first-child {
 			margin-bottom: 15px;
 		}
 	}
 
-	// НЕ РАБОТАЕТ ПОКАЗ ПОДПИСИ ПО НАВЕДЕНИЮ
-	&-item__container:hover .tech__caption-container{
-		opacity: 1;
-	}
-
-	&__caption-container{
-		opacity: 0;
-		font-size: 2rem;
+	&__caption {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		font-size: 2.5rem;
+		font-weight: 700;
+		z-index: 0;
 	}
+
+	// НЕ РАБОТАЕТ ПОКАЗ ПОДПИСИ ПО НАВЕДЕНИЮ
+	// &-item__container:hover .tech__caption-container{
+	// 	opacity: 1;
+	// }
+
+	// &__caption-container{
+	// 	opacity: 0;
+	// 	font-size: 2rem;
+	// 	position: absolute;
+	// 	top: 50%;
+	// 	left: 50%;
+	// 	transform: translate(-50%, -50%);
+	// 	z-index: 4;
+	// }
 
 	&-item__icon {
 		position: relative;
@@ -412,8 +486,109 @@ body {
 	}
 }
 
-.slider__item {
+.contacts {
+	&__heading {
+		margin-bottom: 3rem;
+	}
+
+	&__list {
+		flex-wrap: wrap;
+		gap: 20px;
+		justify-content: center;
+	}
+
+	&__item {
+		width: 80px;
+	}
+
+	& img {
+		width: 100%;
+	}
 }
 
 .slick-dots li button::before {
+	color: $color-orange !important;
+	font-size: 15px !important;
+}
+
+.slick-dots li.slick-active button::before {
+	color: $color-orange !important;
+}
+
+.slick-slide {
+	margin-right: 10px;
+}
+
+.burger-menu {
+	&__container {
+		background-color: $color-light-black;
+		// background-color: grey;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 100;
+		font-size: 2rem;
+		padding: 2rem;
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	&__container.active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&__list {
+		width: 100%;
+		text-align: center;
+		font-size: 2rem;
+		padding: 0;
+	}
+
+	&__close {
+		position: absolute;
+		top: 30px;
+		right: 30px;
+		padding: 3rem 0;
+	}
+}
+
+.close-line {
+	display: block;
+	width: 30px;
+	min-height: 5px;
+	background: white;
+	transform: rotate(-45deg);
+
+	&::before {
+		display: block;
+		content: "";
+		width: 30px;
+		height: 5px;
+		position: relative;
+		background: white;
+		top: 0;
+		transform: rotate(90deg);
+	}
+}
+
+.burger-item a {
+	color: white !important;
+}
+
+.burger__removeAssist {
+	text-align: center;
+}
+
+.changeLang__buttons {
+	text-align: center;
+	color: grey;
+}
+
+.tab-visible {
+	font-size: 20px;
+}
+
+.changeLang__buttons button.active {
+	color: white;
 }

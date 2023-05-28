@@ -5,6 +5,14 @@ $(function () {
     slidesToScroll: 3,
     responsive: [
       {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite:false
+        }
+      },
+      {
         breakpoint: 768,
         settings: {
           slidesToShow: 3,
@@ -32,28 +40,28 @@ $(function () {
 
 })
 
-interact('.draggable')
-  .draggable({
-    // enable inertial throwing
-    inertia: true,
-    autoScroll: true,
+// interact('.draggable')
+//   .draggable({
+//     // enable inertial throwing
+//     inertia: true,
+//     autoScroll: true,
 
-    listeners: {
-      // call this function on every dragmove event
-      move: dragMoveListener,
+//     listeners: {
+//       // call this function on every dragmove event
+//       move: dragMoveListener,
 
-      // call this function on every dragend event
-      end (event) {
-        var textEl = event.target.querySelector('p')
+//       // call this function on every dragend event
+//       end (event) {
+//         var textEl = event.target.querySelector('p')
 
-        textEl && (textEl.textContent =
-          'moved a distance of ' +
-          (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
-                     Math.pow(event.pageY - event.y0, 2) | 0))
-            .toFixed(2) + 'px')
-      }
-    }
-  })
+//         textEl && (textEl.textContent =
+//           'moved a distance of ' +
+//           (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
+//                      Math.pow(event.pageY - event.y0, 2) | 0))
+//             .toFixed(2) + 'px')
+//       }
+//     }
+//   })
 
 function dragMoveListener (event) {
   var target = event.target
@@ -68,4 +76,14 @@ function dragMoveListener (event) {
   target.setAttribute('data-x', x)
   target.setAttribute('data-y', y)
 }
+
+let burgerButton = document.querySelector('.burger-header');
+let burgerMenu = document.querySelector('.burger-menu__container')
+let BurgerClose = document.querySelector('.burger-menu__close');
+
+document.addEventListener('click', () => {
+  burgerMenu.classList.toggle('active')
+})
+
+
 
