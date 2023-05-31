@@ -8475,6 +8475,9 @@ body {
   @media only screen and (min-width: 768px) {
     .aside-header {
       width: 60px; } }
+  @media only screen and (min-width: 1024px) {
+    .aside-header {
+      height: 690px; } }
 
 .aside-links {
   position: relative;
@@ -8532,7 +8535,7 @@ body {
     bottom: 55px;
     left: -50px;
     transform: rotate(20deg); }
-    @media screen and (min-width: 768px) {
+    @media only screen and (min-width: 768px) {
       .first-screen .diagonal-line {
         height: 60px;
         width: 26vw;
@@ -8540,6 +8543,9 @@ body {
         left: -70px;
         transform: rotate(40deg);
         z-index: -1; } }
+    @media only screen and (min-width: 1024px) {
+      .first-screen .diagonal-line {
+        left: -80px; } }
   .first-screen .greeting__container {
     position: relative;
     margin-top: 70px;
@@ -8556,16 +8562,25 @@ body {
     margin: 0 auto;
     outline-offset: 10px;
     position: absolute;
-    top: 0;
+    top: 0px;
     padding-left: 40px; }
     @media screen and (min-width: 768px) {
       .first-screen .greeting__textBox {
-        top: 40px; } }
+        top: 60px;
+        font-size: 3rem !important;
+        padding-left: 60px; } }
   .first-screen .greeting__firstLine {
-    margin-bottom: 15px; }
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 10px;
+    padding-left: 20px; }
     @media screen and (min-width: 768px) {
       .first-screen .greeting__firstLine {
         margin-bottom: 25px; } }
+  .first-screen .greeting__secondLine {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 10px;
+    padding-left: 20px; }
   .first-screen .greeting__animation {
     height: 100px;
     background-color: orange;
@@ -8586,7 +8601,8 @@ body {
     top: 50%;
     left: 5%;
     width: 85%;
-    transform: translateY(-50%); }
+    transform: translateY(-50%);
+    font-size: 2rem; }
   .first-screen__buttons {
     margin: 0 auto; }
   .first-screen .buttons {
@@ -8666,6 +8682,11 @@ body {
       z-index: 0;
       height: 650px;
       right: -50px; } }
+  @media only screen and (min-width: 1024px) {
+    .aside-about {
+      height: 650px;
+      left: 11%;
+      top: -40px; } }
   .aside-about__horizontal {
     width: 100vw;
     height: 30px;
@@ -8678,10 +8699,14 @@ body {
         width: 84vw;
         height: 60px;
         right: 0; } }
+    @media only screen and (min-width: 1024px) {
+      .aside-about__horizontal {
+        bottom: -50px; } }
 
 .about {
   display: flex;
-  position: relative; }
+  position: relative;
+  margin-bottom: 100px; }
   .about__img-container {
     width: 60%;
     margin: 0 auto; }
@@ -8696,6 +8721,8 @@ body {
       flex-wrap: nowrap; } }
   .about__text-container {
     height: 500px; }
+  .about__heading {
+    font-size: 10rem; }
   .about__text {
     padding: 2rem 2rem 2rem 2rem;
     text-align: justify;
@@ -8705,6 +8732,9 @@ body {
     outline: 1px solid #3f3f3f;
     outline-offset: 7px;
     position: relative; }
+    @media only screen and (min-width: 1024px) {
+      .about__text {
+        font-size: 1.7rem; } }
     .about__text::before {
       content: "";
       display: block;
@@ -8733,9 +8763,12 @@ body {
   position: absolute; }
   @media only screen and (min-width: 768px) {
     .aside-tech__vert {
-      width: 40px;
+      width: 60px;
       right: 0;
       top: -50px; } }
+  @media only screen and (min-width: 1024px) {
+    .aside-tech__vert {
+      height: 800px; } }
 
 .tech {
   margin-bottom: 10rem;
@@ -8862,7 +8895,8 @@ body {
 
 .changeLang__buttons {
   text-align: center;
-  color: grey; }
+  color: grey;
+  font-size: 3rem !important; }
 
 .tab-visible {
   font-size: 20px; }
