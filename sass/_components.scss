@@ -2,9 +2,31 @@ body {
 	overflow-x: hidden;
 }
 
+main {
+	// display: flex !important;
+
+	gap: 50px;
+}
+
+.wrapper {
+	width: 100%;
+}
+
+.page {
+	height: 100vh;
+	display: flex;
+}
+
+.main-content {
+	width: 100%;
+}
+
 .header {
-	height: 60px;
-	padding-top: 30px;
+	& .container {
+		padding: 15px;
+		display: flex;
+		justify-content: space-between;
+	}
 
 	&__logo {
 		width: 50px;
@@ -14,41 +36,24 @@ body {
 .aside {
 	&-header {
 		background-color: $color-orange;
-		width: 30px;
-		height: 630px;
-		position: absolute;
-		top: 0;
-		left: 0;
-
-		@include respond(tabPort) {
-			width: 60px;
-		}
-
-		@include respond(tab) {
-			height: 690px;
-		}
+		min-width: 80px;
+		height: 100vh;
+		display: flex;
+		align-items: end;
 	}
 
 	&-links {
-		position: relative;
-		top: 80%;
-		left: 50%;
-		transform: translateX(-50%);
 
-		@include respond(tabPort) {
-			top: 60%;
-		}
 
 		&__list {
-			padding: 0 !important;
-			width: 80%;
 			margin: 0 auto;
+			width: 80%;
+			margin-bottom: 50px;
 		}
 
 		&__item {
 			&:not(:last-child) {
 				margin-bottom: 10px;
-				
 			}
 		}
 	}
@@ -121,6 +126,10 @@ body {
 		}
 	}
 
+	&__greeting {
+		margin-bottom: 200px;
+	}
+
 	& .greeting {
 		&__container {
 			position: relative;
@@ -138,22 +147,26 @@ body {
 			// background-color: $bg-grey;
 			// clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 40%);
 			// shape-outside: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 40%);
-			padding: 20px 20px 20px 30px;
-			font-size: $greeting-box-fs !important;
-			width: 95%;
-			height: 100%;
-			margin: 0 auto;
-			outline-offset: 10px;
-			position: absolute;
-			top: 0px;
+			padding: 20px;
 			padding-left: 40px;
-			
+			font-size: $greeting-box-fs;
 
+			position: absolute;
 
-			@media screen and (min-width: 768px) {
-				top: 60px;
-				font-size: $greeting-box-fs-tab !important;
-				padding-left: 60px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: 40px;
+
+			@media screen and (min-width: 767px) {
+				font-size: 5rem;
+			}
+
+			@media screen and (min-width: 1439px) {
+				left: 5%;
+				width: 85%;
+				top: 50%;
+				transform: translateY(-50%);
 			}
 		}
 
@@ -190,11 +203,35 @@ body {
 		}
 	}
 
+	&__assist {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__assistContainer {
+		position: relative;
+	}
+
+	&__assistImg {
+		height: 200px;
+		width: 610px;
+		object-fit: contain;
+	}
+
+	&__assistText {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 25px;
+		padding: 0 40px;
+	}
+
 	& .assist {
-		&__container {
-			position: relative;
-			top: 50%;
-			transform: translateY(-50%);
+		position: relative;
+		// top: 50%;
+		// transform: translateY(-50%);
+
+		@media screen and (min-width: 1439px) {
 		}
 
 		&__text {
@@ -208,31 +245,28 @@ body {
 	}
 
 	&__buttons {
-		margin: 0 auto;
-	}
-
-	& .buttons {
-		display: block;
-
-		&__interactive {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-right: 50px;
+		width: 30%;
+		&-interactive {
 			margin-bottom: 50px;
-
-			&-link {
-				display: block;
-				transform: skewX(40deg);
-				font-size: $main-button-fs !important;
-			}
 		}
 
-		&__interactive,
-		&__projects {
+		&-interactive,
+		&-projects {
+			display: block;
+			transform: skewX(40deg);
+			font-size: $main-button-fs !important;
+
 			background-color: $bg-grey;
 			padding: 10px;
 			transform: skewX(-40deg);
 			outline: 1px solid $bg-grey;
 			outline-offset: 5px;
 			border: 2px solid #9f9f9f;
-			width: 70%;
+			width: 100%;
 			position: relative;
 			z-index: 1;
 
@@ -261,12 +295,11 @@ body {
 			}
 		}
 
-		&__projects {
-			&-link {
-				display: block;
-				transform: skewX(40deg);
-				font-size: $main-button-fs !important;
-			}
+		&-link {
+			display: block;
+			transform: skewX(40deg);
+			font-size: $main-button-fs !important;
+			color: white;
 		}
 	}
 }
@@ -306,7 +339,7 @@ body {
 	top: -90px;
 	right: 0;
 
-	@include respond(tabPort){ 
+	@include respond(tabPort) {
 		width: 60px;
 		left: 16%;
 		top: -165px;
@@ -315,50 +348,42 @@ body {
 		right: -50px;
 	}
 
-	@include respond (tab) {
+	@include respond(tab) {
 		height: 650px;
 		left: 11%;
 		top: -40px;
 	}
 
 	&__horizontal {
-		width: 100vw;
-		height: 30px;
 		background-color: $color-orange;
+		width: 90%;
+		margin-left: auto;
+		height: 80px;
 		position: absolute;
 		bottom: 0;
-
-		@include respond (tabPort) {
-			bottom: 50px;
-			width: 84vw;
-			height: 60px;
-			right: 0;
-		}
-
-		@include respond (tab) {
-			bottom: -50px;
-		}
+		right: 0;
 	}
 }
 
 .about {
-	display: flex;
 	position: relative;
-	margin-bottom: 100px;
+	top: 50%;
+	transform: translateY(-50%);
 
 	&__img-container {
-		width: 60%;
+		width: 100%;
 		margin: 0 auto;
 
 		@include respond(tabPort) {
 			margin: 0;
 			position: relative;
 			z-index: 1;
-			width: 50%;
+			width: 100%;
 		}
 	}
 
 	&__twoCols {
+		display: flex;
 		@include respond(tabPort) {
 			flex-wrap: nowrap;
 		}
@@ -373,6 +398,7 @@ body {
 
 	&__heading {
 		font-size: 10rem;
+		margin: 50px 0;
 	}
 
 	&__text {
@@ -384,6 +410,7 @@ body {
 		outline: 1px solid $bg-grey;
 		outline-offset: 7px;
 		position: relative;
+		height: 500px;
 
 		@include respond(tab) {
 			font-size: 1.7rem;
@@ -417,26 +444,17 @@ body {
 
 .aside-tech {
 	&__vert {
-		width: 30px;
-		height: 820px;
+		width: 80px;
+		height: 100vh;
 		background-color: #e75d02;
-		position: absolute;
 
-		@include respond(tabPort) {
-			width: 60px;
-			right: 0;
-			top: -50px;
-		}
-
-		@include respond (tab) {
-			height: 800px;
-		}
 	}
 }
 
 .tech {
 	margin-bottom: 10rem;
 	position: relative;
+	width: 100%;
 
 	&__heading {
 		margin-bottom: 3rem;
@@ -552,19 +570,6 @@ body {
 	}
 }
 
-.slick-dots li button::before {
-	color: $color-orange !important;
-	font-size: 15px !important;
-}
-
-.slick-dots li.slick-active button::before {
-	color: $color-orange !important;
-}
-
-.slick-slide {
-	margin-right: 10px;
-}
-
 .burger-menu {
 	&__container {
 		background-color: $color-light-black;
@@ -638,4 +643,8 @@ body {
 
 .changeLang__buttons button.active {
 	color: white;
+}
+
+.swiper-slide {
+	height: auto !important;
 }

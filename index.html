@@ -8,32 +8,17 @@
 		<meta content="frontend, фронтенд, портфолио, portfolio, Vilson, Khechikiants,Вильсон Хечикянц" name="keywords" />
 		<title>Vilson Khechikiants portfolio website</title>
 		<link href="https://fonts.googleapis.com/css?family=Jura:300,regular,500,600,700" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.2.0/swiper-bundle.css"
+			integrity="sha512-EDXaYrpumQKF+Ic8nuEsgJWBwMOhgwWvNINclFu91nx5VR4MeZ5xlUvyRaYQJTMImwbXSeDjtZMtTs8EB65Z0g=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/reset.css" />
-		<link
-			rel="stylesheet"
-			href="node_modules/slick-carousel/slick/slick-theme.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="node_modules/slick-carousel/slick/slick.css"
-		/>
 	</head>
 	<body>
-		<header class="header d-flex align-items-center">
-			<div class="container d-flex justify-content-between">
-				<div class="header__logo">
-					<img src="img/logo.svg" alt="logo" />
-				</div>
-				<div class="burger-menu burger-header d-md-none">
-					<div class="burger-menu__line"></div>
-				</div>
-				<div class="changeLang__buttons tab-visible">
-					<button>ENG</button>
-					<button class="active">RU</button>
-				</div>
-			</div>
-		</header>
 		<div class="burger-menu__container">
 			<ul class="burger-menu__list">
 				<li class="burger-item"><a href="">Главная</a></li>
@@ -45,10 +30,9 @@
 				<span class="close-line"></span>
 			</div>
 			<div class="burger__buttonGroup">
-
 				<div class="burger__removeAssist">
-						<label for="assistSwitch">Убрать ассистента</label>
-						<input type="checkbox" name="assistSwitch">
+					<label for="assistSwitch">Убрать ассистента</label>
+					<input type="checkbox" name="assistSwitch" />
 				</div>
 				<div class="changeLang__buttons">
 					<button>ENG</button>
@@ -56,268 +40,297 @@
 				</div>
 			</div>
 		</div>
-		<aside class="aside-header">
-			<div class="aside-links d-none d-md-block">
-				<ul class="aside-links__list">
-					<li class="aside-links__item">
-						<a href="#"><img src="img/icon-mail.svg" alt="mail" /></a>
-					</li>
-					<li class="aside-links__item">
-						<a href="#"><img src="img/icon-github.svg" alt="github" /></a>
-					</li>
-					<li class="aside-links__item">
-						<a href="#"><img src="img/icon-hh.svg" alt="hh" /></a>
-					</li>
-					<li class="aside-links__item">
-						<a href="#"><img src="img/icon-linkdin.svg" alt="linkdin" /></a>
-					</li>
-					<li class="aside-links__item">
-						<a href="#"><img src="img/icon-telegram.svg" alt="telegram" /></a>
-					</li>
-				</ul>
-			</div>
-		</aside>
+
 		<main>
-			<div class="first-screen">
-				<div class="container">
-					<div class="row first-screen__greeting mb-5">
-						<div class="col-12">
+			<div class="page">
+				<aside class="aside-header">
+					<ul class="aside-links__list">
+						<li class="aside-links__item">
+							<a href="#"><img src="img/icon-mail.svg" alt="mail" /></a>
+						</li>
+						<li class="aside-links__item">
+							<a href="#"><img src="img/icon-github.svg" alt="github" /></a>
+						</li>
+						<li class="aside-links__item">
+							<a href="#"><img src="img/icon-hh.svg" alt="hh" /></a>
+						</li>
+						<li class="aside-links__item">
+							<a href="#"><img src="img/icon-linkdin.svg" alt="linkdin" /></a>
+						</li>
+						<li class="aside-links__item">
+							<a href="#"><img src="img/icon-telegram.svg" alt="telegram" /></a>
+						</li>
+					</ul>
+				</aside>
+				<div class="main-content">
+					<header class="header">
+						<div class="container">
+							<div class="header__logo">
+								<img src="img/logo.svg" alt="logo" />
+							</div>
+							<!-- <div class="burger-menu burger-header">
+								<div class="burger-menu__line"></div>
+							</div> -->
+							<div class="changeLang__buttons tab-visible">
+								<button>ENG</button>
+								<button class="active">RU</button>
+							</div>
+						</div>
+					</header>
+					<div class="first-screen">
+						<div class="first-screen__greeting">
 							<div class="greeting__container">
-								<img class="greeting__img" src="img/info-area.svg" alt="" />
+								<img class="greeting__img" src="img/info-area.svg" alt="hud" />
 								<div class="greeting__textBox">
 									<p class="greeting__firstLine"><span class="greeting__difLang">Hello</span>, меня зовут <span class="accent">Вильсон!</span></p>
 									<p class="greeting__secondLine">Я занимаюсь <span class="accent">Frontend</span> разработкой</p>
 								</div>
 							</div>
-							<div class="greeting__animation d-md-none"></div>
+							<!-- <div class="greeting__animation"></div> -->
 						</div>
-					</div>
 
-					<div class="row first-screen__assist mb-5">
-						<div class="assist__wrapper col-11 col-md-6 d-none d-md-block">
-							<div class="assist__container">
-								<img class="assist__img" src="img/assist-area.svg" alt="" />
-								<p class="assist__text">Приветствую, путешественник, в вашем городе сейчас 37 градусов тепла, самое время, чтобы программировать!</p>
+						<div class="first-screen__assist">
+							<div class="first-screen__assistContainer">
+								<img class="first-screen__assistImg" src="img/assist-area.svg" alt="" />
+								<p class="first-screen__assistText">Приветствую, путешественник, в вашем городе сейчас 37 градусов тепла, самое время, чтобы программировать!</p>
 							</div>
-						</div>
-						<div class="col-12 col-md-6 m-auto">
-							<div class="first-screen__buttons m-auto text-center mb-5">
-								<button class="buttons__interactive">
-									<!-- <img class="buttons__interactive-img" src="img/button.svg" alt="" /> -->
-									<a class="buttons__interactive-link text-uppercase" href="#">интерактивный сайт</a>
+							<div class="first-screen__buttons">
+								<button class="first-screen__buttons-interactive">
+									<a class="first-screen__buttons-link" href="#">интерактивный сайт</a>
 								</button>
-								<button class="buttons__projects">
-									<!-- <img class="buttons__projects-img" src="img/button.svg" alt="" /> -->
-									<a class="buttons__projects-link text-uppercase" href="#">проекты</a>
+								<button class="first-screen__buttons-projects">
+									<a class="first-screen__buttons-link" href="#">проекты</a>
 								</button>
 							</div>
 						</div>
-					</div>
-
-					<!-- <div class="diagonal-line__container"></div> -->
-						<div class="diagonal-line"></div>
-				</div>
-			</div>
-			<div class="assistant">
-				<div class="container">
-					<div class="row">
-						<div class="col-12 text-center d-flex assistant__container">
-							<!-- <img class="assistant__area" src="img/assist-small.svg" alt="" /> -->
-							<p class="assistant__text">Погода на марсе...<br/>Погода на Марсе...</p>
-							<div class="burger-menu burger-assist">
-								<div class="burger-menu__line line-assist"></div>
-							</div>
-						</div>
+						<!-- <div class="diagonal-line__container"></div> -->
+						<!-- <div class="diagonal-line"></div> -->
 					</div>
 				</div>
 			</div>
-			<section class="about">
-				<div class="container">
-					<h1 class="about__heading accent text-uppercase text-center">обо мне</h1>
-					<div class="about__twoCols row">
-						<div class="about__img-container m-md-none col-12 col-md-6">
+			<div class="page">
+				<section class="about">
+					<h1 class="about__heading accent">обо мне</h1>
+					<div class="about__twoCols">
+						<div class="about__img-container">
 							<img src="img/about-photo.png" alt="" />
 						</div>
-						<div class="about__text-container col-12 col-md-6">
+						<div class="about__text-container">
 							<!-- <svg
-								version="1.1"
-								id="Слой_1"
-								xmlns="http://www.w3.org/2000/svg"
-								xmlns:xlink="http://www.w3.org/1999/xlink"
-								x="150"
-								y="0px"
-								viewBox="0 0 814 526"
-								style="enable-background: new 0 0 814 526"
-								preserveAspectRatio="none"
-								width="400"
-								height="400"
-							>
-								<style type="text/css">
-									.st0 {
-										opacity: 0.25;
-										fill: #f6f6f6;
-										enable-background: new;
-									}
-									.st1 {
-										opacity: 0.5;
-										fill: #f6f6f6;
-										enable-background: new;
-									}
-									.st2 {
-										fill: #f6f6f6;
-										stroke-width: 15px;
-										stroke: "white";
-									}
-									.st3 {
-										opacity: 0.2;
-										fill: #f6f6f6;
-									}
-								</style>
-								<path class="st0" d="M808,518.6H6.1V7.2H808V518.6z M7.8,516.6h798.4V9.1H7.8V516.6z" />
-								<path class="st1" d="M802.7,512.8H11.4V13h791.3V512.8z M14.4,509.5h785.4V16.3H14.4V509.5z" />
-								<path class="st2" d="M178.2,525.9H0V388.2h3v134.5h175.2V525.9z" stroke-width="2" stroke="white" />
-								<path class="st2" d="M813.9,137.7H811V3.3H635.8V0h178.1V137.7z" stroke-width="2" stroke="white" />
-								<path class="st2" d="M857,76.3" stroke-width="20" />
-								<path class="st2" d="M395.6,150.9" stroke-width="20" />
-								<rect x="14.4" y="16.3" class="st3" width="785.4" height="493.2" />
-							</svg> -->
+										version="1.1"
+										id="Слой_1"
+										xmlns="http://www.w3.org/2000/svg"
+										xmlns:xlink="http://www.w3.org/1999/xlink"
+										x="150"
+										y="0px"
+										viewBox="0 0 814 526"
+										style="enable-background: new 0 0 814 526"
+										preserveAspectRatio="none"
+										width="400"
+										height="400"
+									>
+										<style type="text/css">
+											.st0 {
+												opacity: 0.25;
+												fill: #f6f6f6;
+												enable-background: new;
+											}
+											.st1 {
+												opacity: 0.5;
+												fill: #f6f6f6;
+												enable-background: new;
+											}
+											.st2 {
+												fill: #f6f6f6;
+												stroke-width: 15px;
+												stroke: "white";
+											}
+											.st3 {
+												opacity: 0.2;
+												fill: #f6f6f6;
+											}
+										</style>
+										<path class="st0" d="M808,518.6H6.1V7.2H808V518.6z M7.8,516.6h798.4V9.1H7.8V516.6z" />
+										<path class="st1" d="M802.7,512.8H11.4V13h791.3V512.8z M14.4,509.5h785.4V16.3H14.4V509.5z" />
+										<path class="st2" d="M178.2,525.9H0V388.2h3v134.5h175.2V525.9z" stroke-width="2" stroke="white" />
+										<path class="st2" d="M813.9,137.7H811V3.3H635.8V0h178.1V137.7z" stroke-width="2" stroke="white" />
+										<path class="st2" d="M857,76.3" stroke-width="20" />
+										<path class="st2" d="M395.6,150.9" stroke-width="20" />
+										<rect x="14.4" y="16.3" class="st3" width="785.4" height="493.2" />
+									</svg> -->
 
 							<p class="about__text">
-								Меня зовут Вильсон Хечикянц и я начинающий Frontend разработчик. Закончил Всероссийскую Академию Внешней Торговли по направлению внешнеторговый менеджмент.<br/> Мой опыт: <br/>
-								ФНС России по крупнейшим налогоплательщикам (3 года); Deloitte consalting (1 год). <br/>Еще во время обучения в университете я интересовался разработкой сайтов и
+								Меня зовут Вильсон Хечикянц и я начинающий Frontend разработчик. Закончил Всероссийскую Академию Внешней Торговли по направлению внешнеторговый менеджмент.<br />
+								Мой опыт: <br />
+								ФНС России по крупнейшим налогоплательщикам (3 года); Deloitte consalting (1 год). <br />Еще во время обучения в университете я интересовался разработкой сайтов и
 								тренировался в создании сайтов. Со временем овладел необходимыми навыками и готов к смене области деятельности. На данный момент я увлечен разработкой на React...
 							</p>
 						</div>
 					</div>
+
+					<!-- <div class="aside-about"></div> -->
+					<div class="aside-about__horizontal"></div>
+				</section>
+			</div>
+			<!-- <div class="assistant">
+				<div class="container">
+						<div class="assistant__container">
+							<img class="assistant__area" src="img/assist-small.svg" alt="" />
+							<p class="assistant__text">Погода на марсе...<br />Погода на Марсе...</p>
+							<div class="burger-menu burger-assist">
+								<div class="burger-menu__line line-assist"></div>
+							</div>
+						</div>
 				</div>
-				<div class="aside-about"></div>
-				<div class="aside-about__horizontal"></div>
-			</section>
-			<section class="tech">
+			</div> -->
+			<div class="page">
+				<section class="tech">
+					<h1 class="tech__heading accent">технологии</h1>
+					<div class="tech__table">
+						<div class="swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-container">
+									<div class="swiper-slide">
+										<div class="tech-item__container first">
+											<img class="tech-item__icon" src="img/HTML.svg" alt="" />
+										</div>
+										<!-- <div class="tech__caption-container">
+												<p class="tech__caption">HTML</p>
+											</div> -->
+									</div>
+									<div class="swiper-slide">
+										<div class="tech__item-inner">
+											<div class="tech-item__container">
+												<img class="tech-item__icon" src="img/CSS.svg" alt="" />
+											</div>
+											<!-- <div class="tech__caption-container">
+												<p class="tech__caption">CSS</p>
+											</div> -->
+										</div>
+									</div>
+								</div>
+								<div class="swiper-container">
+									<div class="swiper-slide">
+										<div class="tech__item-inner">
+											<div class="tech-item__container first">
+												<img class="tech-item__icon" src="img/JS.svg" alt="" />
+											</div>
+											<!-- <div class="tech__caption-container">
+												<p class="tech__caption">JS</p>
+											</div> -->
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="tech__item-inner">
+											<div class="tech-item__container">
+												<img class="tech-item__icon" src="img/Jquery.svg" alt="" />
+											</div>
+											<!-- <div class="tech__caption-container">
+												<p class="tech__caption">JQUERY</p>
+											</div> -->
+										</div>
+									</div>
+								</div>
+								<div class="swiper-container">
+									<div class="swiper-slide">
+										<div class="tech__item-inner">
+											<div class="tech-item__container">
+												<img class="tech-item__icon" src="img/bootstrap.svg" alt="" />
+											</div>
+											<!-- <div class="tech__caption-container">
+												<p class="tech__caption">BOOT<br />STRAP</p>
+											</div> -->
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="tech__item-inner">
+											<div class="tech-item__container first">
+												<img class="tech-item__icon" src="img/sass.svg" alt="" />
+											</div>
+											<!-- <div class="tech__caption-container">
+												<p class="tech__caption">SASS</p>
+											</div> -->
+										</div>
+									</div>
+								</div>
+								<div class="swiper-container">
+									<div class="swiper-slide">
+										<div class="tech__item-inner">
+											<div class="tech-item__container">
+												<img class="tech-item__icon" src="img/TS.svg" alt="" />
+											</div>
+											<!-- <div class="tech__caption-container">
+												<p class="tech__caption">TS</p>
+											</div> -->
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="tech__item-inner">
+											<div class="tech-item__container first">
+												<img class="tech-item__icon" src="img/React.svg" alt="" />
+											</div>
+											<!-- <div class="tech__caption-container">
+												<p class="tech__caption">REACT</p>
+											</div> -->
+										</div>
+									</div>
+								</div>
+								<div class="swiper-container">
+									<div class="swiper-slide">
+										<div class="tech-item__container"></div>
+									</div>
+									<div class="swiper-slide">
+										<div class="tech__item-inner">
+											<div class="tech-item__container first">
+												<img class="tech-item__icon" src="img/NodeJs.svg" alt="" />
+											</div>
+											<!-- <div class="tech__caption-container">
+												<p class="tech__caption">Node.js</p>
+											</div> -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
 				<div class="aside-tech__vert"></div>
-
-				<h1 class="tech__heading accent">технологии</h1>
-				<div class="tech__table">
-					<div class="slider-item">
-						<div class="tech__item-inner">
-							<div class="tech-item__container first">
-								<img class="tech-item__icon" src="img/HTML.svg" alt="">
-							</div>
-							<div class="tech__caption-container">
-								<p class="tech__caption">HTML</p>
-							</div>
-						</div>
-					<div class="tech__item-inner">
-							<div class="tech-item__container">
-								<img class="tech-item__icon" src="img/CSS.svg" alt="">
-							</div>
-							<div class="tech__caption-container">
-								<p class="tech__caption">CSS</p>
-							</div>
-					</div>
-					</div>
-					<div class="slider-item">
-						<div class="tech__item-inner">
-							<div class="tech-item__container first">
-								<img class="tech-item__icon" src="img/JS.svg" alt="">
-							</div>
-							<div class="tech__caption-container">
-								<p class="tech__caption">JS</p>
-							</div>
-						</div>
-						<div class="tech__item-inner">
-							<div class="tech-item__container">
-								<img class="tech-item__icon" src="img/Jquery.svg" 
-								alt="">
-							</div>
-							<div class="tech__caption-container">
-								<p class="tech__caption">JQUERY</p>
-							</div>
-						</div>
-					</div>
-					<div class="slider-item">
-					<div class="tech__item-inner">
-							<div class="tech-item__container first">
-								<img class="tech-item__icon" src="img/sass.svg" alt="">
-							</div>
-							<div class="tech__caption-container">
-								<p class="tech__caption">SASS</p>
-							</div>
-					</div>
-					<div class="tech__item-inner">
-							<div class="tech-item__container">
-								<img class="tech-item__icon" src="img/bootstrap.svg" alt="">
-							</div>
-							<div class="tech__caption-container">
-								<p class="tech__caption">BOOT<br/>STRAP</p>
-							</div>
-					</div>
-					</div>
-					<div class="slider-item">
-					<div class="tech__item-inner">
-							<div class="tech-item__container first">
-								<img class="tech-item__icon" src="img/React.svg" alt="">
-							</div>
-							<div class="tech__caption-container">
-								<p class="tech__caption">REACT</p>
-							</div>
-					</div>
-					<div class="tech__item-inner">
-							<div class="tech-item__container">
-								<img class="tech-item__icon" src="img/TS.svg" alt="">
-							</div>
-							<div class="tech__caption-container">
-								<p class="tech__caption">TS</p>
-							</div>
-					</div>
-					</div>
-					<div class="slider-item">
-					<div class="tech__item-inner">
-							<div class="tech-item__container first">
-								<img class="tech-item__icon" src="img/NodeJs.svg" alt="">
-							</div>
-							<div class="tech__caption-container">
-								<p class="tech__caption">Node.js</p>
-							</div>
-					</div>
-						<div class="tech-item__container"></div>
-					</div>
-				</div>
-			</section>
-			<section class="contacts d-lg-none">
-				<h1 class="contacts__heading accent">контакты</h1>
-				<ul class="contacts__list d-flex">
-					<li class="contacts__item">
-						<a href="#"><img src="img/icon-mail-orange.svg" alt="" /></a>
-					</li>
-					<li class="contacts__item">
-						<a href="#"><img src="img/icon-github-orange.svg" alt="" /></a>
-					</li>
-					<li class="contacts__item">
-						<a href="#"><img src="img/icon-hh-orange.svg" alt="" /></a>
-					</li>
-					<li class="contacts__item">
-						<a href="#"><img src="img/icon-linkdin-orange.svg" alt="" /></a>
-					</li>
-					<li class="contacts__item">
-						<a href="#"><img src="img/icon-telegram-orange.svg" alt="" /></a>
-					</li>
-				</ul>
-			</section>
+			</div>
+			<div class="page">
+				<section class="contacts">
+					<h1 class="contacts__heading accent">контакты</h1>
+					<ul class="contacts__list">
+						<li class="contacts__item">
+							<a href="#"><img src="img/icon-mail-orange.svg" alt="" /></a>
+						</li>
+						<li class="contacts__item">
+							<a href="#"><img src="img/icon-github-orange.svg" alt="" /></a>
+						</li>
+						<li class="contacts__item">
+							<a href="#"><img src="img/icon-hh-orange.svg" alt="" /></a>
+						</li>
+						<li class="contacts__item">
+							<a href="#"><img src="img/icon-linkdin-orange.svg" alt="" /></a>
+						</li>
+						<li class="contacts__item">
+							<a href="#"><img src="img/icon-telegram-orange.svg" alt="" /></a>
+						</li>
+					</ul>
+				</section>
+			</div>
 		</main>
-		<footer class="footer">
+		<!-- <footer class="footer">
 			<p class="footer__text">2023 | Вильсон Хечикянц</p>
-		</footer>
-
-		<!-- <script type="module" src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script> -->
-		<script
-			type="module"
-			src="node_modules/jquery/dist/jquery.min.js"
-	
-		></script>
-		<!-- <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-		<script type="module" src="node_modules/slick-carousel/slick/slick.min.js"></script>
+		</footer> -->
+		<script type="module" src="node_modules/jquery/dist/jquery.min.js"></script>
 		<!-- <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script> -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.2.0/swiper-bundle.min.js"
+			integrity="sha512-QwpsxtdZRih55GaU/Ce2Baqoy2tEv9GltjAG8yuTy2k9lHqK7VHHp3wWWe+yITYKZlsT3AaCj49ZxMYPp46iJQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+
 		<script type="module" src="js/main.js"></script>
 	</body>
 </html>

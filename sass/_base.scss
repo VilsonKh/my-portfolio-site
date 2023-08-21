@@ -6,6 +6,9 @@ body {
    font-family: "Jura", sans-serif;
    background-color: $color-light-black;
    color: $color-light-grey;
+   max-width: 1440px;
+   min-width: 375px;
+   margin: 0 auto;
 }
 
 h1 {

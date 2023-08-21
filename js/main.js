@@ -1,45 +1,3 @@
-$(function () {
-  $('.tech__table').slick({
-    infinite: false,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    responsive: [
-      {
-        breakpoint: 1280,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4,
-          infinite:false
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite:false
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          infinite:false,
-          arrows: false,
-          dots: true
-        }
-      }
-    ]
-  })
-
-  
-      
-
-
-
-})
-
 // interact('.draggable')
 //   .draggable({
 //     // enable inertial throwing
@@ -63,27 +21,31 @@ $(function () {
 //     }
 //   })
 
-function dragMoveListener (event) {
-  var target = event.target
-  // keep the dragged position in the data-x/data-y attributes
-  var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
-  var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
+function dragMoveListener(event) {
+	var target = event.target;
+	// keep the dragged position in the data-x/data-y attributes
+	var x = (parseFloat(target.getAttribute("data-x")) || 0) + event.dx;
+	var y = (parseFloat(target.getAttribute("data-y")) || 0) + event.dy;
 
-  // translate the element
-  target.style.transform = 'translate(' + x + 'px, ' + y + 'px)'
+	// translate the element
+	target.style.transform = "translate(" + x + "px, " + y + "px)";
 
-  // update the posiion attributes
-  target.setAttribute('data-x', x)
-  target.setAttribute('data-y', y)
+	// update the posiion attributes
+	target.setAttribute("data-x", x);
+	target.setAttribute("data-y", y);
 }
 
-let burgerButton = document.querySelector('.burger-header');
-let burgerMenu = document.querySelector('.burger-menu__container')
-let BurgerClose = document.querySelector('.burger-menu__close');
+let burgerButton = document.querySelector(".burger-header");
+let burgerMenu = document.querySelector(".burger-menu__container");
+let BurgerClose = document.querySelector(".burger-menu__close");
 
-document.addEventListener('click', () => {
-  burgerMenu.classList.toggle('active')
-})
+// document.addEventListener("click", () => {
+// 	burgerMenu.classList.toggle("active");
+// });
 
-
-
+new Swiper(".swiper", {
+	sliderPerView: auto,
+	grid: {
+		rows: 2,
+	},
+});
