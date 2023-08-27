@@ -15,6 +15,7 @@ main {
 .page {
 	height: 100vh;
 	display: flex;
+	position: relative;
 }
 
 .main-content {
@@ -446,8 +447,9 @@ main {
 	&__vert {
 		width: 80px;
 		height: 100vh;
-		background-color: #e75d02;
-
+		background-color: $color-orange;
+		position: absolute;
+		right: 0;
 	}
 }
 
@@ -458,6 +460,7 @@ main {
 
 	&__heading {
 		margin-bottom: 3rem;
+		font-size: 10rem;
 	}
 
 	&__table {
@@ -468,19 +471,13 @@ main {
 			width: 65%;
 		}
 	}
-
-	&__item-inner {
-		position: relative;
-	}
-
 	&-item__container {
-		width: 110px;
-		height: 110px;
+		width: 95%;
+		height: 95%;
 		background-color: $bg-grey;
 		outline: 1px solid $bg-grey;
 		outline-offset: 3px;
 		border: 1px solid white;
-		margin: 5px;
 		position: relative;
 		z-index: 1;
 		opacity: 1;
@@ -498,13 +495,6 @@ main {
 		// 	z-index: 3;
 		// }
 
-		&:hover {
-			opacity: 0;
-		}
-
-		&:first-child {
-			margin-bottom: 15px;
-		}
 	}
 
 	&__caption {
@@ -533,6 +523,8 @@ main {
 	// }
 
 	&-item__icon {
+		width: 70%;
+		height: 70%;
 		position: relative;
 		top: 50%;
 		left: 50%;
@@ -645,6 +637,15 @@ main {
 	color: white;
 }
 
+.swiper {
+	height: 340px;
+}
+
 .swiper-slide {
-	height: auto !important;
+	height: 160px;
+	width: 160px;
+	font-size: 5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

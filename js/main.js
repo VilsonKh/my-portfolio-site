@@ -44,7 +44,28 @@ let BurgerClose = document.querySelector(".burger-menu__close");
 // });
 
 new Swiper(".swiper", {
-	sliderPerView: auto,
+	slidesPerView: 2,
+	breakpoints: {
+		767: {
+			slidesPerView: 3,
+			grid: {
+				rows: 2,
+			},
+		},
+		1440: {
+			slidesPerView: 4,
+			grid: {
+				rows: 2,
+			},
+		},
+		1920: {
+			slidesPerView: 5,
+			grid: {
+				rows: 2,
+			},
+		},
+	},
+	spaceBetween: 20,
 	grid: {
 		rows: 2,
 	},

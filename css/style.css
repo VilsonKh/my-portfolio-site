@@ -84,7 +84,8 @@ main {
 
 .page {
   height: 100vh;
-  display: flex; }
+  display: flex;
+  position: relative; }
 
 .main-content {
   width: 100%; }
@@ -394,38 +395,34 @@ main {
 .aside-tech__vert {
   width: 80px;
   height: 100vh;
-  background-color: #e75d02; }
+  background-color: #e75d02;
+  position: absolute;
+  right: 0; }
 
 .tech {
   margin-bottom: 10rem;
   position: relative;
   width: 100%; }
   .tech__heading {
-    margin-bottom: 3rem; }
+    margin-bottom: 3rem;
+    font-size: 10rem; }
   .tech__table {
     width: 60%;
     margin: 0 auto; }
     @media only screen and (min-width: 768px) {
       .tech__table {
         width: 65%; } }
-  .tech__item-inner {
-    position: relative; }
   .tech-item__container {
-    width: 110px;
-    height: 110px;
+    width: 95%;
+    height: 95%;
     background-color: #3f3f3f;
     outline: 1px solid #3f3f3f;
     outline-offset: 3px;
     border: 1px solid white;
-    margin: 5px;
     position: relative;
     z-index: 1;
     opacity: 1;
     transition: opacity 0.3s ease; }
-    .tech-item__container:hover {
-      opacity: 0; }
-    .tech-item__container:first-child {
-      margin-bottom: 15px; }
   .tech__caption {
     position: absolute;
     top: 50%;
@@ -435,6 +432,8 @@ main {
     font-weight: 700;
     z-index: 0; }
   .tech-item__icon {
+    width: 70%;
+    height: 70%;
     position: relative;
     top: 50%;
     left: 50%;
@@ -521,5 +520,14 @@ main {
 .changeLang__buttons button.active {
   color: white; }
 
+.swiper {
+  height: 340px; 
+}
+
 .swiper-slide {
-  height: auto !important; }
+  height: 160px ;
+  width: 160px !important;
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
