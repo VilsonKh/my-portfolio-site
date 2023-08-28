@@ -47,13 +47,13 @@ new Swiper(".swiper", {
 	slidesPerView: 2,
 	breakpoints: {
 		767: {
-			slidesPerView: 3,
+			slidesPerView: 4,
 			grid: {
 				rows: 2,
 			},
 		},
 		1440: {
-			slidesPerView: 4,
+			slidesPerView: 5,
 			grid: {
 				rows: 2,
 			},
