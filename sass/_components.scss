@@ -8,6 +8,24 @@ main {
 	gap: 50px;
 }
 
+.section__heading {
+	margin: 50px 0;
+	text-align: center;
+	color: $color-orange;
+
+	@include respond (phone) {
+		font-size: 5rem;
+	}
+
+	@include respond (tabPort) {
+		font-size: 7rem;
+	}
+
+	@include respond (tab) {
+		font-size: 10rem;
+	}
+}
+
 .wrapper {
 	width: 100%;
 }
@@ -16,6 +34,11 @@ main {
 	height: 100vh;
 	display: flex;
 	position: relative;
+	gap: 20px;
+
+	&__inner {
+		width: 100%;
+	}
 }
 
 .main-content {
@@ -37,19 +60,32 @@ main {
 .aside {
 	&-header {
 		background-color: $color-orange;
-		min-width: 80px;
 		height: 100vh;
 		display: flex;
 		align-items: end;
+
+		@include respond(phone) {
+			min-width: 30px;
+		}
+
+		@include respond(tabPort) {
+			min-width: 60px;
+		}
 	}
 
 	&-links {
-
-
 		&__list {
 			margin: 0 auto;
 			width: 80%;
 			margin-bottom: 50px;
+
+			@include respond(phone) {
+				display: none;
+			}
+
+			@include respond (tabPort) {
+				display: block;
+			}
 		}
 
 		&__item {
@@ -144,26 +180,31 @@ main {
 		}
 
 		&__textBox {
-			// top: 25%;
-			// background-color: $bg-grey;
-			// clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 40%);
-			// shape-outside: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 40%);
 			padding: 20px;
-			padding-left: 40px;
 			font-size: $greeting-box-fs;
-
 			position: absolute;
-
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			gap: 40px;
+			top: 55%;
+			transform: translateY(-50%);
 
-			@media screen and (min-width: 767px) {
-				font-size: 5rem;
+			@include respond(phone) {
+				font-size: 1.6rem;
+				padding-left: 20px;
+				padding-right: 10px;
+				gap: 10px;
 			}
 
-			@media screen and (min-width: 1439px) {
+			@include respond(tabPort) {
+				padding-left: 40px; 
+				font-size: 2.7rem;
+				gap: 20px;
+			}
+
+			@include respond (tab) {
+				gap: 40px;
+				font-size: 4rem;
 				left: 5%;
 				width: 85%;
 				top: 50%;
@@ -172,13 +213,12 @@ main {
 		}
 
 		&__firstLine {
-			margin-bottom: 15px;
 			border-bottom: 1px solid rgba($color: white, $alpha: 0.5);
 			padding-bottom: 10px;
 			padding-left: 20px;
 
-			@media screen and (min-width: 768px) {
-				margin-bottom: 25px;
+			@include respond (desktop) {
+
 			}
 		}
 
@@ -211,10 +251,19 @@ main {
 
 	&__assistContainer {
 		position: relative;
+		flex-basis: 55%;
+
+		@include respond(phone) {
+			display: none;
+		}
+
+		@include respond (tabPort) {
+			display: block;
+		}
 	}
 
 	&__assistImg {
-		height: 200px;
+		height: 100%;
 		width: 610px;
 		object-fit: contain;
 	}
@@ -223,8 +272,13 @@ main {
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
-		font-size: 25px;
-		padding: 0 40px;
+		font-size: 2.5rem;
+		padding: 0px 40px;
+
+		@include respond(tabPort) {
+			font-size: 2rem;
+			width: 75%;
+		}
 	}
 
 	& .assist {
@@ -249,10 +303,23 @@ main {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		margin-right: 50px;
-		width: 30%;
+
+		@include respond(phone) {
+			width: 80%;
+			margin: 0 auto;
+		}
+
+		@include respond(tabPort) {
+			width: 30%;
+		}
+
 		&-interactive {
 			margin-bottom: 50px;
+	
+
+			&:hover::before, &:hover::after {
+				width: 100%;
+			}
 		}
 
 		&-interactive,
@@ -281,6 +348,7 @@ main {
 				height: 40px;
 				top: 40%;
 				right: -5%;
+				transition: width .3s ease;
 			}
 
 			&::after {
@@ -293,6 +361,7 @@ main {
 				height: 40px;
 				top: -30%;
 				left: -5%;
+				transition: width .3s ease;
 			}
 		}
 
@@ -359,10 +428,17 @@ main {
 		background-color: $color-orange;
 		width: 90%;
 		margin-left: auto;
-		height: 80px;
 		position: absolute;
 		bottom: 0;
 		right: 0;
+
+		@include respond(phone) {
+			height: 30px;
+		}
+
+		@include respond(tabPort) {
+			height: 60px;
+		}
 	}
 }
 
@@ -372,7 +448,7 @@ main {
 	transform: translateY(-50%);
 
 	&__img-container {
-		width: 100%;
+		width: 50%;
 		margin: 0 auto;
 
 		@include respond(tabPort) {
@@ -380,26 +456,28 @@ main {
 			position: relative;
 			z-index: 1;
 			width: 100%;
+			flex-basis: 50%;
 		}
 	}
 
 	&__twoCols {
 		display: flex;
+		flex-direction: column;
+
 		@include respond(tabPort) {
 			flex-wrap: nowrap;
+			flex-direction: row;
+			align-items: center;
 		}
 	}
 
 	&__text-container {
-		height: 500px;
+		width: 70%;
+		margin: 0 auto;
 
 		@include respond(tabPort) {
+			flex-basis: 50%;
 		}
-	}
-
-	&__heading {
-		font-size: 10rem;
-		margin: 50px 0;
 	}
 
 	&__text {
@@ -411,7 +489,6 @@ main {
 		outline: 1px solid $bg-grey;
 		outline-offset: 7px;
 		position: relative;
-		height: 500px;
 
 		@include respond(tab) {
 			font-size: 1.7rem;
@@ -445,11 +522,22 @@ main {
 
 .aside-tech {
 	&__vert {
-		width: 80px;
 		height: 100vh;
 		background-color: $color-orange;
 		position: absolute;
 		right: 0;
+
+		@include respond(phone) {
+			width: 30px;
+		}
+
+		@include respond(tabPort) {
+			width: 60px;
+		}
+
+		@include respond(tab) {
+			width: 80px;
+		}
 	}
 }
 
@@ -464,8 +552,11 @@ main {
 	}
 
 	&__table {
-		width: 60%;
 		margin: 0 auto;
+
+		@include respond (phone) {
+			width: 80%;
+		}
 
 		@include respond(tabPort) {
 			width: 65%;
@@ -494,7 +585,6 @@ main {
 		// 	opacity: 0;
 		// 	z-index: 3;
 		// }
-
 	}
 
 	&__caption {
@@ -548,13 +638,14 @@ main {
 	}
 
 	&__list {
+		display: flex;
 		flex-wrap: wrap;
 		gap: 20px;
 		justify-content: center;
 	}
 
 	&__item {
-		width: 80px;
+		width: 20%;
 	}
 
 	& img {
@@ -627,6 +718,10 @@ main {
 	text-align: center;
 	color: grey;
 	font-size: 3rem !important;
+
+	@include respond(phone) {
+		display: none;
+	}
 }
 
 .tab-visible {
@@ -638,14 +733,45 @@ main {
 }
 
 .swiper {
-	height: 340px;
+
+	@include respond (phone) {
+		height: 240px;
+	}
+
+	@include respond (tabPort) {
+		// height: 340px
+	}
+
+	@include respond (desktop) {
+		// height: 340px;
+	}
+}
+
+.swiper-wrapper {
+	gap: 20px;
+}
+
+.slide-container {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
 
 .swiper-slide {
-	height: 160px;
-	width: 160px;
+	height: auto;
+	// width: 100px !important;
 	font-size: 5rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	@include respond (phone) {
+		// width: 100px;
+		// height: 100px;
+	}
+}
+
+.tech-item__container {
+	width: 110px !important;
+	height: 110px !important;
 }
