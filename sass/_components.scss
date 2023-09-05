@@ -9,19 +9,16 @@ main {
 }
 
 .section__heading {
-	margin: 50px 0;
+	padding: 50px 0;
 	text-align: center;
 	color: $color-orange;
+	font-size: 5rem;
 
-	@include respond (phone) {
-		font-size: 5rem;
-	}
-
-	@include respond (tabPort) {
+	@include respond(tabPort) {
 		font-size: 7rem;
 	}
 
-	@include respond (tab) {
+	@include respond(tab) {
 		font-size: 10rem;
 	}
 }
@@ -34,7 +31,7 @@ main {
 	height: 100vh;
 	display: flex;
 	position: relative;
-	gap: 20px;
+	gap: 10px;
 
 	&__inner {
 		width: 100%;
@@ -47,13 +44,23 @@ main {
 
 .header {
 	& .container {
-		padding: 15px;
+		padding: 20px;
+		padding-left: 0;
+
 		display: flex;
 		justify-content: space-between;
 	}
 
 	&__logo {
 		width: 50px;
+	}
+
+	&__burger-icon {
+		cursor: pointer;
+
+		@include respond(tabPort) {
+			display: none;
+		}
 	}
 }
 
@@ -63,10 +70,7 @@ main {
 		height: 100vh;
 		display: flex;
 		align-items: end;
-
-		@include respond(phone) {
-			min-width: 30px;
-		}
+		min-width: 30px;
 
 		@include respond(tabPort) {
 			min-width: 60px;
@@ -78,12 +82,9 @@ main {
 			margin: 0 auto;
 			width: 80%;
 			margin-bottom: 50px;
+			display: none;
 
-			@include respond(phone) {
-				display: none;
-			}
-
-			@include respond (tabPort) {
+			@include respond(tabPort) {
 				display: block;
 			}
 		}
@@ -97,14 +98,17 @@ main {
 }
 
 .burger-menu {
-	height: 50px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	&__line {
 		width: 40px;
 		height: 5px;
 		background-color: #e75d02;
 		cursor: pointer;
 		position: relative;
-		top: 10px;
 
 		&::before {
 			content: "";
@@ -136,7 +140,7 @@ main {
 }
 
 .first-screen {
-	min-height: 746px;
+	padding-right: 20px;
 	overflow-x: hidden;
 	overflow-y: clip;
 
@@ -179,30 +183,42 @@ main {
 			}
 		}
 
+		&__img {
+			display: none;
+
+			@media screen and (min-width: 767px) {
+				display: block;
+			}
+		}
+
 		&__textBox {
-			padding: 20px;
+			width: 95%;
+			margin: 0 auto;
+			padding: 10px;
 			font-size: $greeting-box-fs;
-			position: absolute;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			top: 55%;
-			transform: translateY(-50%);
+			font-size: 1.6rem;
+			gap: 10px;
+			background: #3f3f3f;
+			border: 2px solid #d9d9d9;
+			outline: 2px solid #3f3f3f;
+			outline-offset: 7px;
+			position: relative;
 
-			@include respond(phone) {
-				font-size: 1.6rem;
-				padding-left: 20px;
-				padding-right: 10px;
-				gap: 10px;
+			& p {
+				border-bottom: 1px solid rgba($color: white, $alpha: 0.5);
+				padding-bottom: 5px;
 			}
 
 			@include respond(tabPort) {
-				padding-left: 40px; 
+				padding-left: 40px;
 				font-size: 2.7rem;
 				gap: 20px;
 			}
 
-			@include respond (tab) {
+			@include respond(tab) {
 				gap: 40px;
 				font-size: 4rem;
 				left: 5%;
@@ -213,20 +229,12 @@ main {
 		}
 
 		&__firstLine {
-			border-bottom: 1px solid rgba($color: white, $alpha: 0.5);
-			padding-bottom: 10px;
-			padding-left: 20px;
-
-			@include respond (desktop) {
-
-			}
+			text-align: right;
 		}
 
 		&__secondLine {
-			border-bottom: 1px solid rgba($color: white, $alpha: 0.5);
-			padding-bottom: 10px;
-			padding-left: 20px;
 		}
+
 
 		&__animation {
 			height: 100px;
@@ -252,12 +260,9 @@ main {
 	&__assistContainer {
 		position: relative;
 		flex-basis: 55%;
+		display: none;
 
-		@include respond(phone) {
-			display: none;
-		}
-
-		@include respond (tabPort) {
+		@include respond(tabPort) {
 			display: block;
 		}
 	}
@@ -277,7 +282,11 @@ main {
 
 		@include respond(tabPort) {
 			font-size: 2rem;
-			width: 75%;
+			width: 100%;
+		}
+
+		@include respond(desktop) {
+			width: 80%;
 		}
 	}
 
@@ -300,14 +309,12 @@ main {
 	}
 
 	&__buttons {
+		min-height: 170px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-
-		@include respond(phone) {
-			width: 80%;
-			margin: 0 auto;
-		}
+		width: 80%;
+		margin: 0 auto;
 
 		@include respond(tabPort) {
 			width: 30%;
@@ -315,54 +322,55 @@ main {
 
 		&-interactive {
 			margin-bottom: 50px;
-	
+		}
+	}
+	&__button {
+		display: block;
+		transform: skewX(40deg);
+		font-size: $main-button-fs !important;
+		background-color: $bg-grey;
+		padding: 10px;
+		transform: skewX(-40deg);
+		outline: 1px solid $bg-grey;
+		outline-offset: 5px;
+		border: 2px solid #9f9f9f;
+		width: 100%;
+		position: relative;
+		z-index: 1;
 
-			&:hover::before, &:hover::after {
-				width: 100%;
-			}
+		&:first-child {
+			margin-bottom: 50px;
 		}
 
-		&-interactive,
-		&-projects {
-			display: block;
-			transform: skewX(40deg);
-			font-size: $main-button-fs !important;
-
-			background-color: $bg-grey;
-			padding: 10px;
-			transform: skewX(-40deg);
-			outline: 1px solid $bg-grey;
-			outline-offset: 5px;
-			border: 2px solid #9f9f9f;
+		&:hover::before,
+		&:hover::after {
 			width: 100%;
-			position: relative;
-			z-index: 1;
+		}
 
-			&::before {
-				content: "";
-				display: block;
-				position: absolute;
-				border-bottom: 2px solid white;
-				border-right: 3px solid white;
-				width: 70px;
-				height: 40px;
-				top: 40%;
-				right: -5%;
-				transition: width .3s ease;
-			}
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			border-bottom: 2px solid white;
+			border-right: 3px solid white;
+			width: 70px;
+			height: 40px;
+			top: 40%;
+			right: -5%;
+			transition: width 0.3s ease;
+		}
 
-			&::after {
-				content: "";
-				display: block;
-				position: absolute;
-				border-top: 2px solid white;
-				border-left: 3px solid white;
-				width: 70px;
-				height: 40px;
-				top: -30%;
-				left: -5%;
-				transition: width .3s ease;
-			}
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			border-top: 2px solid white;
+			border-left: 3px solid white;
+			width: 70px;
+			height: 40px;
+			top: -30%;
+			left: -5%;
+			transition: width 0.3s ease;
 		}
 
 		&-link {
@@ -428,28 +436,25 @@ main {
 		background-color: $color-orange;
 		width: 90%;
 		margin-left: auto;
-		position: absolute;
-		bottom: 0;
-		right: 0;
-
-		@include respond(phone) {
-			height: 30px;
-		}
+		height: 30px;
 
 		@include respond(tabPort) {
 			height: 60px;
+		}
+
+		@include respond(desktop) {
+			height: 80px;
 		}
 	}
 }
 
 .about {
 	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
 
 	&__img-container {
 		width: 50%;
 		margin: 0 auto;
+		margin-bottom: 50px;
 
 		@include respond(tabPort) {
 			margin: 0;
@@ -461,6 +466,8 @@ main {
 	}
 
 	&__twoCols {
+		margin: 0 auto;
+		width: 90%;
 		display: flex;
 		flex-direction: column;
 
@@ -472,8 +479,9 @@ main {
 	}
 
 	&__text-container {
-		width: 70%;
+		width: 80%;
 		margin: 0 auto;
+		padding: 20px 0;
 
 		@include respond(tabPort) {
 			flex-basis: 50%;
@@ -502,8 +510,8 @@ main {
 			border-right: 3px solid white;
 			width: 70px;
 			height: 70px;
-			top: -5%;
-			right: -5%;
+			top: -7%;
+			right: -3%;
 		}
 
 		&::after {
@@ -514,22 +522,20 @@ main {
 			border-left: 3px solid white;
 			width: 70px;
 			height: 70px;
-			bottom: -5%;
-			left: -5%;
+			bottom: -7%;
+			left: -3%;
 		}
 	}
 }
 
 .aside-tech {
 	&__vert {
-		height: 100vh;
+		height: 500px;
 		background-color: $color-orange;
 		position: absolute;
+		top: 0;
 		right: 0;
-
-		@include respond(phone) {
-			width: 30px;
-		}
+		width: 30px;
 
 		@include respond(tabPort) {
 			width: 60px;
@@ -553,18 +559,15 @@ main {
 
 	&__table {
 		margin: 0 auto;
-
-		@include respond (phone) {
-			width: 80%;
-		}
+		// width: 80%;
 
 		@include respond(tabPort) {
-			width: 65%;
+			// width: 65%;
 		}
 	}
 	&-item__container {
-		width: 95%;
-		height: 95%;
+		width: 94%;
+		height: 94%;
 		background-color: $bg-grey;
 		outline: 1px solid $bg-grey;
 		outline-offset: 3px;
@@ -625,6 +628,10 @@ main {
 .contacts {
 	margin-bottom: 10rem;
 
+	@include respond(tabPort) {
+		display: none;
+	}
+
 	&__list {
 		width: 70%;
 		margin: 0 auto;
@@ -681,7 +688,7 @@ main {
 
 	&__close {
 		position: absolute;
-		top: 30px;
+		top: 0;
 		right: 30px;
 		padding: 3rem 0;
 	}
@@ -718,10 +725,7 @@ main {
 	text-align: center;
 	color: grey;
 	font-size: 3rem !important;
-
-	@include respond(phone) {
-		display: none;
-	}
+	display: none;
 }
 
 .tab-visible {
@@ -733,16 +737,25 @@ main {
 }
 
 .swiper {
+	width: 830px;
 
-	@include respond (phone) {
-		height: 240px;
+	@media screen and (max-width: 956px) {
+		width: 677px;
 	}
 
-	@include respond (tabPort) {
+	@media screen and (max-width: 766px) {
+		width: 450px;
+	}
+
+	@media screen and (max-width: 470px) {
+		width: 259px;
+	}
+
+	@include respond(tabPort) {
 		// height: 340px
 	}
 
-	@include respond (desktop) {
+	@include respond(desktop) {
 		// height: 340px;
 	}
 }
@@ -764,14 +777,29 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	width: 150px !important;
+	height: 150px !important;
 
-	@include respond (phone) {
-		// width: 100px;
-		// height: 100px;
+	@media screen and (max-width: 766px) {
+		width: 130px !important;
+		height: 130px !important;
+	}
+
+	@media screen and (max-width: 470px) {
+		width: 110px !important;
+		height: 110px !important;
 	}
 }
 
 .tech-item__container {
-	width: 110px !important;
-	height: 110px !important;
+}
+
+.container {
+	position: relative;
+}
+
+.letter {
+	display: inline-block;
+  line-height: 1em;
+  transform-origin: 0 0;
 }
