@@ -1,1 +1,1 @@
-export const greetings = ["Здравствуйте", "Hello", "Merhaba", "Aloha", "Shalom", "Buenas dias", "Buon giorno", "Guten Tag", "Namaste", "Konnichi wa"];
+export const greetings = ["Привет", "Hello", "Merhaba", "Aloha", "Shalom", "Hola", "Ciao", "Halo", "Namaste", "Konnichi wa"];

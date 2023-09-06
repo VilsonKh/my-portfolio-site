@@ -122,13 +122,28 @@ main {
 
 .aside-header {
   background-color: #e75d02;
-  height: 100vh;
+  height: 75vh;
   display: flex;
   align-items: end;
-  min-width: 30px; }
+  min-width: 30px;
+  position: relative; }
   @media only screen and (min-width: 768px) {
     .aside-header {
-      min-width: 60px; } }
+      max-width: 60px;
+      height: 100vh; } }
+
+.aside-header-diagonal {
+  position: absolute;
+  width: 120vw;
+  height: 30px;
+  background: #e75d02;
+  top: 96%;
+  transform-origin: left; }
+  @media only screen and (min-width: 768px) {
+    .aside-header-diagonal {
+      width: 200px;
+      height: 60px;
+      transform: rotate(40deg); } }
 
 .aside-links__list {
   margin: 0 auto;
@@ -179,12 +194,13 @@ main {
   overflow-y: clip; }
   .first-screen .diagonal-line {
     height: 30px;
-    width: 120vw;
+    width: 140vw;
     background-color: #e75d02;
     position: relative;
-    bottom: 55px;
-    left: -50px;
-    transform: rotate(20deg); }
+    bottom: 69px;
+    left: -32px;
+    transform: rotate(30deg);
+    position: absolute; }
     @media only screen and (min-width: 768px) {
       .first-screen .diagonal-line {
         height: 60px;
@@ -233,7 +249,12 @@ main {
       .first-screen .greeting__textBox {
         padding-left: 40px;
         font-size: 2.7rem;
-        gap: 20px; } }
+        gap: 20px;
+        background: transparent;
+        border: none;
+        outline: none;
+        position: absolute;
+        top: 20%; } }
     @media only screen and (min-width: 1024px) {
       .first-screen .greeting__textBox {
         gap: 40px;
@@ -242,8 +263,22 @@ main {
         width: 85%;
         top: 50%;
         transform: translateY(-50%); } }
+  .first-screen .greeting__difLang {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    top: 4px;
+    white-space: nowrap; }
+  .first-screen .greeting__difLang.animate-greeting {
+    animation-name: printed-text;
+    animation-duration: 2s; }
+
+@keyframes printed-text {
+  from {
+    width: 0%; } }
   .first-screen .greeting__firstLine {
-    text-align: right; }
+    text-align: right;
+    perspective: 1000px; }
   .first-screen .greeting__animation {
     height: 100px;
     background-color: orange;
@@ -369,18 +404,19 @@ main {
 
 .aside-about {
   width: 30px;
-  height: 835px;
+  height: 848px;
   background-color: #e75d02;
   position: absolute;
-  top: -90px;
+  top: 0;
   right: 0; }
   @media only screen and (min-width: 768px) {
     .aside-about {
       width: 60px;
       left: 16%;
-      top: -165px;
+      top: unset;
+      bottom: 0;
       z-index: 0;
-      height: 650px;
+      height: 500px;
       right: -50px; } }
   @media only screen and (min-width: 1024px) {
     .aside-about {
@@ -389,11 +425,12 @@ main {
       top: -40px; } }
   .aside-about__horizontal {
     background-color: #e75d02;
-    width: 90%;
-    margin-left: auto;
+    width: 100%;
     height: 30px; }
     @media only screen and (min-width: 768px) {
       .aside-about__horizontal {
+        width: 84%;
+        margin-left: auto;
         height: 60px; } }
     @media only screen and (min-width: 1440px) {
       .aside-about__horizontal {
@@ -449,8 +486,8 @@ main {
       border-right: 3px solid white;
       width: 70px;
       height: 70px;
-      top: -7%;
-      right: -3%; }
+      top: -20px;
+      right: -20px; }
     .about__text::after {
       content: "";
       display: block;
@@ -459,19 +496,22 @@ main {
       border-left: 3px solid white;
       width: 70px;
       height: 70px;
-      bottom: -7%;
-      left: -3%; }
+      bottom: -20px;
+      left: -20px; }
 
 .aside-tech__vert {
-  height: 500px;
+  height: 850px;
   background-color: #e75d02;
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   width: 30px; }
   @media only screen and (min-width: 768px) {
     .aside-tech__vert {
-      width: 60px; } }
+      display: block;
+      width: 60px;
+      left: unset;
+      right: 0; } }
   @media only screen and (min-width: 1024px) {
     .aside-tech__vert {
       width: 80px; } }
@@ -637,8 +677,3 @@ main {
 
 .container {
   position: relative; }
-
-.letter {
-  display: inline-block;
-  line-height: 1em;
-  transform-origin: 0 0; }

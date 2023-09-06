@@ -53,36 +53,51 @@ burgerClose.addEventListener("click", () => {
 const greetingTag = document.querySelector(".greeting__difLang");
 
 function changeGreeting() {
-	console.log("start");
-	let i = 1;
+	let i = 0;
+	if (i === 0) {
+		greetingTag.textContent = greetings[i];
+		greetingTag.classList.add("animate-greeting");
+	}
+
 	setInterval(() => {
 		greetingTag.textContent = greetings[i];
-		greetingTag.innerHTML = greetingTag.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-		animateGreetings();
+		greetingTag.style.width = `${greetings[i].length}ch`;
+		greetingTag.classList.add("animate-greeting");
+		// greetingTag.innerHTML = greetingTag.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 		if (i < greetings.length - 1) {
 			i++;
 		} else {
 			i = 0;
 		}
-	}, 2000);
+	}, 4000);
+	greetingTag.classList.add("animate-greeting");
 }
 
 window.addEventListener("load", changeGreeting);
 
+const headerDiagonal = document.querySelector(".aside-header-diagonal");
+
+if (window.screen.width < 768) {
+	const calcDegree = 30 + 15 * ((window.screen.width - 375) / (375 - 767));
+	headerDiagonal.style.transform = `rotate(${calcDegree}deg)`;
+}
+
+greetingTag.addEventListener("animationend", () => {
+	greetingTag.classList.remove("animate-greeting");
+});
+
 function animateGreetings() {
-	anime({
-		targets: ".greeting__difLang .letter",
-		rotateY: [-90, 0],
-		duration: 2000,
-		delay: (el, i) => 45 * i,
-		// loop: true,
-	});
 	// anime({
-	// 	targets: ".greeting__difLand",
-	// 	opacity: 0,
+	// 	targets: ".greeting__difLang .letter",
+	// 	opacity: [0, 1],
 	// 	duration: 2000,
-	// 	easing: "easeOutExpo",
-	// 	delay: 1000,
+	// 	delay: (el, i) => 45 * i,
+	// 	// loop: true,
+	// });
+	// anime({
+	// 	targets: ".greeting__difLang",
+	// 	width: [0, 100],
+	// 	duration: 2000,
 	// });
 }
 
