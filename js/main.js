@@ -78,13 +78,48 @@ window.addEventListener("load", changeGreeting);
 const headerDiagonal = document.querySelector(".aside-header-diagonal");
 
 if (window.screen.width < 768) {
-	const calcDegree = 30 + 15 * ((window.screen.width - 375) / (375 - 767));
+	const calcDegree = 29.4 + 15 * ((window.screen.width - 375) / (375 - 767));
 	headerDiagonal.style.transform = `rotate(${calcDegree}deg)`;
+}
+
+const aboutDiagonal = document.querySelector(".aside-about-diagonal");
+
+if (window.screen.width > 767 && window.screen.width < 1440) {
+	const calcDegree = 225 + 6 * ((window.screen.width - 767) / (1024 - 767));
+	aboutDiagonal.style.transform = `rotate(${calcDegree}deg)`;
 }
 
 greetingTag.addEventListener("animationend", () => {
 	greetingTag.classList.remove("animate-greeting");
 });
+
+let canvas = document.getElementById("noisy-canvas"),
+	ctx = canvas.getContext("2d");
+function main() {
+	window.addEventListener("resize", updateCanvasSize);
+	updateCanvasSize();
+	render();
+}
+function getRandom() {
+	return Math.random() * 255 - 140;
+}
+function render() {
+	let imageData = ctx.createImageData(ctx.canvas.width, ctx.canvas.height);
+	for (let i = 0; i < imageData.data.length; i += 4) {
+		const color = getRandom();
+		imageData.data[i] = color;
+		imageData.data[i + 1] = color;
+		imageData.data[i + 2] = color;
+		imageData.data[i + 3] = 255;
+	}
+	ctx.putImageData(imageData, 0, 0);
+	requestAnimationFrame(render);
+}
+function updateCanvasSize() {
+	ctx.canvas.height = canvas.offsetHeight;
+	ctx.canvas.width = canvas.offsetWidth;
+}
+main();
 
 function animateGreetings() {
 	// anime({
@@ -100,6 +135,10 @@ function animateGreetings() {
 	// 	duration: 2000,
 	// });
 }
+
+const currentYear = document.querySelector(".currentYear");
+
+currentYear.textContent = new Date().getFullYear();
 
 new Swiper(".swiper", {
 	slidesPerView: 2,

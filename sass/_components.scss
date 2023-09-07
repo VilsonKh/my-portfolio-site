@@ -4,7 +4,7 @@ body {
 
 main {
 	// display: flex !important;
-
+	background: $color-light-black;
 	gap: 50px;
 }
 
@@ -32,6 +32,7 @@ main {
 	display: flex;
 	position: relative;
 	gap: 10px;
+	overflow: hidden;
 
 	&__inner {
 		width: 100%;
@@ -70,12 +71,17 @@ main {
 		height: 75vh;
 		display: flex;
 		align-items: end;
-		min-width: 30px;
+		width: 30px;
 		position: relative;
+		z-index: 1;
 
 		@include respond(tabPort) {
-			max-width: 60px;
+			width: 60px;
 			height: 100vh;
+		}
+
+		@include respond (desktop) {
+			width: 80px;
 		}
 
 		// &::before {
@@ -103,9 +109,10 @@ main {
 		transform-origin: left;
 
 		@include respond (tabPort) {
-			width: 200px;
-			height: 60px;
-			transform: rotate(40deg)
+			display: none;
+			// width: 200px;
+			// height: 60px;
+			// transform: rotate(40deg)
 		}
 	}
 
@@ -370,6 +377,7 @@ main {
 
 		@include respond(desktop) {
 			width: 80%;
+			font-size: 3rem;
 		}
 	}
 
@@ -410,7 +418,7 @@ main {
 	&__button {
 		display: block;
 		transform: skewX(40deg);
-		font-size: $main-button-fs !important;
+		font-size: $main-button-fs ;
 		background-color: $bg-grey;
 		padding: 10px;
 		transform: skewX(-40deg);
@@ -420,6 +428,8 @@ main {
 		width: 100%;
 		position: relative;
 		z-index: 1;
+
+		
 
 		&:first-child {
 			margin-bottom: 50px;
@@ -441,6 +451,11 @@ main {
 			top: 40%;
 			right: -5%;
 			transition: width 0.3s ease;
+
+			@include respond (desktop) {
+				top: 58%;	
+			}
+		
 		}
 
 		&::after {
@@ -454,13 +469,19 @@ main {
 			top: -30%;
 			left: -5%;
 			transition: width 0.3s ease;
+
+			
 		}
 
 		&-link {
 			display: block;
 			transform: skewX(40deg);
-			font-size: $main-button-fs !important;
+			font-size: $main-button-fs;
 			color: white;
+
+			@include respond (desktop) {
+				font-size: 3rem
+			}
 		}
 	}
 }
@@ -513,7 +534,34 @@ main {
 	@include respond(tab) {
 		height: 650px;
 		left: 11%;
-		top: -40px;
+	}
+
+	@include respond (desktop) {
+		width: 80px;
+	}
+
+	&-diagonal {
+		background: $color-orange;
+		width: 100vh;
+		height: 60px;
+		transform-origin: left bottom;
+		position: relative;
+		top: -60px;
+		left: 60px;
+		transform: rotate(240deg);
+		display: none;
+
+		@include respond (tabPort) {
+			display: block;
+		}
+
+		@include respond (desktop) {
+			top: -80px;
+			left: 80px;
+			height: 80px;
+		}
+
+
 	}
 
 	&__horizontal {
@@ -522,7 +570,7 @@ main {
 		height: 30px;
 
 		@include respond(tabPort) {
-			width: 84%;
+			width: 85%;
 			margin-left: auto;
 			height: 60px;
 		}
@@ -535,6 +583,7 @@ main {
 
 .about {
 	position: relative;
+	overflow: hidden;
 
 	&__img-container {
 		width: 50%;
@@ -615,7 +664,7 @@ main {
 
 .aside-tech {
 	&__vert {
-		height: 850px;
+		height: 685px;
 		background-color: $color-orange;
 		position: absolute;
 		top: 0;
@@ -637,7 +686,7 @@ main {
 }
 
 .tech {
-	margin-bottom: 10rem;
+	padding-bottom: 10rem;
 	position: relative;
 	width: 100%;
 
@@ -716,6 +765,7 @@ main {
 
 .contacts {
 	margin-bottom: 10rem;
+	padding-bottom: 20px;
 
 	@include respond(tabPort) {
 		display: none;
@@ -725,6 +775,14 @@ main {
 		width: 70%;
 		margin: 0 auto;
 		padding: 0;
+	}
+}
+
+.footer {
+	background: $color-light-black;
+
+	&__text {
+		padding-bottom: 20px
 	}
 }
 
@@ -889,4 +947,12 @@ main {
 
 .letter {
 
+}
+
+#noisy-canvas {
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	z-index: -1;
 }
