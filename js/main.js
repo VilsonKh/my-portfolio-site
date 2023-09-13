@@ -1,27 +1,4 @@
-// interact('.draggable')
-//   .draggable({
-//     // enable inertial throwing
-//     inertia: true,
-//     autoScroll: true,
-import anime from "../node_modules/animejs/lib/anime.es.js";
 import { greetings } from "./const.js";
-
-//     listeners: {
-//       // call this function on every dragmove event
-//       move: dragMoveListener,
-
-//       // call this function on every dragend event
-//       end (event) {
-//         var textEl = event.target.querySelector('p')
-
-//         textEl && (textEl.textContent =
-//           'moved a distance of ' +
-//           (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
-//                      Math.pow(event.pageY - event.y0, 2) | 0))
-//             .toFixed(2) + 'px')
-//       }
-//     }
-//   })
 
 function dragMoveListener(event) {
 	var target = event.target;
@@ -53,35 +30,19 @@ burgerClose.addEventListener("click", () => {
 const greetingTag = document.querySelector(".greeting__difLang");
 
 function changeGreeting() {
-	let i = 0;
-	if (i === 0) {
-		greetingTag.textContent = greetings[i];
-		greetingTag.classList.add("animate-greeting");
-	}
-
-	setInterval(() => {
-		greetingTag.textContent = greetings[i];
-		const lettersHtml = greetingTag.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-		greetingTag.innerHTML = `<div class='letters'>${lettersHtml}</div><span class='cursor'></span>`;
-
-		anime.timeline({ loop: false }).add({
-			targets: ".greeting__difLang div > span",
-			opacity: [{ value: [0, 0] }, { value: [1, 1] }],
-			easing: "easeInOutQuad",
-			duration: 1000,
-			delay: (el, i) => 100 * (i + 1),
-		});
-
-		// greetingTag.style.width = `${greetings[i].length}ch`;
-		// greetingTag.classList.add("animate-greeting");
-
-		if (i < greetings.length - 1) {
-			i++;
-		} else {
-			i = 0;
-		}
-	}, 4000);
-	// greetingTag.classList.add("animate-greeting");
+	const typed = new Typed(".greeting__difLang", {
+		strings: [...greetings],
+		stringElement: null,
+		loop: true,
+		loopCount: Infinity,
+		typeSpeed: 200,
+		backSpeed: 100,
+		smartBackspace: true,
+		backDelay: 4000,
+		startDelay: 1000,
+		attr: null,
+		contentType: "html",
+	});
 }
 
 window.addEventListener("load", changeGreeting);
@@ -105,10 +66,6 @@ if (window.screen.width > 767 && window.screen.width < 1024) {
 	const calcDegree = 220 + 14 * ((window.screen.width - 767) / (1024 - 767));
 	aboutDiagonal.style.transform = `rotate(${calcDegree}deg)`;
 }
-
-greetingTag.addEventListener("animationend", () => {
-	greetingTag.classList.remove("animate-greeting");
-});
 
 //canvas
 let canvas = document.getElementById("noisy-canvas"),
