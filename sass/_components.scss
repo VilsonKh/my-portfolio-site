@@ -1,4 +1,5 @@
 body {
+	margin: 0 auto;
 	overflow-x: hidden;
 }
 
@@ -32,7 +33,6 @@ main {
 	display: flex;
 	position: relative;
 	gap: 10px;
-	overflow: hidden;
 
 	&__inner {
 		width: 100%;
@@ -80,23 +80,23 @@ main {
 			height: 100vh;
 		}
 
-		@include respond (desktop) {
+		@include respond(desktop) {
 			width: 80px;
 		}
 
 		// &::before {
-			// content: '';
-			// display: block;
-			// background: $color-orange;
-			// width: 120vw;
-			// height: 30px;
-			// position: absolute;
-			// top: calc(100% - 30px);
-			// transform-origin: left;
-			// transform: rotate(calc(30deg - 15deg * ((100vw - 767px) / (767 - 375))))
-			// transform: rotate(30deg)
-			
-			// font-size: calc(72px + 40 * ((100vw - 768px) / (768 - 320)));
+		// content: '';
+		// display: block;
+		// background: $color-orange;
+		// width: 120vw;
+		// height: 30px;
+		// position: absolute;
+		// top: calc(100% - 30px);
+		// transform-origin: left;
+		// transform: rotate(calc(30deg - 15deg * ((100vw - 767px) / (767 - 375))))
+		// transform: rotate(30deg)
+
+		// font-size: calc(72px + 40 * ((100vw - 768px) / (768 - 320)));
 		// }
 	}
 
@@ -108,7 +108,7 @@ main {
 		top: 96%;
 		transform-origin: left;
 
-		@include respond (tabPort) {
+		@include respond(tabPort) {
 			display: none;
 			// width: 200px;
 			// height: 60px;
@@ -285,15 +285,13 @@ main {
 			// position: absolute;
 			// transform-style: preserve-3d;
 			// transform-origin: 50% 0;
-	
+
 			// border-right: 4px solid $color-orange;
 			animation-name: printed-text;
 			animation-duration: 2s;
 			// animation-iteration-count: steps(11),
 			// animation: printed-text 2s steps(11,end), flashin-border .75s step-start infinite;
 			// width: 5ch;
-			
-
 
 			// @keyframes flashin-border{
 			// 	0%{
@@ -306,16 +304,13 @@ main {
 			// 		border-color: $color-orange;
 			// 	}
 			// }
-			
-			@keyframes printed-text{
+
+			@keyframes printed-text {
 				from {
 					width: 0%;
 				}
 			}
 		}
-
-
-
 
 		&__firstLine {
 			text-align: right;
@@ -324,7 +319,6 @@ main {
 
 		&__secondLine {
 		}
-
 
 		&__animation {
 			height: 100px;
@@ -418,7 +412,7 @@ main {
 	&__button {
 		display: block;
 		transform: skewX(40deg);
-		font-size: $main-button-fs ;
+		font-size: $main-button-fs;
 		background-color: $bg-grey;
 		padding: 10px;
 		transform: skewX(-40deg);
@@ -428,8 +422,6 @@ main {
 		width: 100%;
 		position: relative;
 		z-index: 1;
-
-		
 
 		&:first-child {
 			margin-bottom: 50px;
@@ -452,10 +444,9 @@ main {
 			right: -5%;
 			transition: width 0.3s ease;
 
-			@include respond (desktop) {
-				top: 58%;	
+			@include respond(desktop) {
+				top: 58%;
 			}
-		
 		}
 
 		&::after {
@@ -469,8 +460,6 @@ main {
 			top: -30%;
 			left: -5%;
 			transition: width 0.3s ease;
-
-			
 		}
 
 		&-link {
@@ -479,8 +468,8 @@ main {
 			font-size: $main-button-fs;
 			color: white;
 
-			@include respond (desktop) {
-				font-size: 3rem
+			@include respond(desktop) {
+				font-size: 3rem;
 			}
 		}
 	}
@@ -536,7 +525,7 @@ main {
 		left: 11%;
 	}
 
-	@include respond (desktop) {
+	@include respond(desktop) {
 		width: 80px;
 	}
 
@@ -548,20 +537,18 @@ main {
 		position: relative;
 		top: -60px;
 		left: 60px;
-		transform: rotate(240deg);
+		transform: rotate(239deg);
 		display: none;
 
-		@include respond (tabPort) {
+		@include respond(tabPort) {
 			display: block;
 		}
 
-		@include respond (desktop) {
+		@include respond(desktop) {
 			top: -80px;
 			left: 80px;
 			height: 80px;
 		}
-
-
 	}
 
 	&__horizontal {
@@ -671,11 +658,10 @@ main {
 		left: 0;
 		width: 30px;
 
-
 		@include respond(tabPort) {
 			display: block;
 			width: 60px;
-			left:unset;
+			left: unset;
 			right: 0;
 		}
 
@@ -782,7 +768,7 @@ main {
 	background: $color-light-black;
 
 	&__text {
-		padding-bottom: 20px
+		padding-bottom: 20px;
 	}
 }
 
@@ -813,6 +799,7 @@ main {
 		// background-color: grey;
 		position: absolute;
 		top: 0;
+		left: 0;
 		width: 100%;
 		z-index: 100;
 		font-size: 2rem;
@@ -945,9 +932,7 @@ main {
 	position: relative;
 }
 
-.letter {
 
-}
 
 #noisy-canvas {
 	left: 0;

@@ -61,31 +61,48 @@ function changeGreeting() {
 
 	setInterval(() => {
 		greetingTag.textContent = greetings[i];
-		greetingTag.style.width = `${greetings[i].length}ch`;
-		greetingTag.classList.add("animate-greeting");
-		// greetingTag.innerHTML = greetingTag.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+		const lettersHtml = greetingTag.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+		greetingTag.innerHTML = `<div class='letters'>${lettersHtml}</div><span class='cursor'></span>`;
+
+		anime.timeline({ loop: false }).add({
+			targets: ".greeting__difLang div > span",
+			opacity: [{ value: [0, 0] }, { value: [1, 1] }],
+			easing: "easeInOutQuad",
+			duration: 1000,
+			delay: (el, i) => 100 * (i + 1),
+		});
+
+		// greetingTag.style.width = `${greetings[i].length}ch`;
+		// greetingTag.classList.add("animate-greeting");
+
 		if (i < greetings.length - 1) {
 			i++;
 		} else {
 			i = 0;
 		}
 	}, 4000);
-	greetingTag.classList.add("animate-greeting");
+	// greetingTag.classList.add("animate-greeting");
 }
 
 window.addEventListener("load", changeGreeting);
 
+//diagonal rotate degrees
 const headerDiagonal = document.querySelector(".aside-header-diagonal");
 
-if (window.screen.width < 768) {
-	const calcDegree = 29.4 + 15 * ((window.screen.width - 375) / (375 - 767));
+if (window.screen.width < 643) {
+	const calcDegree = 31.4 + 13.4 * ((window.screen.width - 375) / (375 - 643));
+	headerDiagonal.style.transform = `rotate(${calcDegree}deg)`;
+}
+
+if (window.screen.width > 643 && window.screen.width < 768) {
+	const calcDegree = 18 + 2 * ((window.screen.width - 643) / (643 - 768));
 	headerDiagonal.style.transform = `rotate(${calcDegree}deg)`;
 }
 
 const aboutDiagonal = document.querySelector(".aside-about-diagonal");
 
-if (window.screen.width > 767 && window.screen.width < 1440) {
-	const calcDegree = 225 + 6 * ((window.screen.width - 767) / (1024 - 767));
+if (window.screen.width > 767 && window.screen.width < 1024) {
+	const calcDegree = 220 + 14 * ((window.screen.width - 767) / (1024 - 767));
 	aboutDiagonal.style.transform = `rotate(${calcDegree}deg)`;
 }
 
@@ -93,6 +110,7 @@ greetingTag.addEventListener("animationend", () => {
 	greetingTag.classList.remove("animate-greeting");
 });
 
+//canvas
 let canvas = document.getElementById("noisy-canvas"),
 	ctx = canvas.getContext("2d");
 function main() {
@@ -103,6 +121,7 @@ function main() {
 function getRandom() {
 	return Math.random() * 255 - 140;
 }
+
 function render() {
 	let imageData = ctx.createImageData(ctx.canvas.width, ctx.canvas.height);
 	for (let i = 0; i < imageData.data.length; i += 4) {

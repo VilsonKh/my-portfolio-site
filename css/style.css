@@ -74,6 +74,7 @@ p {
   color: rgba(255, 255, 255, 0.5); }
 
 body {
+  margin: 0 auto;
   overflow-x: hidden; }
 
 main {
@@ -99,8 +100,7 @@ main {
   height: 100vh;
   display: flex;
   position: relative;
-  gap: 10px;
-  overflow: hidden; }
+  gap: 10px; }
   .page__inner {
     width: 100%; }
 
@@ -444,7 +444,7 @@ main {
     position: relative;
     top: -60px;
     left: 60px;
-    transform: rotate(240deg);
+    transform: rotate(239deg);
     display: none; }
     @media only screen and (min-width: 768px) {
       .aside-about-diagonal {
@@ -619,6 +619,7 @@ main {
   background-color: #1c1c1c;
   position: absolute;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 100;
   font-size: 2rem;
