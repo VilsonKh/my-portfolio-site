@@ -39,13 +39,37 @@ function changeGreeting() {
 		backSpeed: 100,
 		smartBackspace: true,
 		backDelay: 4000,
-		startDelay: 1000,
+		startDelay: 500,
 		attr: null,
 		contentType: "html",
 	});
 }
 
 window.addEventListener("load", changeGreeting);
+
+const assistant = document.querySelector(".assistant");
+
+const typed = new Typed(".assistant__text", {
+	strings: ["Здесь будут шутки и подсказки", "Здесь будут еще подсказки", "Здесь будут подсказки и шутки", "Здесь будут еще другие шутки и подсказки"],
+	stringElement: null,
+	contentType: "html",
+	loop: true,
+	loopCounter: Infinity,
+	typeSpeed: 50,
+	backSpeed: 20,
+	smartBackspace: true,
+	onStop: (arrayPos, self) => {
+		console.log(arrayPos);
+	},
+});
+
+window.addEventListener("scroll", function (e) {
+	if (this.window.scrollY > this.window.innerHeight) {
+		assistant.classList.add("active");
+	} else {
+		assistant.classList.remove("active");
+	}
+});
 
 //diagonal rotate degrees
 const headerDiagonal = document.querySelector(".aside-header-diagonal");
@@ -124,6 +148,9 @@ new Swiper(".swiper", {
 		},
 		690: {
 			slidesPerView: 3,
+		},
+		767: {
+			slidesPerView: 4,
 		},
 		956: {
 			slidesPerView: 5,
