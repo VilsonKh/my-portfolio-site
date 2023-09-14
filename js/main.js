@@ -58,16 +58,20 @@ const typed = new Typed(".assistant__text", {
 	typeSpeed: 50,
 	backSpeed: 20,
 	smartBackspace: true,
-	onStop: (arrayPos, self) => {
-		console.log(arrayPos);
-	},
+	onStringTyped: () => (typing ? typed.start() : typed.stop()),
 });
 
+typed.stop();
+
+let typing = false;
 window.addEventListener("scroll", function (e) {
 	if (this.window.scrollY > this.window.innerHeight) {
 		assistant.classList.add("active");
+		typed.start();
+		typing = true;
 	} else {
 		assistant.classList.remove("active");
+		typing = false;
 	}
 });
 
