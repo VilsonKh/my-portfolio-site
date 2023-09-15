@@ -67,31 +67,49 @@ let typing = false;
 window.addEventListener("scroll", function (e) {
 	if (this.window.scrollY > this.window.innerHeight) {
 		assistant.classList.add("active");
-		typed.start();
+		if (!typing) {
+			typed.start();
+		}
 		typing = true;
+		console.count();
 	} else {
 		assistant.classList.remove("active");
 		typing = false;
 	}
+	console.log(typing);
 });
 
 //diagonal rotate degrees
 const headerDiagonal = document.querySelector(".aside-header-diagonal");
 
-if (window.screen.width < 643) {
-	const calcDegree = 31.4 + 13.4 * ((window.screen.width - 375) / (375 - 643));
+if (window.screen.width <= 500 && window.screen.width > 374) {
+	let calcDegree = null;
+	if (window.screen.height < 700) {
+		calcDegree = 24.4 + 7.4 * ((window.screen.width - 375) / (375 - 500));
+	} else if (window.screen.height <= 812) {
+		calcDegree = 29.4 + 8.4 * ((window.screen.width - 375) / (375 - 500));
+	} else if (window.screen.height <= 896) {
+		calcDegree = 32.4 + 7.4 * ((window.screen.width - 375) / (375 - 500));
+	} else if (window.screen.height <= 926) {
+		calcDegree = 33.4 + 7.4 * ((window.screen.width - 375) / (375 - 500));
+	}
+	headerDiagonal.style.transform = `rotate(${calcDegree}deg)`;
+}
+
+if (window.screen.width > 500 && window.screen.width <= 643) {
+	const calcDegree = 25 + 4 * ((window.screen.width - 500) / (500 - 643));
 	headerDiagonal.style.transform = `rotate(${calcDegree}deg)`;
 }
 
 if (window.screen.width > 643 && window.screen.width < 768) {
-	const calcDegree = 18 + 2 * ((window.screen.width - 643) / (643 - 768));
+	const calcDegree = 21 + 3 * ((window.screen.width - 643) / (643 - 768));
 	headerDiagonal.style.transform = `rotate(${calcDegree}deg)`;
 }
 
 const aboutDiagonal = document.querySelector(".aside-about-diagonal");
 
 if (window.screen.width > 767 && window.screen.width < 1024) {
-	const calcDegree = 220 + 14 * ((window.screen.width - 767) / (1024 - 767));
+	const calcDegree = 220.7 + 13.75 * ((window.screen.width - 767) / (1024 - 767));
 	aboutDiagonal.style.transform = `rotate(${calcDegree}deg)`;
 }
 

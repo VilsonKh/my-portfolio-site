@@ -107,6 +107,7 @@ main {
 		background: $color-orange;
 		top: 96%;
 		transform-origin: left;
+		transform: rotate(33.4deg);
 
 		@include respond(tabPort) {
 			display: none;
@@ -502,6 +503,16 @@ main {
 		position: absolute;
 		top: 10%;
 		left: 10%;
+	}
+
+	&__text::after {
+		content: '|';
+		display: inline;
+		color: $color-orange;
+		font-size: 2rem;
+		animation-name: cursor-blink;
+		animation-duration:1s;
+		animation-iteration-count:infinite;
 	}
 
 	&__area {

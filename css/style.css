@@ -144,7 +144,8 @@ main {
   height: 30px;
   background: #e75d02;
   top: 96%;
-  transform-origin: left; }
+  transform-origin: left;
+  transform: rotate(33.4deg); }
   @media only screen and (min-width: 768px) {
     .aside-header-diagonal {
       display: none; } }
@@ -416,6 +417,14 @@ main {
     position: absolute;
     top: 10%;
     left: 10%; }
+  .assistant__text::after {
+    content: '|';
+    display: inline;
+    color: #e75d02;
+    font-size: 2rem;
+    animation-name: cursor-blink;
+    animation-duration: 1s;
+    animation-iteration-count: infinite; }
   .assistant__area {
     width: 80%; }
   .assistant__logo {
