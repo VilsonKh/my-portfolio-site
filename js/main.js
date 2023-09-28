@@ -58,7 +58,6 @@ const typed = new Typed(".assistant__text", {
 	typeSpeed: 50,
 	backSpeed: 20,
 	smartBackspace: true,
-	onStringTyped: () => (typing ? typed.start() : typed.stop()),
 });
 
 typed.stop();
@@ -69,14 +68,15 @@ window.addEventListener("scroll", function (e) {
 		assistant.classList.add("active");
 		if (!typing) {
 			typed.start();
+			console.log("start");
 		}
 		typing = true;
-		console.count();
 	} else {
 		assistant.classList.remove("active");
 		typing = false;
+		typed.stop();
+		console.log("stop");
 	}
-	console.log(typing);
 });
 
 //diagonal rotate degrees
@@ -114,34 +114,35 @@ if (window.screen.width > 767 && window.screen.width < 1024) {
 }
 
 //canvas
-let canvas = document.getElementById("noisy-canvas"),
-	ctx = canvas.getContext("2d");
-function main() {
-	window.addEventListener("resize", updateCanvasSize);
-	updateCanvasSize();
-	render();
-}
-function getRandom() {
-	return Math.random() * 255 - 140;
-}
+// let canvas = document.getElementById("noisy-canvas"),
+// 	ctx = canvas.getContext("2d");
+// function main() {
+// 	window.addEventListener("resize", updateCanvasSize);
+// 	updateCanvasSize();
+// 	render();
+// }
+// function getRandom() {
+// 	return Math.random() * 255 - 140;
+// }
 
-function render() {
-	let imageData = ctx.createImageData(ctx.canvas.width, ctx.canvas.height);
-	for (let i = 0; i < imageData.data.length; i += 4) {
-		const color = getRandom();
-		imageData.data[i] = color;
-		imageData.data[i + 1] = color;
-		imageData.data[i + 2] = color;
-		imageData.data[i + 3] = 255;
-	}
-	ctx.putImageData(imageData, 0, 0);
-	requestAnimationFrame(render);
-}
-function updateCanvasSize() {
-	ctx.canvas.height = canvas.offsetHeight;
-	ctx.canvas.width = canvas.offsetWidth;
-}
-main();
+// function render() {
+// 	let imageData = ctx.createImageData(ctx.canvas.width, ctx.canvas.height);
+// 	for (let i = 0; i < imageData.data.length; i += 4) {
+// 		const color = getRandom();
+// 		console.log(imageData.data);
+// 		imageData.data[i] = color;
+// 		imageData.data[i + 1] = color;
+// 		imageData.data[i + 2] = color;
+// 		imageData.data[i + 3] = 255;
+// 	}
+// 	ctx.putImageData(imageData, 0, 0);
+// 	requestAnimationFrame(render);
+// }
+// function updateCanvasSize() {
+// 	ctx.canvas.height = canvas.offsetHeight;
+// 	ctx.canvas.width = canvas.offsetWidth;
+// }
+// main();
 
 function animateGreetings() {
 	// anime({
@@ -168,7 +169,7 @@ new Swiper(".swiper", {
 		375: {
 			sledesPerView: 2,
 		},
-		690: {
+		600: {
 			slidesPerView: 3,
 		},
 		767: {

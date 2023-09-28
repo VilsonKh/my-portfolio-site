@@ -18,6 +18,9 @@ p {
 .accent {
   color: #e75d02; }
 
+svg path {
+  transition: all .2s linear; }
+
 @font-face {
   font-family: "Marske";
   src: url(../fonts/Marske.ttf); }
@@ -100,7 +103,8 @@ main {
   height: 100vh;
   display: flex;
   position: relative;
-  gap: 10px; }
+  gap: 10px;
+  overflow: hidden; }
   .page__inner {
     width: 100%; }
 
@@ -162,6 +166,9 @@ main {
 .aside-links__item:not(:last-child) {
   margin-bottom: 10px; }
 
+.aside-links__item:hover svg path {
+  fill: white; }
+
 .burger-menu {
   height: 40px;
   display: flex;
@@ -196,7 +203,11 @@ main {
 .first-screen {
   padding-right: 20px;
   overflow-x: hidden;
-  overflow-y: clip; }
+  overflow-y: clip;
+  height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column; }
   .first-screen .diagonal-line {
     height: 30px;
     width: 140vw;
@@ -217,8 +228,6 @@ main {
     @media only screen and (min-width: 1024px) {
       .first-screen .diagonal-line {
         left: -80px; } }
-  .first-screen__greeting {
-    margin-bottom: 200px; }
   .first-screen .greeting__container {
     position: relative;
     margin-top: 70px;
@@ -229,7 +238,7 @@ main {
         margin-left: auto; } }
   .first-screen .greeting__img {
     display: none; }
-    @media screen and (min-width: 767px) {
+    @media screen and (min-width: 768px) {
       .first-screen .greeting__img {
         display: block; } }
   .first-screen .greeting__textBox {
@@ -406,7 +415,11 @@ main {
   padding: 10px 0;
   opacity: 0;
   visibility: hidden;
-  transition: all .3s linear; }
+  transition: all .3s linear;
+  max-width: 1440px;
+  min-width: 375px;
+  left: 50%;
+  transform: translateX(-50%); }
   .assistant.active {
     opacity: 1;
     visibility: visible; }
@@ -466,7 +479,7 @@ main {
     position: relative;
     top: -60px;
     left: 60px;
-    transform: rotate(239deg);
+    transform: rotate(249deg);
     display: none; }
     @media only screen and (min-width: 768px) {
       .aside-about-diagonal {
@@ -571,7 +584,7 @@ main {
       width: 80px; } }
 
 .tech {
-  padding-bottom: 10rem;
+  padding: 10rem 0 17rem 0;
   position: relative;
   width: 100%; }
   .tech__heading {
@@ -597,14 +610,17 @@ main {
     transform: translate(-50%, -50%);
     font-size: 2.5rem;
     font-weight: 700;
-    z-index: 0; }
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .3s linear; }
   .tech-item__icon {
     width: 70%;
     height: 70%;
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    transition: opacity .3s linear; }
 
 .contacts {
   margin-bottom: 10rem;
@@ -704,9 +720,12 @@ main {
   @media screen and (max-width: 956px) {
     .swiper {
       width: 680px; } }
-  @media screen and (max-width: 766px) {
+  @media screen and (max-width: 750px) {
     .swiper {
       width: 450px; } }
+  @media screen and (max-width: 600px) {
+    .swiper {
+      width: 300px; } }
   @media screen and (max-width: 470px) {
     .swiper {
       width: 259px; } }
@@ -726,7 +745,8 @@ main {
   justify-content: center;
   align-items: center;
   width: 150px !important;
-  height: 150px !important; }
+  height: 150px !important;
+  transition: opacity .3s linear; }
   @media screen and (max-width: 766px) {
     .swiper-slide {
       width: 130px !important;
@@ -735,6 +755,12 @@ main {
     .swiper-slide {
       width: 110px !important;
       height: 110px !important; } }
+
+.swiper-slide:hover .tech-item__container {
+  opacity: 0; }
+
+.swiper-slide:hover .tech__caption {
+  opacity: 1; }
 
 .container {
   position: relative; }

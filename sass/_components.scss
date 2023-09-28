@@ -33,6 +33,7 @@ main {
 	display: flex;
 	position: relative;
 	gap: 10px;
+	overflow: hidden;
 
 	&__inner {
 		width: 100%;
@@ -133,6 +134,10 @@ main {
 			&:not(:last-child) {
 				margin-bottom: 10px;
 			}
+
+			&:hover svg path{
+				fill: white;
+			}
 		}
 	}
 }
@@ -183,6 +188,10 @@ main {
 	padding-right: 20px;
 	overflow-x: hidden;
 	overflow-y: clip;
+	height: 80vh;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
 
 	& .diagonal-line {
 		height: 30px;
@@ -208,10 +217,6 @@ main {
 		}
 	}
 
-	&__greeting {
-		margin-bottom: 200px;
-	}
-
 	& .greeting {
 		&__container {
 			position: relative;
@@ -227,7 +232,7 @@ main {
 		&__img {
 			display: none;
 
-			@media screen and (min-width: 767px) {
+			@media screen and (min-width: 768px) {
 				display: block;
 			}
 		}
@@ -488,6 +493,10 @@ main {
 	opacity: 0;
 	visibility: hidden;
 	transition: all .3s linear;
+	max-width: 1440px;
+	min-width: 375px;
+	left: 50%;
+	transform: translateX(-50%);
 
 	&.active {
 		opacity: 1;
@@ -565,7 +574,7 @@ main {
 		position: relative;
 		top: -60px;
 		left: 60px;
-		transform: rotate(239deg);
+		transform: rotate(249deg);
 		display: none;
 
 		@include respond(tabPort) {
@@ -700,9 +709,11 @@ main {
 }
 
 .tech {
-	padding-bottom: 10rem;
+
+	padding: 10rem 0 17rem 0;
 	position: relative;
 	width: 100%;
+
 
 	&__heading {
 		margin-bottom: 3rem;
@@ -749,7 +760,9 @@ main {
 		transform: translate(-50%, -50%);
 		font-size: 2.5rem;
 		font-weight: 700;
-		z-index: 0;
+		z-index: 1;
+		opacity: 0;
+		transition: opacity .3s linear;
 	}
 
 	// НЕ РАБОТАЕТ ПОКАЗ ПОДПИСИ ПО НАВЕДЕНИЮ
@@ -774,6 +787,7 @@ main {
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		transition: opacity .3s linear;
 	}
 }
 
@@ -905,8 +919,12 @@ main {
 		width: 680px;
 	}
 
-	@media screen and (max-width: 766px) {
+	@media screen and (max-width: 750px) {
 		width: 450px;
+	}
+
+	@media screen and (max-width: 600px) {
+		width: 300px;
 	}
 
 	@media screen and (max-width: 470px) {
@@ -941,6 +959,7 @@ main {
 	align-items: center;
 	width: 150px !important;
 	height: 150px !important;
+	transition: opacity .3s linear;
 
 	@media screen and (max-width: 766px) {
 		width: 130px !important;
@@ -953,7 +972,12 @@ main {
 	}
 }
 
-.tech-item__container {
+.swiper-slide:hover .tech-item__container {
+opacity: 0;
+}
+
+.swiper-slide:hover .tech__caption {
+	opacity: 1
 }
 
 .container {
