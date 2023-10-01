@@ -135,7 +135,7 @@ main {
 				margin-bottom: 10px;
 			}
 
-			&:hover svg path{
+			&:hover svg path {
 				fill: white;
 			}
 		}
@@ -280,13 +280,13 @@ main {
 		}
 
 		&__difLang::after {
-			content: '|';
+			content: "|";
 			display: inline;
 			color: $color-orange;
 			font-size: 3rem;
 			animation-name: cursor-blink;
-			animation-duration:1s;
-			animation-iteration-count:infinite;
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
 		}
 
 		&__difLang.animate-greeting {
@@ -488,11 +488,11 @@ main {
 	top: 0;
 	width: 100%;
 	z-index: 100;
-	background: $color-light-black;
+
 	padding: 10px 0;
 	opacity: 0;
 	visibility: hidden;
-	transition: all .3s linear;
+	transition: all 0.3s linear;
 	max-width: 1440px;
 	min-width: 375px;
 	left: 50%;
@@ -506,26 +506,26 @@ main {
 	&__text {
 		// background-color: $bg-grey;
 		padding: 10px 0;
-		width: 80%;
+		width: 30%;
 		margin-right: 30px;
 		// clip-path: polygon(0 0, 90% 0, 100% 40%, 100% 100%, 10% 100%, 0 60%);
 		position: absolute;
-		top: 10%;
-		left: 10%;
+		top: 13%;
+		left: 2%;
 	}
 
 	&__text::after {
-		content: '|';
+		content: "|";
 		display: inline;
 		color: $color-orange;
 		font-size: 2rem;
 		animation-name: cursor-blink;
-		animation-duration:1s;
-		animation-iteration-count:infinite;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
 	}
 
 	&__area {
-		width: 80%;
+		width: 40%;
 	}
 
 	&__logo {
@@ -546,13 +546,14 @@ main {
 	position: absolute;
 	top: 0;
 	right: 0;
+	z-index: 1;
 
 	@include respond(tabPort) {
 		width: 60px;
 		left: 16%;
 		top: unset;
 		bottom: 0;
-		z-index: 0;
+		z-index: 1;
 		height: 500px;
 		right: -50px;
 	}
@@ -574,7 +575,7 @@ main {
 		position: relative;
 		top: -60px;
 		left: 60px;
-		transform: rotate(249deg);
+		transform: rotate(235deg);
 		display: none;
 
 		@include respond(tabPort) {
@@ -620,6 +621,8 @@ main {
 			z-index: 1;
 			width: 100%;
 			flex-basis: 50%;
+			transform: translateX(100px);
+			align-self: end;
 		}
 	}
 
@@ -642,7 +645,7 @@ main {
 		padding: 20px 0;
 
 		@include respond(tabPort) {
-			flex-basis: 50%;
+			flex-basis: 47%;
 		}
 	}
 
@@ -657,7 +660,7 @@ main {
 		position: relative;
 
 		@include respond(tab) {
-			font-size: 1.7rem;
+			font-size: 2.7rem;
 		}
 
 		&::before {
@@ -688,7 +691,7 @@ main {
 
 .aside-tech {
 	&__vert {
-		height: 685px;
+		height: 885px;
 		background-color: $color-orange;
 		position: absolute;
 		top: 0;
@@ -709,11 +712,9 @@ main {
 }
 
 .tech {
-
 	padding: 10rem 0 17rem 0;
 	position: relative;
 	width: 100%;
-
 
 	&__heading {
 		margin-bottom: 3rem;
@@ -762,7 +763,7 @@ main {
 		font-weight: 700;
 		z-index: 1;
 		opacity: 0;
-		transition: opacity .3s linear;
+		transition: opacity 0.3s linear;
 	}
 
 	// НЕ РАБОТАЕТ ПОКАЗ ПОДПИСИ ПО НАВЕДЕНИЮ
@@ -787,7 +788,7 @@ main {
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		transition: opacity .3s linear;
+		transition: opacity 0.3s linear;
 	}
 }
 
@@ -803,6 +804,10 @@ main {
 		width: 70%;
 		margin: 0 auto;
 		padding: 0;
+	}
+
+	&__item:hover svg path {
+		fill: white;
 	}
 }
 
@@ -848,15 +853,21 @@ main {
 		padding: 2rem;
 		opacity: 0;
 		visibility: hidden;
+		transform: translateY(-100%);
+		transition: all .3s linear;
 	}
 
 	&__container.active {
 		opacity: 1;
 		visibility: visible;
+		transform: translateY(0);
 	}
 
 	&__list {
 		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		text-align: center;
 		font-size: 2rem;
 		padding: 0;
@@ -889,12 +900,27 @@ main {
 	}
 }
 
+.burger-item {
+	display: inline-block;
+}
+
 .burger-item a {
 	color: white !important;
 }
 
 .burger__removeAssist {
 	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+
+.burger__buttonGroup {
+	@include respond(desktop) {
+		display: flex;
+		justify-content: center;
+	}
 }
 
 .changeLang__buttons {
@@ -913,7 +939,7 @@ main {
 }
 
 .swiper {
-	width: 830px;
+	width: 850px;
 
 	@media screen and (max-width: 956px) {
 		width: 680px;
@@ -950,16 +976,17 @@ main {
 	gap: 20px;
 }
 
-.swiper-slide {
+.slider-item {
 	height: auto;
 	// width: 100px !important;
 	font-size: 5rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	transition: opacity 0.3s linear;
+	position: relative;
 	width: 150px !important;
 	height: 150px !important;
-	transition: opacity .3s linear;
 
 	@media screen and (max-width: 766px) {
 		width: 130px !important;
@@ -972,12 +999,27 @@ main {
 	}
 }
 
-.swiper-slide:hover .tech-item__container {
-opacity: 0;
+.swiper-slide {
+	width: 150px !important;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	@media screen and (max-width: 766px) {
+		width: 130px !important;
+	}
+
+	@media screen and (max-width: 470px) {
+		width: 110px !important;
+	}
 }
 
-.swiper-slide:hover .tech__caption {
-	opacity: 1
+.slider-item:hover .tech-item__container {
+	opacity: 0;
+}
+
+.slider-item:hover .tech__caption {
+	opacity: 1;
 }
 
 .container {
@@ -989,16 +1031,15 @@ opacity: 0;
 	display: none;
 }
 
-
 @keyframes cursor-blink {
-  0%,
-  50% {
-    opacity:1
-  }
-  51%,
-  to {
-    opacity:0
-  }
+	0%,
+	50% {
+		opacity: 1;
+	}
+	51%,
+	to {
+		opacity: 0;
+	}
 }
 
 .letter {
@@ -1006,11 +1047,41 @@ opacity: 0;
 	opacity: 0;
 }
 
-
 #noisy-canvas {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
 	position: fixed;
 	z-index: -1;
+}
+
+input[name="assistSwitch"] {
+	display: none;
+}
+
+.customCheckbox {
+	width: 40px;
+	height: 20px;
+	border: 1px solid white;
+	background: $color-light-black;
+	position: relative;
+	box-sizing: content-box;
+
+	&::before {
+		content: "";
+		width: 20px;
+		height: 20px;
+		display: block;
+		position: absolute;
+		background: $color-orange;
+		top: 0;
+		right: 0;
+		transition: all 0.1s linear;
+	}
+}
+
+.burger__removeAssist.disabled > .customCheckbox::before {
+	transform: translateX(-20px);
+	background: $color-light-grey;
+	opacity: 0.5;
 }

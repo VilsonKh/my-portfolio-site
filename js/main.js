@@ -63,8 +63,8 @@ const typed = new Typed(".assistant__text", {
 typed.stop();
 
 let typing = false;
-window.addEventListener("scroll", function (e) {
-	if (this.window.scrollY > this.window.innerHeight) {
+const assistantToggler = () => {
+	if (window.scrollY > window.innerHeight) {
 		assistant.classList.add("active");
 		if (!typing) {
 			typed.start();
@@ -77,7 +77,8 @@ window.addEventListener("scroll", function (e) {
 		typed.stop();
 		console.log("stop");
 	}
-});
+};
+window.addEventListener("scroll", assistantToggler);
 
 //diagonal rotate degrees
 const headerDiagonal = document.querySelector(".aside-header-diagonal");
@@ -165,6 +166,12 @@ currentYear.textContent = new Date().getFullYear();
 
 new Swiper(".swiper", {
 	slidesPerView: 2,
+	autoplay: {
+		delay: 2000,
+		pauseOnMouseEnter: true,
+		disableOnInteraction: false,
+	},
+
 	breakpoints: {
 		375: {
 			sledesPerView: 2,
@@ -179,4 +186,25 @@ new Swiper(".swiper", {
 			slidesPerView: 5,
 		},
 	},
+});
+
+// const assistantSwitcher = document.querySelector('[for="assistSwitch"');
+// console.log(assistantSwitcher);
+// assistantSwitcher.addEventListener("click", () => {
+// 	if (checkboxInput.checked) {
+// 		console.log("checked");
+// 		window.removeEventListener("scroll", assistantToggler);
+// 	} else {
+// 		window.addEventListener("scroll", assistantToggler);
+// 	}
+// });
+
+const disableAssistant = document.querySelector(".burger__removeAssist");
+disableAssistant.addEventListener("click", () => {
+	disableAssistant.classList.toggle("disabled");
+	if (disableAssistant.classList.contains("disabled")) {
+		window.removeEventListener("scroll", assistantToggler);
+	} else {
+		window.addEventListener("scroll", assistantToggler);
+	}
 });

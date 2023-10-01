@@ -7,7 +7,8 @@ body {
   color: #d9d9d9;
   max-width: 1440px;
   min-width: 375px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  position: relative; }
 
 h1 {
   font-family: "Marske", sans-serif; }
@@ -278,7 +279,7 @@ main {
         top: 50%;
         transform: translateY(-50%); } }
   .first-screen .greeting__difLang::after {
-    content: '|';
+    content: "|";
     display: inline;
     color: #e75d02;
     font-size: 3rem;
@@ -411,11 +412,10 @@ main {
   top: 0;
   width: 100%;
   z-index: 100;
-  background: #1c1c1c;
   padding: 10px 0;
   opacity: 0;
   visibility: hidden;
-  transition: all .3s linear;
+  transition: all 0.3s linear;
   max-width: 1440px;
   min-width: 375px;
   left: 50%;
@@ -425,13 +425,13 @@ main {
     visibility: visible; }
   .assistant__text {
     padding: 10px 0;
-    width: 80%;
+    width: 30%;
     margin-right: 30px;
     position: absolute;
-    top: 10%;
-    left: 10%; }
+    top: 13%;
+    left: 2%; }
   .assistant__text::after {
-    content: '|';
+    content: "|";
     display: inline;
     color: #e75d02;
     font-size: 2rem;
@@ -439,7 +439,7 @@ main {
     animation-duration: 1s;
     animation-iteration-count: infinite; }
   .assistant__area {
-    width: 80%; }
+    width: 40%; }
   .assistant__logo {
     width: 50px;
     position: absolute;
@@ -454,14 +454,15 @@ main {
   background-color: #e75d02;
   position: absolute;
   top: 0;
-  right: 0; }
+  right: 0;
+  z-index: 1; }
   @media only screen and (min-width: 768px) {
     .aside-about {
       width: 60px;
       left: 16%;
       top: unset;
       bottom: 0;
-      z-index: 0;
+      z-index: 1;
       height: 500px;
       right: -50px; } }
   @media only screen and (min-width: 1024px) {
@@ -479,7 +480,7 @@ main {
     position: relative;
     top: -60px;
     left: 60px;
-    transform: rotate(249deg);
+    transform: rotate(235deg);
     display: none; }
     @media only screen and (min-width: 768px) {
       .aside-about-diagonal {
@@ -515,7 +516,9 @@ main {
         position: relative;
         z-index: 1;
         width: 100%;
-        flex-basis: 50%; } }
+        flex-basis: 50%;
+        transform: translateX(100px);
+        align-self: end; } }
   .about__twoCols {
     margin: 0 auto;
     width: 90%;
@@ -532,7 +535,7 @@ main {
     padding: 20px 0; }
     @media only screen and (min-width: 768px) {
       .about__text-container {
-        flex-basis: 50%; } }
+        flex-basis: 47%; } }
   .about__text {
     padding: 2rem 2rem 2rem 2rem;
     text-align: justify;
@@ -544,7 +547,7 @@ main {
     position: relative; }
     @media only screen and (min-width: 1024px) {
       .about__text {
-        font-size: 1.7rem; } }
+        font-size: 2.7rem; } }
     .about__text::before {
       content: "";
       display: block;
@@ -567,7 +570,7 @@ main {
       left: -20px; }
 
 .aside-tech__vert {
-  height: 685px;
+  height: 885px;
   background-color: #e75d02;
   position: absolute;
   top: 0;
@@ -612,7 +615,7 @@ main {
     font-weight: 700;
     z-index: 1;
     opacity: 0;
-    transition: opacity .3s linear; }
+    transition: opacity 0.3s linear; }
   .tech-item__icon {
     width: 70%;
     height: 70%;
@@ -620,7 +623,7 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: opacity .3s linear; }
+    transition: opacity 0.3s linear; }
 
 .contacts {
   margin-bottom: 10rem;
@@ -632,6 +635,8 @@ main {
     width: 70%;
     margin: 0 auto;
     padding: 0; }
+  .contacts__item:hover svg path {
+    fill: white; }
 
 .footer {
   background: #1c1c1c; }
@@ -663,14 +668,20 @@ main {
   font-size: 2rem;
   padding: 2rem;
   opacity: 0;
-  visibility: hidden; }
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: all .3s linear; }
 
 .burger-menu__container.active {
   opacity: 1;
-  visibility: visible; }
+  visibility: visible;
+  transform: translateY(0); }
 
 .burger-menu__list {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   font-size: 2rem;
   padding: 0; }
@@ -697,11 +708,23 @@ main {
     top: 0;
     transform: rotate(90deg); }
 
+.burger-item {
+  display: inline-block; }
+
 .burger-item a {
   color: white !important; }
 
 .burger__removeAssist {
-  text-align: center; }
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; }
+
+@media only screen and (min-width: 1440px) {
+  .burger__buttonGroup {
+    display: flex;
+    justify-content: center; } }
 
 .changeLang__buttons {
   text-align: center;
@@ -716,7 +739,7 @@ main {
   color: white; }
 
 .swiper {
-  width: 830px; }
+  width: 850px; }
   @media screen and (max-width: 956px) {
     .swiper {
       width: 680px; } }
@@ -738,28 +761,41 @@ main {
   flex-direction: column;
   gap: 20px; }
 
-.swiper-slide {
+.slider-item {
   height: auto;
   font-size: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: opacity 0.3s linear;
+  position: relative;
   width: 150px !important;
-  height: 150px !important;
-  transition: opacity .3s linear; }
+  height: 150px !important; }
   @media screen and (max-width: 766px) {
-    .swiper-slide {
+    .slider-item {
       width: 130px !important;
       height: 130px !important; } }
   @media screen and (max-width: 470px) {
-    .swiper-slide {
+    .slider-item {
       width: 110px !important;
       height: 110px !important; } }
 
-.swiper-slide:hover .tech-item__container {
+.swiper-slide {
+  width: 150px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; }
+  @media screen and (max-width: 766px) {
+    .swiper-slide {
+      width: 130px !important; } }
+  @media screen and (max-width: 470px) {
+    .swiper-slide {
+      width: 110px !important; } }
+
+.slider-item:hover .tech-item__container {
   opacity: 0; }
 
-.swiper-slide:hover .tech__caption {
+.slider-item:hover .tech__caption {
   opacity: 1; }
 
 .container {
@@ -787,3 +823,29 @@ main {
   height: 100vh;
   position: fixed;
   z-index: -1; }
+
+input[name="assistSwitch"] {
+  display: none; }
+
+.customCheckbox {
+  width: 40px;
+  height: 20px;
+  border: 1px solid white;
+  background: #1c1c1c;
+  position: relative;
+  box-sizing: content-box; }
+  .customCheckbox::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    background: #e75d02;
+    top: 0;
+    right: 0;
+    transition: all 0.1s linear; }
+
+.burger__removeAssist.disabled > .customCheckbox::before {
+  transform: translateX(-20px);
+  background: #d9d9d9;
+  opacity: 0.5; }
