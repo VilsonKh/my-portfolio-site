@@ -135,7 +135,8 @@ main {
   align-items: end;
   width: 30px;
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  flex-shrink: 0; }
   @media only screen and (min-width: 768px) {
     .aside-header {
       width: 60px;
@@ -149,7 +150,7 @@ main {
   width: 120vw;
   height: 30px;
   background: #e75d02;
-  top: 96%;
+  top: 97%;
   transform-origin: left; }
   @media only screen and (min-width: 768px) {
     .aside-header-diagonal {
@@ -466,7 +467,7 @@ main {
 
 .aside-about {
   width: 30px;
-  height: 848px;
+  height: 100vh;
   background-color: #e75d02;
   position: absolute;
   top: 0;
@@ -488,15 +489,24 @@ main {
   @media only screen and (min-width: 1440px) {
     .aside-about {
       width: 80px; } }
+  .aside-about__additional {
+    width: 60px;
+    height: 60px;
+    background: #e75d02;
+    position: absolute;
+    right: 0; }
+    @media screen and (min-width: 1440px) {
+      .aside-about__additional {
+        width: 80px; } }
   .aside-about-diagonal {
     background: #e75d02;
-    width: 100vh;
+    width: 60px;
     height: 60px;
     transform-origin: left bottom;
     position: relative;
     top: -60px;
     left: 60px;
-    transform: rotate(234deg);
+    transform: rotate(180deg);
     display: none; }
     @media only screen and (min-width: 768px) {
       .aside-about-diagonal {
@@ -505,7 +515,8 @@ main {
       .aside-about-diagonal {
         top: -80px;
         left: 80px;
-        height: 80px; } }
+        height: 80px;
+        width: 80px; } }
   .aside-about__horizontal {
     background-color: #e75d02;
     width: 100%;

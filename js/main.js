@@ -107,26 +107,29 @@ window.addEventListener("scroll", assistantToggler);
 // 	headerDiagonal.style.transform = `rotate(${calcDegree}deg)`;
 // }
 
-const aboutDiagonal = document.querySelector(".aside-about-diagonal");
+// const aboutDiagonal = document.querySelector(".aside-about-diagonal");
 
-if (window.screen.width > 767 && window.screen.width < 1024) {
-	const calcDegree = 220.7 + 13.75 * ((window.screen.width - 767) / (1024 - 767));
-	aboutDiagonal.style.transform = `rotate(${calcDegree}deg)`;
-}
+// if (window.screen.width > 767 && window.screen.width < 1024) {
+// 	const calcDegree = 220.7 + 13.75 * ((window.screen.width - 767) / (1024 - 767));
+// 	aboutDiagonal.style.transform = `rotate(${calcDegree}deg)`;
+// }
 
-function animateGreetings() {
-	// anime({
-	// 	targets: ".greeting__difLang .letter",
-	// 	opacity: [0, 1],
-	// 	duration: 2000,
-	// 	delay: (el, i) => 45 * i,
-	// 	// loop: true,
-	// });
-	// anime({
-	// 	targets: ".greeting__difLang",
-	// 	width: [0, 100],
-	// 	duration: 2000,
-	// });
+const aboutHorizontalDiagonal = document.querySelector(".aside-about-diagonal");
+const aboutAdditionalLine = document.querySelector(".aside-about__additional");
+const mainContainer = document.querySelector("main");
+const aboutSection = document.querySelector(".about");
+const aboutSectionPosition = aboutSection.getBoundingClientRect().top + window.scrollY;
+const aboutHorizontalPosition = aboutAdditionalLine.getBoundingClientRect().top + window.scrollY;
+const aboutHorizontalInitialHeight = aboutAdditionalLine.getBoundingClientRect().height;
+console.log(aboutSectionPosition, aboutHorizontalPosition, aboutHorizontalInitialHeight);
+const aboutHorizontalHeight = aboutHorizontalPosition + aboutHorizontalInitialHeight - aboutSectionPosition + 25;
+aboutAdditionalLine.style.height = aboutHorizontalHeight + "px";
+
+if (window.screen.width > 767 && window.screen.width < 1439) {
+	aboutHorizontalDiagonal.style.width = `${aboutHorizontalDiagonal.getBoundingClientRect().x + aboutHorizontalDiagonal.getBoundingClientRect().width}px`;
+} else {
+	const getHorizontalLineWidth = `${aboutHorizontalDiagonal.getBoundingClientRect().x - mainContainer.getBoundingClientRect().x + aboutHorizontalDiagonal.getBoundingClientRect().width}`;
+	aboutHorizontalDiagonal.style.width = getHorizontalLineWidth + "px";
 }
 
 const currentYear = document.querySelector(".currentYear");
