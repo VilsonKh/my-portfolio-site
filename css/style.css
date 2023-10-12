@@ -130,7 +130,7 @@ main {
 
 .aside-header {
   background-color: #e75d02;
-  height: 75vh;
+  height: 100vh;
   display: flex;
   align-items: end;
   width: 30px;
@@ -150,8 +150,7 @@ main {
   height: 30px;
   background: #e75d02;
   top: 96%;
-  transform-origin: left;
-  transform: rotate(33.4deg); }
+  transform-origin: left; }
   @media only screen and (min-width: 768px) {
     .aside-header-diagonal {
       display: none; } }
@@ -208,7 +207,7 @@ main {
   overflow-y: clip;
   height: 80vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: column; }
   .first-screen .diagonal-line {
     height: 30px;
@@ -524,7 +523,7 @@ main {
   position: relative;
   overflow: hidden; }
   .about__img-container {
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
     margin-bottom: 50px; }
     @media only screen and (min-width: 768px) {

@@ -69,7 +69,7 @@ main {
 .aside {
 	&-header {
 		background-color: $color-orange;
-		height: 75vh;
+		height: 100vh;
 		display: flex;
 		align-items: end;
 		width: 30px;
@@ -108,7 +108,7 @@ main {
 		background: $color-orange;
 		top: 96%;
 		transform-origin: left;
-		transform: rotate(33.4deg);
+		// transform: rotate(33.4deg);
 
 		@include respond(tabPort) {
 			display: none;
@@ -190,7 +190,7 @@ main {
 	overflow-y: clip;
 	height: 80vh;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	flex-direction: column;
 
 	& .diagonal-line {
@@ -629,7 +629,7 @@ main {
 	overflow: hidden;
 
 	&__img-container {
-		width: 50%;
+		width: 70%;
 		margin: 0 auto;
 		margin-bottom: 50px;
 

@@ -81,31 +81,31 @@ const assistantToggler = () => {
 window.addEventListener("scroll", assistantToggler);
 
 //diagonal rotate degrees
-const headerDiagonal = document.querySelector(".aside-header-diagonal");
+// const headerDiagonal = document.querySelector(".aside-header-diagonal");
 
-if (window.screen.width <= 500 && window.screen.width > 374) {
-	let calcDegree = null;
-	if (window.screen.height < 700) {
-		calcDegree = 24.4 + 7.4 * ((window.screen.width - 375) / (375 - 500));
-	} else if (window.screen.height <= 812) {
-		calcDegree = 29.4 + 8.4 * ((window.screen.width - 375) / (375 - 500));
-	} else if (window.screen.height <= 896) {
-		calcDegree = 32.4 + 7.4 * ((window.screen.width - 375) / (375 - 500));
-	} else if (window.screen.height <= 926) {
-		calcDegree = 33.4 + 7.4 * ((window.screen.width - 375) / (375 - 500));
-	}
-	headerDiagonal.style.transform = `rotate(${calcDegree}deg)`;
-}
+// if (window.screen.width <= 500 && window.screen.width > 374) {
+// 	let calcDegree = null;
+// 	if (window.screen.height < 700) {
+// 		calcDegree = 24.4 + 7.4 * ((window.screen.width - 375) / (375 - 500));
+// 	} else if (window.screen.height <= 812) {
+// 		calcDegree = 29.4 + 8.4 * ((window.screen.width - 375) / (375 - 500));
+// 	} else if (window.screen.height <= 896) {
+// 		calcDegree = 32.4 + 7.4 * ((window.screen.width - 375) / (375 - 500));
+// 	} else if (window.screen.height <= 926) {
+// 		calcDegree = 33.4 + 7.4 * ((window.screen.width - 375) / (375 - 500));
+// 	}
+// 	headerDiagonal.style.transform = `rotate(${calcDegree}deg)`;
+// }
 
-if (window.screen.width > 500 && window.screen.width <= 643) {
-	const calcDegree = 25 + 4 * ((window.screen.width - 500) / (500 - 643));
-	headerDiagonal.style.transform = `rotate(${calcDegree}deg)`;
-}
+// if (window.screen.width > 500 && window.screen.width <= 643) {
+// 	const calcDegree = 25 + 4 * ((window.screen.width - 500) / (500 - 643));
+// 	headerDiagonal.style.transform = `rotate(${calcDegree}deg)`;
+// }
 
-if (window.screen.width > 643 && window.screen.width < 768) {
-	const calcDegree = 21 + 3 * ((window.screen.width - 643) / (643 - 768));
-	headerDiagonal.style.transform = `rotate(${calcDegree}deg)`;
-}
+// if (window.screen.width > 643 && window.screen.width < 768) {
+// 	const calcDegree = 21 + 3 * ((window.screen.width - 643) / (643 - 768));
+// 	headerDiagonal.style.transform = `rotate(${calcDegree}deg)`;
+// }
 
 const aboutDiagonal = document.querySelector(".aside-about-diagonal");
 
