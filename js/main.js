@@ -114,37 +114,6 @@ if (window.screen.width > 767 && window.screen.width < 1024) {
 	aboutDiagonal.style.transform = `rotate(${calcDegree}deg)`;
 }
 
-//canvas
-// let canvas = document.getElementById("noisy-canvas"),
-// 	ctx = canvas.getContext("2d");
-// function main() {
-// 	window.addEventListener("resize", updateCanvasSize);
-// 	updateCanvasSize();
-// 	render();
-// }
-// function getRandom() {
-// 	return Math.random() * 255 - 140;
-// }
-
-// function render() {
-// 	let imageData = ctx.createImageData(ctx.canvas.width, ctx.canvas.height);
-// 	for (let i = 0; i < imageData.data.length; i += 4) {
-// 		const color = getRandom();
-// 		console.log(imageData.data);
-// 		imageData.data[i] = color;
-// 		imageData.data[i + 1] = color;
-// 		imageData.data[i + 2] = color;
-// 		imageData.data[i + 3] = 255;
-// 	}
-// 	ctx.putImageData(imageData, 0, 0);
-// 	requestAnimationFrame(render);
-// }
-// function updateCanvasSize() {
-// 	ctx.canvas.height = canvas.offsetHeight;
-// 	ctx.canvas.width = canvas.offsetWidth;
-// }
-// main();
-
 function animateGreetings() {
 	// anime({
 	// 	targets: ".greeting__difLang .letter",
@@ -188,17 +157,6 @@ new Swiper(".swiper", {
 	},
 });
 
-// const assistantSwitcher = document.querySelector('[for="assistSwitch"');
-// console.log(assistantSwitcher);
-// assistantSwitcher.addEventListener("click", () => {
-// 	if (checkboxInput.checked) {
-// 		console.log("checked");
-// 		window.removeEventListener("scroll", assistantToggler);
-// 	} else {
-// 		window.addEventListener("scroll", assistantToggler);
-// 	}
-// });
-
 const disableAssistant = document.querySelector(".burger__removeAssist");
 disableAssistant.addEventListener("click", () => {
 	disableAssistant.classList.toggle("disabled");
@@ -208,3 +166,16 @@ disableAssistant.addEventListener("click", () => {
 		window.addEventListener("scroll", assistantToggler);
 	}
 });
+
+// const changeLang = document.querySelector(".changeLang__buttons");
+
+// changeLang.addEventListener("click", (e) => {
+// 	if (e.target.nodeName === "BUTTON") {
+// 		const buttons = changeLang.querySelectorAll("button");
+// 		buttons.forEach((button) => {
+// 			button.classList.remove("active");
+// 		});
+
+// 		e.target.classList.add("active");
+// 	}
+// });

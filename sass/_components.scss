@@ -54,7 +54,7 @@ main {
 	}
 
 	&__logo {
-		width: 50px;
+		width: 100px;
 	}
 
 	&__burger-icon {
@@ -506,12 +506,20 @@ main {
 	&__text {
 		// background-color: $bg-grey;
 		padding: 10px 0;
-		width: 30%;
+		width: 100%;
 		margin-right: 30px;
 		// clip-path: polygon(0 0, 90% 0, 100% 40%, 100% 100%, 10% 100%, 0 60%);
 		position: absolute;
 		top: 13%;
-		left: 2%;
+		left: 13%;
+
+		@media screen and (min-width: 767px) {
+			width: 40%;
+		}
+
+		@media screen and (min-width: 1024px) {
+			left: 20%;
+		}
 	}
 
 	&__text::after {
@@ -525,7 +533,17 @@ main {
 	}
 
 	&__area {
-		width: 40%;
+		width: 80%;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		@media screen and (min-width: 767px) {
+			left: 35%;
+			width: 60%;
+		}
+		@media screen and (min-width: 1024px) {
+			width: 40%;
+		}
 	}
 
 	&__logo {
@@ -575,7 +593,7 @@ main {
 		position: relative;
 		top: -60px;
 		left: 60px;
-		transform: rotate(235deg);
+		transform: rotate(234deg);
 		display: none;
 
 		@include respond(tabPort) {
@@ -691,7 +709,7 @@ main {
 
 .aside-tech {
 	&__vert {
-		height: 885px;
+		height: 1085px;
 		background-color: $color-orange;
 		position: absolute;
 		top: 0;
@@ -699,6 +717,7 @@ main {
 		width: 30px;
 
 		@include respond(tabPort) {
+			height: 885px;
 			display: block;
 			width: 60px;
 			left: unset;
@@ -806,6 +825,10 @@ main {
 		padding: 0;
 	}
 
+	&__item svg {
+		width: 47px;
+	}
+
 	&__item:hover svg path {
 		fill: white;
 	}
@@ -854,7 +877,7 @@ main {
 		opacity: 0;
 		visibility: hidden;
 		transform: translateY(-100%);
-		transition: all .3s linear;
+		transition: all 0.3s linear;
 	}
 
 	&__container.active {
@@ -878,6 +901,7 @@ main {
 		top: 0;
 		right: 30px;
 		padding: 3rem 0;
+		cursor: pointer;
 	}
 }
 
@@ -902,6 +926,7 @@ main {
 
 .burger-item {
 	display: inline-block;
+	font-size: 3rem;
 }
 
 .burger-item a {
@@ -914,20 +939,12 @@ main {
 	align-items: center;
 	justify-content: center;
 	gap: 10px;
-}
-
-.burger__buttonGroup {
-	@include respond(desktop) {
-		display: flex;
-		justify-content: center;
-	}
+	font-size: 3rem;
 }
 
 .changeLang__buttons {
 	text-align: center;
 	color: grey;
-	font-size: 3rem !important;
-	display: none;
 }
 
 .tab-visible {
@@ -1084,4 +1101,16 @@ input[name="assistSwitch"] {
 	transform: translateX(-20px);
 	background: $color-light-grey;
 	opacity: 0.5;
+}
+
+#contacts-button {
+	@media screen and (min-width: 767px){
+		display: none;
+	}
+}
+
+.header .changeLang__buttons {
+	@media screen and (min-width: 767px) {
+		display: none;
+	}
 }
