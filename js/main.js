@@ -122,7 +122,7 @@ const aboutSectionPosition = aboutSection.getBoundingClientRect().top + window.s
 const aboutHorizontalPosition = aboutAdditionalLine.getBoundingClientRect().top + window.scrollY;
 const aboutHorizontalInitialHeight = aboutAdditionalLine.getBoundingClientRect().height;
 console.log(aboutSectionPosition, aboutHorizontalPosition, aboutHorizontalInitialHeight);
-const aboutHorizontalHeight = aboutHorizontalPosition + aboutHorizontalInitialHeight - aboutSectionPosition + 25;
+const aboutHorizontalHeight = aboutHorizontalPosition + aboutHorizontalInitialHeight * 4 - aboutSectionPosition;
 aboutAdditionalLine.style.height = aboutHorizontalHeight + "px";
 
 if (window.screen.width > 767 && window.screen.width < 1439) {

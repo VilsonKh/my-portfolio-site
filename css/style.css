@@ -117,10 +117,11 @@ main {
   padding: 20px;
   padding-left: 0;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  align-items: center; }
 
 .header__logo {
-  width: 100px; }
+  width: 80px; }
 
 .header__burger-icon {
   cursor: pointer; }
@@ -210,6 +211,9 @@ main {
   display: flex;
   justify-content: space-around;
   flex-direction: column; }
+  @media screen and (min-width: 767px) {
+    .first-screen {
+      justify-content: space-between; } }
   .first-screen .diagonal-line {
     height: 30px;
     width: 140vw;
@@ -251,7 +255,6 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 1.6rem;
     gap: 10px;
     background: #3f3f3f;
     border: 2px solid #d9d9d9;
@@ -402,7 +405,6 @@ main {
     .first-screen__button-link {
       display: block;
       transform: skewX(40deg);
-      font-size: 1.7rem;
       color: white; }
       @media only screen and (min-width: 1440px) {
         .first-screen__button-link {
@@ -430,7 +432,7 @@ main {
     margin-right: 30px;
     position: absolute;
     top: 13%;
-    left: 13%; }
+    left: 16%; }
     @media screen and (min-width: 767px) {
       .assistant__text {
         width: 40%; } }
@@ -476,7 +478,7 @@ main {
   @media only screen and (min-width: 768px) {
     .aside-about {
       width: 60px;
-      left: 16%;
+      left: 15%;
       top: unset;
       bottom: 0;
       z-index: 1;
@@ -535,8 +537,7 @@ main {
   overflow: hidden; }
   .about__img-container {
     width: 70%;
-    margin: 0 auto;
-    margin-bottom: 50px; }
+    margin: 0 auto; }
     @media only screen and (min-width: 768px) {
       .about__img-container {
         margin: 0;
@@ -557,7 +558,7 @@ main {
         flex-direction: row;
         align-items: center; } }
   .about__text-container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     padding: 20px 0; }
     @media only screen and (min-width: 768px) {
@@ -571,7 +572,8 @@ main {
     border: 2px solid #d9d9d9;
     outline: 1px solid #3f3f3f;
     outline-offset: 7px;
-    position: relative; }
+    position: relative;
+    font-size: 1.7rem; }
     @media only screen and (min-width: 1024px) {
       .about__text {
         font-size: 2.7rem; } }
@@ -610,7 +612,7 @@ main {
       width: 60px;
       left: unset;
       right: 0; } }
-  @media only screen and (min-width: 1024px) {
+  @media screen and (min-width: 1440px) {
     .aside-tech__vert {
       width: 80px; } }
 
@@ -700,7 +702,7 @@ main {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-100%);
-  transition: all 0.3s linear; }
+  transition: all 0.2s linear; }
 
 .burger-menu__container.active {
   opacity: 1;

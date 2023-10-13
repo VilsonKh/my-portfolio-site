@@ -51,10 +51,11 @@ main {
 
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 	}
 
 	&__logo {
-		width: 100px;
+		width: 80px;
 	}
 
 	&__burger-icon {
@@ -194,6 +195,10 @@ main {
 	justify-content: space-around;
 	flex-direction: column;
 
+	@media screen and (min-width: 767px) {
+		justify-content: space-between
+	}
+
 	& .diagonal-line {
 		height: 30px;
 		width: 140vw;
@@ -246,7 +251,6 @@ main {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			font-size: 1.6rem;
 			gap: 10px;
 			background: #3f3f3f;
 			border: 2px solid #d9d9d9;
@@ -474,7 +478,6 @@ main {
 		&-link {
 			display: block;
 			transform: skewX(40deg);
-			font-size: $main-button-fs;
 			color: white;
 
 			@include respond(desktop) {
@@ -512,7 +515,7 @@ main {
 		// clip-path: polygon(0 0, 90% 0, 100% 40%, 100% 100%, 10% 100%, 0 60%);
 		position: absolute;
 		top: 13%;
-		left: 13%;
+		left: 16%;
 
 		@media screen and (min-width: 767px) {
 			width: 40%;
@@ -569,7 +572,7 @@ main {
 
 	@include respond(tabPort) {
 		width: 60px;
-		left: 16%;
+		left: 15%;
 		top: unset;
 		bottom: 0;
 		z-index: 1;
@@ -646,7 +649,7 @@ main {
 	&__img-container {
 		width: 70%;
 		margin: 0 auto;
-		margin-bottom: 50px;
+
 
 		@include respond(tabPort) {
 			margin: 0;
@@ -673,7 +676,7 @@ main {
 	}
 
 	&__text-container {
-		width: 80%;
+		width: 90%;
 		margin: 0 auto;
 		padding: 20px 0;
 
@@ -691,6 +694,7 @@ main {
 		outline: 1px solid $bg-grey;
 		outline-offset: 7px;
 		position: relative;
+		font-size: 1.7rem;
 
 		@include respond(tab) {
 			font-size: 2.7rem;
@@ -739,7 +743,7 @@ main {
 			right: 0;
 		}
 
-		@include respond(tab) {
+		@media screen and (min-width: 1440px) {
 			width: 80px;
 		}
 	}
@@ -892,7 +896,7 @@ main {
 		opacity: 0;
 		visibility: hidden;
 		transform: translateY(-100%);
-		transition: all 0.3s linear;
+		transition: all 0.2s linear;
 	}
 
 	&__container.active {
