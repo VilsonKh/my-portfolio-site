@@ -169,16 +169,3 @@ disableAssistant.addEventListener("click", () => {
 		window.addEventListener("scroll", assistantToggler);
 	}
 });
-
-// const changeLang = document.querySelector(".changeLang__buttons");
-
-// changeLang.addEventListener("click", (e) => {
-// 	if (e.target.nodeName === "BUTTON") {
-// 		const buttons = changeLang.querySelectorAll("button");
-// 		buttons.forEach((button) => {
-// 			button.classList.remove("active");
-// 		});
-
-// 		e.target.classList.add("active");
-// 	}
-// });
