@@ -158,13 +158,28 @@ main {
       display: none; } }
 
 .aside-links__list {
+  mix-blend-mode: difference;
   margin: 0 auto;
-  width: 80%;
+  width: 30px;
   margin-bottom: 50px;
   display: none; }
   @media only screen and (min-width: 768px) {
     .aside-links__list {
-      display: block; } }
+      display: block;
+      position: fixed;
+      z-index: 100;
+      bottom: 0;
+      width: 60px; } }
+  @media only screen and (min-width: 1440px) {
+    .aside-links__list {
+      width: 80px; } }
+
+.aside-links__item a {
+  display: flex;
+  justify-content: center; }
+
+.aside-links__item img {
+  width: 100%; }
 
 .aside-links__item:not(:last-child) {
   margin-bottom: 10px; }
@@ -617,7 +632,7 @@ main {
       width: 80px; } }
 
 .tech {
-  padding: 10rem 0 17rem 0;
+  padding: 0rem 0 17rem 0;
   position: relative;
   width: 100%; }
   .tech__heading {
@@ -885,3 +900,15 @@ input[name="assistSwitch"] {
 @media screen and (min-width: 767px) {
   .header .changeLang__buttons {
     display: none; } }
+
+.invisible-line {
+  width: 80px;
+  height: 100vh;
+  position: absolute; }
+  .invisible-line_tech {
+    width: 80px;
+    position: absolute;
+    height: 885px; }
+
+.tech .section__heading {
+  padding-top: 10rem; }

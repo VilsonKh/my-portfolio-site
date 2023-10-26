@@ -122,17 +122,36 @@ main {
 
 	&-links {
 		&__list {
+			mix-blend-mode: difference;
 			margin: 0 auto;
-			width: 80%;
+			width: 30px;
 			margin-bottom: 50px;
 			display: none;
 
 			@include respond(tabPort) {
 				display: block;
+				position: fixed;
+				z-index: 100;
+				bottom: 0;
+				width: 60px;
+			}
+
+			@include respond(desktop) {
+				width: 80px;
 			}
 		}
 
 		&__item {
+			
+			& a {
+				display: flex;
+				justify-content: center;
+			}
+
+			& img {
+				width: 100%;
+			}
+
 			&:not(:last-child) {
 				margin-bottom: 10px;
 			}
@@ -750,7 +769,7 @@ main {
 }
 
 .tech {
-	padding: 10rem 0 17rem 0;
+	padding: 0rem 0 17rem 0;
 	position: relative;
 	width: 100%;
 
@@ -1132,4 +1151,21 @@ input[name="assistSwitch"] {
 	@media screen and (min-width: 767px) {
 		display: none;
 	}
+}
+
+.invisible-line {
+	width: 80px;
+	height: 100vh;
+	position: absolute;
+
+
+	&_tech {
+		width: 80px;
+		position: absolute;
+		height: 885px;
+	}
+}
+
+.tech .section__heading {
+	padding-top: 10rem;
 }
