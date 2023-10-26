@@ -7,6 +7,13 @@
 		<meta content="The website provides information about me, as well as examples of my projects" name="description" />
 		<meta content="frontend, фронтенд, портфолио, portfolio, Vilson, Khechikiants,Вильсон Хечикянц" name="keywords" />
 		<title>Vilson Khechikiants portfolio website</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+			integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 		<link href="https://fonts.googleapis.com/css?family=Jura:300,regular,500,600,700" rel="stylesheet" />
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="css/style.css" />
@@ -92,7 +99,7 @@
 					</header>
 					<div class="first-screen">
 						<div class="first-screen__greeting">
-							<div class="greeting__container">
+							<div class="greeting__container" data-aos="fade-left">
 								<img class="greeting__img" src="img/info-area.svg" alt="hud" />
 								<div class="greeting__textBox">
 									<p class="greeting__firstLine"><span class="greeting__difLang"></span>, my name is <span class="accent">Vilson!</span></p>
@@ -103,11 +110,11 @@
 						</div>
 
 						<div class="first-screen__assist">
-							<div class="first-screen__assistContainer">
+							<div class="first-screen__assistContainer" data-aos="fade-right">
 								<img class="first-screen__assistImg" src="img/assist-area.svg" alt="" />
 								<p class="first-screen__assistText">The weather outside is great, so it's time for writing code.</p>
 							</div>
-							<div class="first-screen__buttons">
+							<div class="first-screen__buttons" data-aos="fade-left">
 								<button class="first-screen__button">
 									<a class="first-screen__button-link" href="#">interactive website</a>
 								</button>
@@ -124,13 +131,13 @@
 
 			<section class="about" id="about">
 				<div class="invisible-line"></div>
-				<h1 class="section__heading">about</h1>
+				<h1 class="section__heading" data-aos="fade-down">about</h1>
 				<div class="about__twoCols">
 					<div class="about__img-container">
-						<img src="img/about__photo.png" alt="" />
+						<img data-aos="fade-right" src="img/about__photo.png" alt="" />
 					</div>
 					<div class="about__text-container">
-						<p class="about__text">
+						<p class="about__text" data-aos="fade-left">
 							My name is Vilson Khechikiants and I'm Frontend Developer. I was graduaded from Russian Foreign Trade Academy and get a bachelor degree on International Trade Management.
 							<br />
 							After graduating from the institute, I worked at the Federal Tax Service for 3 years, and then at Deloitte Consulting for 1 year. <br />Even during my academy studies, I
@@ -157,8 +164,8 @@
 			<div class="container">
 				<section class="tech" id="tech">
 					<div class="invisible-line_tech"></div>
-					<h1 class="section__heading">skills</h1>
-					<div class="tech__table">
+					<h1 class="section__heading" data-aos="fade-down">skills</h1>
+					<div class="tech__table" data-aos="fade-up">
 						<div class="swiper">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide">
@@ -456,6 +463,12 @@
 			referrerpolicy="no-referrer"
 		></script>
 		<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+			integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
 		<script type="module" src="js/main.js"></script>
 	</body>
 </html>

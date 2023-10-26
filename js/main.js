@@ -14,7 +14,10 @@ function dragMoveListener(event) {
 	target.setAttribute("data-y", y);
 }
 
-let burgerButton = document.querySelector(".burger-header");
+AOS.init({
+	duration: 400,
+});
+
 let burgerMenu = document.querySelector(".burger-menu__container");
 let burgerClose = document.querySelector(".burger-menu__close");
 const burgerIcon = document.querySelector(".burger-menu");
