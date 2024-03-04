@@ -580,7 +580,7 @@ main {
       .about__text-container {
         flex-basis: 47%; } }
   .about__text {
-    padding: 2rem 2rem 2rem 2rem;
+    padding: 2rem 2rem 3rem 2rem;
     text-align: justify;
     background-color: #3f3f3f;
     width: 95%;
