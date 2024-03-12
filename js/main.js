@@ -53,7 +53,12 @@ window.addEventListener("load", changeGreeting);
 const assistant = document.querySelector(".assistant");
 
 const typed = new Typed(".assistant__text", {
-	strings: ["Здесь будут шутки и подсказки", "Здесь будут еще подсказки", "Здесь будут подсказки и шутки", "Здесь будут еще другие шутки и подсказки"],
+	strings: [
+		"Здесь будут шутки и подсказки",
+		"Здесь будут еще подсказки",
+		"Здесь будут подсказки и шутки",
+		"Здесь будут еще другие шутки и подсказки",
+	],
 	stringElement: null,
 	contentType: "html",
 	loop: true,
@@ -71,52 +76,15 @@ const assistantToggler = () => {
 		assistant.classList.add("active");
 		if (!typing) {
 			typed.start();
-			console.log("start");
 		}
 		typing = true;
 	} else {
 		assistant.classList.remove("active");
 		typing = false;
 		typed.stop();
-		console.log("stop");
 	}
 };
 window.addEventListener("scroll", assistantToggler);
-
-//diagonal rotate degrees
-// const headerDiagonal = document.querySelector(".aside-header-diagonal");
-
-// if (window.screen.width <= 500 && window.screen.width > 374) {
-// 	let calcDegree = null;
-// 	if (window.screen.height < 700) {
-// 		calcDegree = 24.4 + 7.4 * ((window.screen.width - 375) / (375 - 500));
-// 	} else if (window.screen.height <= 812) {
-// 		calcDegree = 29.4 + 8.4 * ((window.screen.width - 375) / (375 - 500));
-// 	} else if (window.screen.height <= 896) {
-// 		calcDegree = 32.4 + 7.4 * ((window.screen.width - 375) / (375 - 500));
-// 	} else if (window.screen.height <= 926) {
-// 		calcDegree = 33.4 + 7.4 * ((window.screen.width - 375) / (375 - 500));
-// 	}
-// 	headerDiagonal.style.transform = `rotate(${calcDegree}deg)`;
-// }
-
-// if (window.screen.width > 500 && window.screen.width <= 643) {
-// 	const calcDegree = 25 + 4 * ((window.screen.width - 500) / (500 - 643));
-// 	headerDiagonal.style.transform = `rotate(${calcDegree}deg)`;
-// }
-
-// if (window.screen.width > 643 && window.screen.width < 768) {
-// 	const calcDegree = 21 + 3 * ((window.screen.width - 643) / (643 - 768));
-// 	headerDiagonal.style.transform = `rotate(${calcDegree}deg)`;
-// }
-
-// const aboutDiagonal = document.querySelector(".aside-about-diagonal");
-
-// if (window.screen.width > 767 && window.screen.width < 1024) {
-// 	const calcDegree = 220.7 + 13.75 * ((window.screen.width - 767) / (1024 - 767));
-// 	aboutDiagonal.style.transform = `rotate(${calcDegree}deg)`;
-// }
-
 const aboutHorizontalDiagonal = document.querySelector(".aside-about-diagonal");
 const aboutAdditionalLine = document.querySelector(".aside-about__additional");
 const mainContainer = document.querySelector("main");
@@ -124,14 +92,28 @@ const aboutSection = document.querySelector(".about");
 const aboutSectionPosition = aboutSection.getBoundingClientRect().top + window.scrollY;
 const aboutHorizontalPosition = aboutAdditionalLine.getBoundingClientRect().top + window.scrollY;
 const aboutHorizontalInitialHeight = aboutAdditionalLine.getBoundingClientRect().height;
-console.log(aboutSectionPosition, aboutHorizontalPosition, aboutHorizontalInitialHeight);
+const asideAbout = document.querySelector(".aside-about");
+const aboutSectionHeight = aboutSection.clientHeight;
+
+asideAbout.style.height = aboutSectionHeight + 100 + "px";
+const firstSectionHeight = document.querySelector(".page").clientHeight;
+const headerDiagonal = document.querySelector(".aside-header-diagonal");
+
+headerDiagonal.style.top = firstSectionHeight - 30 + "px";
+
 const aboutHorizontalHeight = aboutHorizontalPosition + aboutHorizontalInitialHeight * 4 - aboutSectionPosition;
 aboutAdditionalLine.style.height = aboutHorizontalHeight + "px";
 
 if (window.screen.width > 767 && window.screen.width < 1439) {
-	aboutHorizontalDiagonal.style.width = `${aboutHorizontalDiagonal.getBoundingClientRect().x + aboutHorizontalDiagonal.getBoundingClientRect().width}px`;
+	aboutHorizontalDiagonal.style.width = `${
+		aboutHorizontalDiagonal.getBoundingClientRect().x + aboutHorizontalDiagonal.getBoundingClientRect().width
+	}px`;
 } else {
-	const getHorizontalLineWidth = `${aboutHorizontalDiagonal.getBoundingClientRect().x - mainContainer.getBoundingClientRect().x + aboutHorizontalDiagonal.getBoundingClientRect().width}`;
+	const getHorizontalLineWidth = `${
+		aboutHorizontalDiagonal.getBoundingClientRect().x -
+		mainContainer.getBoundingClientRect().x +
+		aboutHorizontalDiagonal.getBoundingClientRect().width
+	}`;
 	aboutHorizontalDiagonal.style.width = getHorizontalLineWidth + "px";
 }
 
@@ -171,4 +153,18 @@ disableAssistant.addEventListener("click", () => {
 	} else {
 		window.addEventListener("scroll", assistantToggler);
 	}
+});
+
+const interactiveButton = document.querySelector("#interactive");
+const underConstructionPopup = document.querySelector(".first-screen__underConstruction");
+interactiveButton.addEventListener("mouseover", () => {
+	underConstructionPopup.classList.add("active");
+});
+
+interactiveButton.addEventListener("mouseout", () => {
+	underConstructionPopup.classList.remove("active");
+});
+
+interactiveButton.addEventListener("click", () => {
+	underConstructionPopup.classList.toggle("active");
 });

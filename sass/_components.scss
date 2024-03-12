@@ -108,7 +108,7 @@ main {
 		width: 120vw;
 		height: 30px;
 		background: $color-orange;
-		top: 97%;
+		top: 96%;
 		transform-origin: left;
 		// transform: rotate(33.4deg);
 
@@ -142,7 +142,6 @@ main {
 		}
 
 		&__item {
-			
 			& a {
 				display: flex;
 				justify-content: center;
@@ -215,7 +214,7 @@ main {
 	flex-direction: column;
 
 	@media screen and (min-width: 767px) {
-		justify-content: space-between
+		justify-content: space-between;
 	}
 
 	& .diagonal-line {
@@ -314,28 +313,8 @@ main {
 		}
 
 		&__difLang.animate-greeting {
-			// position: absolute;
-			// transform-style: preserve-3d;
-			// transform-origin: 50% 0;
-
-			// border-right: 4px solid $color-orange;
 			animation-name: printed-text;
 			animation-duration: 2s;
-			// animation-iteration-count: steps(11),
-			// animation: printed-text 2s steps(11,end), flashin-border .75s step-start infinite;
-			// width: 5ch;
-
-			// @keyframes flashin-border{
-			// 	0%{
-			// 		border-color: $color-orange;
-			// 	}
-			// 	50%{
-			// 		border-color: transparent;
-			// 	}
-			// 	100%{
-			// 		border-color: $color-orange;
-			// 	}
-			// }
 
 			@keyframes printed-text {
 				from {
@@ -347,9 +326,6 @@ main {
 		&__firstLine {
 			text-align: right;
 			perspective: 1000px;
-		}
-
-		&__secondLine {
 		}
 
 		&__animation {
@@ -409,8 +385,6 @@ main {
 
 	& .assist {
 		position: relative;
-		// top: 50%;
-		// transform: translateY(-50%);
 
 		@media screen and (min-width: 1439px) {
 		}
@@ -429,18 +403,50 @@ main {
 		min-height: 170px;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: space-around;
 		width: 80%;
 		margin: 0 auto;
+		position: relative;
 
 		@include respond(tabPort) {
 			width: 30%;
 		}
+	}
 
-		&-interactive {
-			margin-bottom: 50px;
+	&__underConstruction {
+		opacity: 0;
+		visibility: hidden;
+		width: 100%;
+		border: 1px solid white;
+		position: absolute;
+		bottom: 110%;
+		padding: 20px;
+		font-size: 1.7rem;
+		text-align: center;
+		transition: all 0.2s linear;
+
+		@include respond(desktop) {
+			font-size: 3rem;
+		}
+
+		&::before {
+			content: "";
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			background: white;
+			top: 101%;
+			left: 50%;
+			clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
+			transform: translateX(-50%);
 		}
 	}
+
+	&__underConstruction.active {
+		opacity: 1;
+		visibility: visible;
+	}
+
 	&__button {
 		display: block;
 		transform: skewX(40deg);
@@ -454,15 +460,6 @@ main {
 		width: 100%;
 		position: relative;
 		z-index: 1;
-
-		&:first-child {
-			margin-bottom: 50px;
-		}
-
-		&:hover::before,
-		&:hover::after {
-			width: 100%;
-		}
 
 		&::before {
 			content: "";
@@ -504,6 +501,15 @@ main {
 			}
 		}
 	}
+}
+
+#interactive {
+	opacity: 0.5;
+}
+
+#projects:hover::before,
+#projects:hover::after {
+	width: 100%;
 }
 
 .assistant {
@@ -610,14 +616,13 @@ main {
 
 	&__additional {
 		width: 60px;
-		height:60px;
+		height: 60px;
 		background: $color-orange;
 		position: absolute;
 		right: 0;
 
 		@media screen and (min-width: 1440px) {
 			width: 80px;
-
 		}
 	}
 
@@ -668,7 +673,6 @@ main {
 	&__img-container {
 		width: 70%;
 		margin: 0 auto;
-
 
 		@include respond(tabPort) {
 			margin: 0;
@@ -769,7 +773,7 @@ main {
 }
 
 .tech {
-	padding: 0rem 0 17rem 0;
+	padding: 0rem 0 10rem 0;
 	position: relative;
 	width: 100%;
 
@@ -1142,7 +1146,7 @@ input[name="assistSwitch"] {
 }
 
 #contacts-button {
-	@media screen and (min-width: 767px){
+	@media screen and (min-width: 767px) {
 		display: none;
 	}
 }
@@ -1157,7 +1161,6 @@ input[name="assistSwitch"] {
 	width: 80px;
 	height: 100vh;
 	position: absolute;
-
 
 	&_tech {
 		width: 80px;
