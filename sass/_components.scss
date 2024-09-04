@@ -29,7 +29,7 @@ main {
 }
 
 .page {
-	height: 100vh;
+	/* height: 100vh; */
 	display: flex;
 	position: relative;
 	gap: 10px;
@@ -58,11 +58,36 @@ main {
 		width: 80px;
 	}
 
-	&__burger-icon {
-		cursor: pointer;
+	&__navigation {
+		width: 55%;
+		&-list {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			margin-right: 10px;
+		}
 
-		@include respond(tabPort) {
-			display: none;
+		&-item {
+			min-width: 250px;
+			padding: 5px 10px;
+			border: 1px solid #9f9f9f;
+			cursor: pointer;
+			text-align: center;
+			text-transform: uppercase;
+			transform: skew(-40deg);
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				background-color: #474747;
+				transform: skew(-40deg) translate(-0%, 10%);
+			}
+			& a {
+				display: block;
+				text-decoration: none;
+				font-size: 3rem;
+				color: inherit;
+				transform: skew(40deg);
+			}
 		}
 	}
 }
@@ -145,6 +170,10 @@ main {
 			& a {
 				display: flex;
 				justify-content: center;
+				transition: all 0.3s ease-in-out;
+				&:hover {
+					transform: translate(30%);
+				}
 			}
 
 			& img {
@@ -208,13 +237,17 @@ main {
 	padding-right: 20px;
 	overflow-x: hidden;
 	overflow-y: clip;
-	height: 80vh;
-	display: flex;
+	/* height: 80vh; */
+	/* display: flex;
 	justify-content: space-around;
-	flex-direction: column;
+	flex-direction: column; */
 
-	@media screen and (min-width: 767px) {
+	/* @media screen and (min-width: 767px) {
 		justify-content: space-between;
+	} */
+
+	&__greeting {
+		margin-bottom: 80px;
 	}
 
 	& .diagonal-line {
@@ -244,11 +277,11 @@ main {
 	& .greeting {
 		&__container {
 			position: relative;
-			margin-top: 70px;
+			margin-top: 170px;
 			margin-bottom: 70px;
 
 			@media screen and (min-width: 768px) {
-				width: 80%;
+				width: 90%;
 				margin-left: auto;
 			}
 		}
@@ -277,7 +310,7 @@ main {
 			position: relative;
 
 			& p {
-				border-bottom: 1px solid rgba($color: white, $alpha: 0.5);
+				/* border-bottom: 1px solid rgba($color: white, $alpha: 0.5); */
 				padding-bottom: 5px;
 			}
 
@@ -294,10 +327,10 @@ main {
 
 			@include respond(tab) {
 				gap: 40px;
-				font-size: 4rem;
+				font-size: 5rem;
 				left: 5%;
 				width: 85%;
-				top: 50%;
+				top: 45%;
 				transform: translateY(-50%);
 			}
 		}
@@ -340,6 +373,37 @@ main {
 				position: relative;
 				top: 10px;
 				font-size: 3rem;
+			}
+		}
+
+		&__button {
+			display: block;
+			text-transform: uppercase;
+			font-size: $main-button-fs;
+			background-color: #1c1c1c;
+			padding: 10px;
+			outline: 1px solid $bg-grey;
+			outline-offset: 5px;
+			border: 2px solid #9f9f9f;
+			width: 90%;
+			position: absolute;
+			left: 50%;
+			bottom: 10%;
+			transform: translateX(-50%);
+			z-index: 1;
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				background-color: $color-orange;
+			}
+
+			&-link {
+				display: block;
+				color: white;
+
+				@include respond(desktop) {
+					font-size: 3rem;
+				}
 			}
 		}
 	}
@@ -399,105 +463,40 @@ main {
 		}
 	}
 
-	&__buttons {
-		min-height: 170px;
+	&__scroll-container {
 		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		width: 80%;
-		margin: 0 auto;
-		position: relative;
+		justify-content: center;
+		margin-bottom: 50px;
 
-		@include respond(tabPort) {
-			width: 30%;
-		}
-	}
-
-	&__underConstruction {
-		opacity: 0;
-		visibility: hidden;
-		width: 100%;
-		border: 1px solid white;
-		position: absolute;
-		bottom: 110%;
-		padding: 20px;
-		font-size: 1.7rem;
-		text-align: center;
-		transition: all 0.2s linear;
-
-		@include respond(desktop) {
-			font-size: 3rem;
-		}
-
-		&::before {
-			content: "";
-			width: 50px;
-			height: 50px;
-			position: absolute;
-			background: white;
-			top: 101%;
-			left: 50%;
-			clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
-			transform: translateX(-50%);
-		}
-	}
-
-	&__underConstruction.active {
-		opacity: 1;
-		visibility: visible;
-	}
-
-	&__button {
-		display: block;
-		transform: skewX(40deg);
-		font-size: $main-button-fs;
-		background-color: $bg-grey;
-		padding: 10px;
-		transform: skewX(-40deg);
-		outline: 1px solid $bg-grey;
-		outline-offset: 5px;
-		border: 2px solid #9f9f9f;
-		width: 100%;
-		position: relative;
-		z-index: 1;
-
-		&::before {
-			content: "";
-			display: block;
-			position: absolute;
-			border-bottom: 2px solid white;
-			border-right: 3px solid white;
-			width: 70px;
-			height: 40px;
-			top: 40%;
-			right: -5%;
-			transition: width 0.3s ease;
-
-			@include respond(desktop) {
-				top: 58%;
+		& div {
+			position: relative;
+			&::before{
+				content: '';
+				display: block;
+				width: 20px;
+				height: 20px;
+				border-right: 5px solid white;
+				border-bottom: 5px solid white;
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				transform: translateX(-50%) rotate(45deg) 
 			}
-		}
-
-		&::after {
-			content: "";
-			display: block;
-			position: absolute;
-			border-top: 2px solid white;
-			border-left: 3px solid white;
-			width: 70px;
-			height: 40px;
-			top: -30%;
-			left: -5%;
-			transition: width 0.3s ease;
-		}
-
-		&-link {
-			display: block;
-			transform: skewX(40deg);
-			color: white;
-
-			@include respond(desktop) {
-				font-size: 3rem;
+			&::after{
+				content: '';
+				display: block;
+				width: 20px;
+				height: 20px;
+				border-right: 5px solid white;
+				border-bottom: 5px solid white;
+				position: absolute;
+				top: 130%;
+				left: 50%;
+				transform: translateX(-50%) rotate(45deg) 
+			}
+			& img {
+				width: 50px;
+				position: relative;
 			}
 		}
 	}
@@ -620,9 +619,10 @@ main {
 		background: $color-orange;
 		position: absolute;
 		right: 0;
+		transform: translateX(0px);
 
 		@media screen and (min-width: 1440px) {
-			width: 80px;
+			width: 79px;
 		}
 	}
 
@@ -668,7 +668,7 @@ main {
 
 .about {
 	position: relative;
-	overflow: hidden;
+	/* overflow: hidden; */
 
 	&__img-container {
 		width: 70%;

@@ -51,32 +51,6 @@
 	<canvas id="noisy-canvas"></canvas>
 
 	<body>
-		<div class="burger-menu__container">
-			<ul class="burger-menu__list">
-				<li class="burger-item"><a href="#about">About</a></li>
-				<li class="burger-item"><a href="#tech">Skills</a></li>
-				<li
-					id="contacts-button"
-					class="burger-item"
-				>
-					<a href="#contacts">Contacts</a>
-				</li>
-			</ul>
-			<div class="burger-menu__close">
-				<span class="close-line"></span>
-			</div>
-			<div class="burger__buttonGroup">
-				<div class="burger__removeAssist">
-					<label for="assistSwitch">Assistant</label>
-					<input
-						type="checkbox"
-						name="assistSwitch"
-					/>
-					<div class="customCheckbox"></div>
-				</div>
-			</div>
-		</div>
-
 		<main>
 			<div class="page">
 				<ul class="aside-links__list">
@@ -141,13 +115,34 @@
 									alt="logo"
 								/>
 							</div>
-							<div class="burger-menu header__burger-icon">
-								<div class="burger-menu__line"></div>
+							<div class="header__navigation">
+								<ul class="header__navigation-list">
+									<li class="header__navigation-item">
+										<a
+											class="header__navigation-link"
+											href="#about"
+										>
+											About
+										</a>
+									</li>
+									<li class="header__navigation-item">
+										<a
+											class="header__navigation-link"
+											href="#experience"
+										>
+											Experience
+										</a>
+									</li>
+									<li class="header__navigation-item">
+										<a
+											class="header__navigation-link"
+											href="#stack"
+										>
+											Stack
+										</a>
+									</li>
+								</ul>
 							</div>
-							<!-- <div class="changeLang__buttons tab-visible">
-								<button>ENG</button>
-								<button class="active">RU</button>
-							</div> -->
 						</div>
 					</header>
 					<div class="first-screen">
@@ -163,55 +158,34 @@
 								/>
 								<div class="greeting__textBox">
 									<p class="greeting__firstLine">
-										<span class="greeting__difLang"></span>, my name is <span class="accent">Vilson!</span>
+										<span class="greeting__difLang"></span>, my name is
+										<span class="accent">Vilson!</span>
 									</p>
-									<p class="greeting__secondLine">I'm a <span class="accent">Frontend</span> developer</p>
-								</div>
-							</div>
-							<!-- <div class="greeting__animation"></div> -->
-						</div>
-
-						<div class="first-screen__assist">
-							<div
-								class="first-screen__assistContainer"
-								data-aos="fade-right"
-							>
-								<img
-									class="first-screen__assistImg"
-									src="img/assist-area.svg"
-									alt=""
-								/>
-								<p class="first-screen__assistText">The weather outside is great, so it's time for writing code.</p>
-							</div>
-							<div
-								class="first-screen__buttons"
-								data-aos="fade-left"
-							>
-								<div class="first-screen__underConstruction">
-									<p class="first-screen__underConstruction-text">under construction</p>
+									<p class="greeting__secondLine">
+										I'm a <span class="accent">Frontend</span> developer
+									</p>
 								</div>
 
 								<button
-									class="first-screen__button"
-									id="interactive"
-								>
-									<p
-										class="first-screen__button-link"
-										href="#"
-									>
-										interactive website
-									</p>
-								</button>
-								<button
-									class="first-screen__button"
+									class="greeting__button"
 									id="projects"
 								>
 									<a
-										class="first-screen__button-link"
+										class="greeting__button-link"
 										href="https://projects.devilson.me"
-										>projects</a
+										>see my projects</a
 									>
 								</button>
+
+								<!-- <div class="greeting__animation"></div> -->
+							</div>
+						</div>
+						<div class="first-screen__scroll-container">
+							<div>
+								<img
+									src="img/mouse.svg"
+									alt="mouse"
+								/>
 							</div>
 						</div>
 						<!-- <div class="diagonal-line__container"></div> -->
@@ -244,13 +218,16 @@
 							class="about__text"
 							data-aos="fade-left"
 						>
-							My name is Vilson Khechikiants and I'm Frontend Developer. I was graduaded from Russian Foreign Trade Academy and get a
-							bachelor degree on International Trade Management.
+							My name is Vilson Khechikiants and I'm Frontend Developer. I was
+							graduaded from Russian Foreign Trade Academy and get a bachelor degree
+							on International Trade Management.
 							<br />
-							After graduating from the institute, I worked at the Federal Tax Service for 3 years, and then at Deloitte Consulting for
-							1 year. <br />Even during my academy studies, I was interested in website development and practiced creating websites.
-							Over time, I've been acquired the necessary skills and I'm ready for a change of working field. Currently, I am passionate
-							about React development.<br />
+							After graduating from the institute, I worked at the Federal Tax Service
+							for 3 years, and then at Deloitte Consulting for 1 year. <br />Even
+							during my academy studies, I was interested in website development and
+							practiced creating websites. Over time, I've been acquired the necessary
+							skills and I'm ready for a change of working field. Currently, I am
+							passionate about React development.<br />
 						</p>
 					</div>
 				</div>
@@ -262,18 +239,25 @@
 				</div>
 				<div class="aside-about__horizontal"></div>
 			</section>
-
-			<div class="assistant">
-				<div class="assistant__container">
-					<img
-						class="assistant__area"
-						src="img/assist-small.svg"
-						alt=""
-					/>
-					<p class="assistant__text"></p>
-				</div>
-			</div>
 			<div class="container">
+				<section
+				class="experience"
+				id="experience"
+			>
+				<div class="invisible-line_tech"></div>
+				<h1
+					class="section__heading"
+					data-aos="fade-down"
+				>
+					experience
+				</h1>
+				<div
+					class="tech__table"
+					data-aos="fade-up"
+				>
+					
+				</div>
+			</section>
 				<section
 					class="tech"
 					id="tech"
@@ -454,6 +438,7 @@
 						</div>
 					</div>
 				</section>
+				
 				<section
 					class="contacts"
 					id="contacts"
@@ -680,12 +665,11 @@
 						</li>
 					</ul>
 				</section>
-
 				<div class="aside-tech__vert"></div>
 			</div>
 		</main>
 		<footer class="footer">
-			<p class="footer__text"><span class="currentYear">2023</span> | Vilson Khechikiants</p>
+			<p class="footer__text"><span class="currentYear"></span> | Vilson Khechikiants</p>
 		</footer>
 		<script
 			type="module"

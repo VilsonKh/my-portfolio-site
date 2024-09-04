@@ -20,15 +20,15 @@ AOS.init({
 
 let burgerMenu = document.querySelector(".burger-menu__container");
 let burgerClose = document.querySelector(".burger-menu__close");
-const burgerIcon = document.querySelector(".burger-menu");
+// const burgerIcon = document.querySelector(".burger-menu");
 
-burgerIcon.addEventListener("click", () => {
-	burgerMenu.classList.toggle("active");
-});
+// burgerIcon.addEventListener("click", () => {
+// 	burgerMenu.classList.toggle("active");
+// });
 
-burgerClose.addEventListener("click", () => {
-	burgerMenu.classList.toggle("active");
-});
+// burgerClose.addEventListener("click", () => {
+// 	burgerMenu.classList.toggle("active");
+// });
 
 const greetingTag = document.querySelector(".greeting__difLang");
 
@@ -50,41 +50,41 @@ function changeGreeting() {
 
 window.addEventListener("load", changeGreeting);
 
-const assistant = document.querySelector(".assistant");
+// const assistant = document.querySelector(".assistant");
 
-const typed = new Typed(".assistant__text", {
-	strings: [
-		"Здесь будут шутки и подсказки",
-		"Здесь будут еще подсказки",
-		"Здесь будут подсказки и шутки",
-		"Здесь будут еще другие шутки и подсказки",
-	],
-	stringElement: null,
-	contentType: "html",
-	loop: true,
-	loopCounter: Infinity,
-	typeSpeed: 50,
-	backSpeed: 20,
-	smartBackspace: true,
-});
+// const typed = new Typed(".assistant__text", {
+// 	strings: [
+// 		"Здесь будут шутки и подсказки",
+// 		"Здесь будут еще подсказки",
+// 		"Здесь будут подсказки и шутки",
+// 		"Здесь будут еще другие шутки и подсказки",
+// 	],
+// 	stringElement: null,
+// 	contentType: "html",
+// 	loop: true,
+// 	loopCounter: Infinity,
+// 	typeSpeed: 50,
+// 	backSpeed: 20,
+// 	smartBackspace: true,
+// });
 
-typed.stop();
+// typed.stop();
 
 let typing = false;
-const assistantToggler = () => {
-	if (window.scrollY > window.innerHeight) {
-		assistant.classList.add("active");
-		if (!typing) {
-			typed.start();
-		}
-		typing = true;
-	} else {
-		assistant.classList.remove("active");
-		typing = false;
-		typed.stop();
-	}
-};
-window.addEventListener("scroll", assistantToggler);
+// const assistantToggler = () => {
+// 	if (window.scrollY > window.innerHeight) {
+// 		assistant.classList.add("active");
+// 		if (!typing) {
+// 			typed.start();
+// 		}
+// 		typing = true;
+// 	} else {
+// 		assistant.classList.remove("active");
+// 		typing = false;
+// 		typed.stop();
+// 	}
+// };
+// window.addEventListener("scroll", assistantToggler);
 const aboutHorizontalDiagonal = document.querySelector(".aside-about-diagonal");
 const aboutAdditionalLine = document.querySelector(".aside-about__additional");
 const mainContainer = document.querySelector("main");
@@ -118,6 +118,7 @@ if (window.screen.width > 767 && window.screen.width < 1439) {
 }
 
 const currentYear = document.querySelector(".currentYear");
+console.log(currentYear)
 
 currentYear.textContent = new Date().getFullYear();
 
@@ -145,26 +146,26 @@ new Swiper(".swiper", {
 	},
 });
 
-const disableAssistant = document.querySelector(".burger__removeAssist");
-disableAssistant.addEventListener("click", () => {
-	disableAssistant.classList.toggle("disabled");
-	if (disableAssistant.classList.contains("disabled")) {
-		window.removeEventListener("scroll", assistantToggler);
-	} else {
-		window.addEventListener("scroll", assistantToggler);
-	}
-});
+// const disableAssistant = document.querySelector(".burger__removeAssist");
+// disableAssistant.addEventListener("click", () => {
+// 	disableAssistant.classList.toggle("disabled");
+// 	if (disableAssistant.classList.contains("disabled")) {
+// 		window.removeEventListener("scroll", assistantToggler);
+// 	} else {
+// 		window.addEventListener("scroll", assistantToggler);
+// 	}
+// });
 
-const interactiveButton = document.querySelector("#interactive");
-const underConstructionPopup = document.querySelector(".first-screen__underConstruction");
-interactiveButton.addEventListener("mouseover", () => {
-	underConstructionPopup.classList.add("active");
-});
+// const interactiveButton = document.querySelector("#interactive");
+// const underConstructionPopup = document.querySelector(".first-screen__underConstruction");
+// interactiveButton.addEventListener("mouseover", () => {
+// 	underConstructionPopup.classList.add("active");
+// });
 
-interactiveButton.addEventListener("mouseout", () => {
-	underConstructionPopup.classList.remove("active");
-});
+// interactiveButton.addEventListener("mouseout", () => {
+// 	underConstructionPopup.classList.remove("active");
+// });
 
-interactiveButton.addEventListener("click", () => {
-	underConstructionPopup.classList.toggle("active");
-});
+// interactiveButton.addEventListener("click", () => {
+// 	underConstructionPopup.classList.toggle("active");
+// });
